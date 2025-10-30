@@ -65,6 +65,11 @@
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
 
+      security.pki.certificates = [
+        # mkcert X.509 certificate for local development
+        (builtins.readFile ./rootCA.crt)
+      ];
+
       # Enable networking
       networking.networkmanager.enable = true;
 
