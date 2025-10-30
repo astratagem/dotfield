@@ -1,6 +1,6 @@
 {
   users.cdom.aspects.development.home = {
-    programs.git.aliases =
+    programs.git.settings.alias =
       let
         withDifft = s: "-c diff.external=difft ${s}";
       in

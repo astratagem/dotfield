@@ -77,13 +77,13 @@ in
         programs.gh.settings.git_protocol = lib.mkDefault "ssh";
       }
       (lib.mkIf (!isEmpty (whoami.name or false)) {
-        programs.git.userName = whoami.name;
+        programs.git.settings.user.name = whoami.name;
       })
       (lib.mkIf (!isEmpty (whoami.email.primary or false)) {
-        programs.git.userEmail = whoami.email.primary;
+        programs.git.settings.user.email = whoami.email.primary;
       })
       (lib.mkIf (!isEmpty (whoami.accounts.github or false)) {
-        programs.git.extraConfig.github.user = whoami.accounts.github;
+        programs.git.settings.github.user = whoami.accounts.github;
       })
     ];
 }

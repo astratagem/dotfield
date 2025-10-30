@@ -6,7 +6,7 @@
     {
       home.packages = [ perSystem.config.packages.difftastic-16k ];
 
-      programs.git.extraConfig = {
+      programs.git.settings = {
         diff.external = lib.mkDefault "difft";
         diff.tool = lib.mkDefault "difftastic";
         difftool.difftastic.cmd = ''difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"'';
