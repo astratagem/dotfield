@@ -11,5 +11,11 @@
         inputs.beams.modules.nixos.default
       ];
     };
+
+    home = {
+      imports = [
+        inputs.beams.modules.homeManager.default
+      ];
+    };
   };
 }
