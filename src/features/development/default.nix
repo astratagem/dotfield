@@ -29,6 +29,8 @@
         ++ [
           pkgs.asciinema
           pkgs.ast-grep
+          pkgs.awscli2
+          pkgs.aws-sso-cli
           pkgs.copier
           pkgs.quicktype # json schema toolkit
           pkgs.skate
