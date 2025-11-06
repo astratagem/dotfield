@@ -48,8 +48,8 @@ in
           dig
           diskus # :: simple `du -sh` alternative by sharkdp
           dnsutils
-          du-dust
           dua
+          dust
           exfatprogs
           eza
           fd

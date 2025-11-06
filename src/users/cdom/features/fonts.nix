@@ -13,7 +13,7 @@
     {
       home.packages = [
         (mkIosevkaSgrVariant "Term")
-        perSystem.config.packages.astrata
+        # perSystem.config.packages.astrata
         perSystem.config.packages.iosvmata-bin
         perSystem.config.packages.pragmasevka-bin
         pkgs.aporetic

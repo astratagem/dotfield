@@ -21,7 +21,7 @@ in
       {
         programs.git = {
           enable = true;
-          package = pkgs.gitAndTools.gitFull;
+          package = pkgs.gitFull;
           ignores = [
             # OS or Editor files
             "._*"
@@ -67,9 +67,9 @@ in
 
         home.packages = [
           pkgs.codeberg-cli
-          pkgs.gitAndTools.hub
-          pkgs.gitAndTools.gh
+          pkgs.gh
           pkgs.glab
+          pkgs.hub
           pkgs.hut # <- a sourcehut CLI (unofficial)
         ];
 
