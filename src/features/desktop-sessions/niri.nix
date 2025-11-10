@@ -13,8 +13,7 @@
 
         programs.niri = {
           enable = true;
-          # package = pkgs.niri-stable;
-          package = inputs'.niri-with-primary-render-fallback.packages.niri;
+          package = pkgs.niri-stable;
         };
 
         xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
