@@ -7,9 +7,6 @@
         (pkgs.writeShellScriptBin "xterm" ''
           handlr launch x-scheme-handler/terminal -- "$@"
         '')
-        (pkgs.writeShellScriptBin "xdg-open" ''
-          handlr open "$@"
-        '')
       ];
     };
 }
