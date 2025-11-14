@@ -4,7 +4,8 @@
     {
       home.packages = with pkgs; [
         sox
-        tenacity
+        # XXX(2025-11-14): build failure
+        # tenacity
       ];
     };
 }

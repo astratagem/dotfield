@@ -41,7 +41,6 @@
           # intersection of "graphical" and "mail" aspects, but there is
           # currently no mechanism to achieve that. (i'm thinking
           # module args / specialArgs of all active aspects...)
-          pkgs.protonmail-bridge-gui
           pkgs.python313Packages.weasyprint # archive webpages to PDF
           pkgs.visidata
           pkgs.vscode

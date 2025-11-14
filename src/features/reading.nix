@@ -4,7 +4,8 @@
     {
       home.packages = [
         pkgs.calibre
-        pkgs.mcomix
+        # XXX(2025-11-14): build failure
+        # pkgs.mcomix
       ];
     };
 }
