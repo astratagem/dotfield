@@ -31,6 +31,7 @@
         adwaita-icon-theme
         dconf-editor
         dconf2nix
+        foot
         glib # provides gsettings
         gnome-backgrounds
         libnotify
