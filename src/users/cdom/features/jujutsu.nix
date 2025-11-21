@@ -35,6 +35,20 @@
         #     ),
         #   )
         # '';
+
+        op_log_node = "if(current_operation, \"@\", \"◉\")";
+        log_node = ''
+          label("node",
+            coalesce(
+              if(!self, label("elided", "⇋")),
+              if(current_working_copy, label("working_copy", "◉")),
+              if(conflict, label("conflict", "x")),
+              if(immutable, label("immutable", "◆")),
+              if(description.starts_with("wip: "), label("wip", "!")),
+              label("normal", "○")
+            )
+          )
+        '';
       };
       template-aliases = {
         # Display relative timestamps in log output
@@ -42,6 +56,51 @@
       };
       ui = {
         movement.edit = true;
+      };
+      # https://gist.github.com/thoughtpolice/8f2fd36ae17cd11b8e7bd93a70e31ad6#file-jjconfig-toml-L182-L194
+      colors = {
+        "normal change_id" = {
+          bold = true;
+          fg = "magenta";
+        };
+        "immutable change_id" = {
+          bold = false;
+          fg = "bright cyan";
+        };
+
+        # Used by log node template
+        "node" = {
+          bold = true;
+        };
+        "node elided" = {
+          fg = "bright black";
+        };
+        "node working_copy" = {
+          fg = "green";
+        };
+        "node conflict" = {
+          fg = "red";
+        };
+        "node immutable" = {
+          fg = "bright cyan";
+        };
+        "node wip" = {
+          fg = "yellow";
+        };
+        "node normal" = {
+          bold = false;
+        };
+
+        "text link" = {
+          bold = true;
+          fg = "magenta";
+        };
+        "text warning" = {
+          bold = true;
+          # TODO: or yellow?
+          fg = "red";
+        };
+
       };
     };
   };
