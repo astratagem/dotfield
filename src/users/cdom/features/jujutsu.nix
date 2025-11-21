@@ -19,6 +19,12 @@
           "--no-pager"
         ];
       };
+
+      revsets = {
+        # By default, show all my current stacks.
+        log = "stack(mine() | @) | trunk() | @";
+      };
+
       templates = {
         # FIXME: error │ 2: Value not found for ui.should-sign-off
         # draft_commit_description = ''
@@ -50,13 +56,16 @@
           )
         '';
       };
+
       template-aliases = {
         # Display relative timestamps in log output
         "format_timestamp(timestamp)" = "timestamp.ago()";
       };
+
       ui = {
         movement.edit = true;
       };
+
       # https://gist.github.com/thoughtpolice/8f2fd36ae17cd11b8e7bd93a70e31ad6#file-jjconfig-toml-L182-L194
       colors = {
         "normal change_id" = {
