@@ -23,6 +23,7 @@ in
       ];
 
       home.packages = [
+        pkgs.jj-pre-push
         pkgs.jjui
       ];
 
@@ -100,6 +101,15 @@ in
               "log"
               "-r"
               "open()"
+            ];
+
+            # https://github.com/acarapetis/jj-pre-push?tab=readme-ov-file#installation
+            push = [
+              "util"
+              "exec"
+              "--"
+              "jj-pre-push"
+              "push"
             ];
 
             retrunk = [

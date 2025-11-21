@@ -32,6 +32,10 @@
           pkgs.awscli2
           pkgs.aws-sso-cli
           pkgs.copier
+          # Although git hooks should obviously be managed on a
+          # per-project basis, `jj-git-push` expects the `pre-commit`
+          # binary to be available (normally it is not).
+          pkgs.pre-commit
           pkgs.quicktype # json schema toolkit
           pkgs.skate
           pkgs.universal-ctags
