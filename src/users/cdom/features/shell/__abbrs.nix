@@ -16,8 +16,7 @@
   jjd = "jj describe -m";
   jjff = "jj diff";
   jjl = "jj log -n 6 --no-pager";
-  jjn = "jj new";
-  jjnm = "jj new -m";
+  jjn = "jj new -m";
   jjs = "jj st --no-pager";
 
   ### Git
