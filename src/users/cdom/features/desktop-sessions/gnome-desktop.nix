@@ -23,7 +23,7 @@ in
 
         "org/gnome/desktop/search-providers" = {
           sort-order = [
-            "org.gnome.Nautilus.desktop"
+            (mimeapps.nameFor "nautilus")
             "org.gnome.Documents.desktop"
           ];
         };
