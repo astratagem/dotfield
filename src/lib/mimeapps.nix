@@ -1,6 +1,8 @@
 let
   desktopEntryNames = {
+    file-roller = "org.gnome.FileRoller";
     ghostty = "com.mitchellh.ghostty";
+    loupe = "org.gnome.Loupe";
     zathura = "org.pwmt.zathura-pdf-mupdf";
   };
 

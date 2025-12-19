@@ -1,6 +1,6 @@
 { self, ... }:
 let
-  inherit (self.lib) mimetypes;
+  inherit (self.lib) mimeapps mimetypes;
 in
 {
   users.cdom.aspects.desktop-sessions__gnome.home =
@@ -9,9 +9,7 @@ in
       inherit (lib.hm.gvariant) mkUint32;
     in
     {
-      xdg.mimeApps.defaultApplications =
-        (mimetypes.genAssoc mimetypes.archive "org.gnome.FileRoller.desktop")
-        // (mimetypes.genAssoc mimetypes.image "org.gnome.Loupe.desktop");
+      xdg.mimeApps.defaultApplications = (mimetypes.genAssoc mimetypes.image mimeapps.nameFor "loupe");
 
       dconf.settings = {
         "org/gnome/desktop/interface" = {
