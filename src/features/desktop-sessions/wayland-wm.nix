@@ -37,11 +37,9 @@
 
         environment.systemPackages = with pkgs; [
           brightnessctl
-          file-roller
           fuzzel
           grim
           gtk-layer-shell
-          nautilus
           satty
           slurp
           swaybg

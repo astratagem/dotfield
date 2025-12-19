@@ -31,12 +31,15 @@
         adwaita-icon-theme
         dconf-editor
         dconf2nix
+        file-roller
         foot
         glib # provides gsettings
         gnome-backgrounds
         libnotify
+        loupe
         mesa-demos # provides mesa utilities e.g. glxinfo
         qt5.qtwayland
+        nautilus
         wev
         wl-clipboard
         wtype # abandoned?
