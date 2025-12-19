@@ -10,6 +10,7 @@
       xdg.mimeApps.defaultApplications =
         (mimetypes.genAssoc mimetypes.archive (mimeapps.nameFor "file-roller"))
         // (mimetypes.genAssoc mimetypes.audio (mimeapps.nameFor "mpv"))
+        // (mimetypes.genAssoc mimetypes.image (mimeapps.nameFor "loupe"))
         // (mimetypes.genAssoc mimetypes.text (mimeapps.nameFor "emacsclient"))
         // (mimetypes.genAssoc mimetypes.video (mimeapps.nameFor "mpv"))
         // (mimetypes.genAssoc mimetypes.webpage (mimeapps.nameFor "firefox"))

@@ -9,8 +9,6 @@ in
       inherit (lib.hm.gvariant) mkUint32;
     in
     {
-      xdg.mimeApps.defaultApplications = (mimetypes.genAssoc mimetypes.image mimeapps.nameFor "loupe");
-
       dconf.settings = {
         "org/gnome/desktop/interface" = {
           clock-show-seconds = false;
