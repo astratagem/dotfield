@@ -61,6 +61,8 @@ layout {
     preset-window-heights { }
 
     focus-ring {
+        off
+
         width 1
         active-color "#a6e3a1"
         inactive-color "#6c7086"
@@ -100,6 +102,15 @@ workspace "scratch"
 
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 /// ==================================================================
+
+window-rule {
+    opacity 0.9
+}
+
+window-rule {
+    match is-focused=true
+    opacity 1.0
+}
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
