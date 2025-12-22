@@ -74,12 +74,16 @@ layout {
         off
     }
 
+    // https://yalter.github.io/niri/Configuration%3A-Layout.html#shadow
     shadow {
         on
-        softness 80
-        spread 5
+        // "softness" (aka blur radius) is measured in logical pixels
+        softness 88 // orig. 80
+        // "spread" :: distance to expand the window rectangle in logical pixels (signed)
+        spread 55 // orig. 5
         offset x=0 y=5
         color "#0007"
+        // inactive-color "..."
     }
 
     insert-hint {
