@@ -13,7 +13,7 @@
         client_id = "a51489a80c22465482734244dc626132";
 
         # Must match the callback URL specified in Spotify API configuration.
-        client_port = 8080;
+        client_port = 8989;
       };
     };
 }
