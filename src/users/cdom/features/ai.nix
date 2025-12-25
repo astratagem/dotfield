@@ -10,8 +10,6 @@
       ++ (with perSystem.inputs'.llm-agents.packages; [
         backlog-md
         beads
-        claude-code
-        claude-plugins
         crush
       ]);
     }
