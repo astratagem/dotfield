@@ -8,7 +8,10 @@
         pkgs.mods # https://github.com/charmbracelet/mods
       ]
       ++ (with perSystem.inputs'.nix-ai-tools.packages; [
+        backlog-md
+        beads
         claude-code
+        claude-plugins
         crush
       ]);
     }
