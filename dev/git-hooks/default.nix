@@ -14,6 +14,7 @@
             "\.(age|gpg)$"
             "secrets.ya?ml$"
             "blesh/init.sh$"
+            "src/users/cdom/config/claude/.claude/skills/terminal-title/.+"
           ];
           hooks = {
             actionlint.enable = true;

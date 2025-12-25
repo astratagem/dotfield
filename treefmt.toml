@@ -6,6 +6,7 @@ excludes = [
   ".gitmodules",
   "npins/sources.json",
   "*secrets.yaml",
+  "src/users/cdom/cdom/claude/.claude/skills/terminal-title/*",
 ]
 on-unmatched = "warn"
 

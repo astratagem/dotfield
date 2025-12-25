@@ -141,9 +141,18 @@
   },
   "enabledPlugins": {
     "commit-commands@claude-plugins-official": true,
+    "document-skills@anthropic-agent-skills": true,
+    "feature-dev@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
     "learning-output-style@claude-plugins-official": true,
-    "compounding-engineering@every-marketplace": true
+    "ralph-wiggum@claude-plugins-official": true,
+    "compounding-engineering@every-marketplace": true,
+    "code-refactoring@claude-code-workflows": true,
+    "code-documentation@claude-code-workflows": true,
+    "context-management@claude-code-workflows": true,
+    "agent-orchestration@claude-code-workflows": true,
+    "developer-essentials@claude-code-workflows": true
   },
   "outputStyle": "Explanatory",
   "alwaysThinkingEnabled": true
