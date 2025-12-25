@@ -61,12 +61,13 @@ notify_brightness_level() {
 
 main() {
     case "$1" in
-        audio) notify_audio_volume "$(get_volume)" ;;
-        brightness) notify_brightness_level "$(get_brightness)" ;;
-        *)
-            echo "Invalid arguments:"
-            echo "$1"
-            exit 2
+    audio) notify_audio_volume "$(get_volume)" ;;
+    brightness) notify_brightness_level "$(get_brightness)" ;;
+    *)
+        echo "Invalid arguments:"
+        echo "$1"
+        exit 2
+        ;;
     esac
 }
 

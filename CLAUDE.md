@@ -1,11 +1,15 @@
 # Dotfield - NixOS Configuration
 
 ## Overview
-Dotfield is a comprehensive NixOS configuration system ("dotfiles") using Nix flakes for managing multiple machines and users. It's built around a modular architecture with features, hosts, and users as the primary organizational units.
+
+Dotfield is a comprehensive NixOS configuration system ("dotfiles") using Nix
+flakes for managing multiple machines and users. It's built around a modular
+architecture with features, hosts, and users as the primary organizational
+units.
 
 ## Project Structure
 
-```
+```text
 /etc/nixos/
 ├── flake.nix              # Main flake definition with inputs and outputs
 ├── hive.nix               # Colmena deployment configuration
@@ -60,21 +64,28 @@ just dark                  # Switch to dark theme
 ## Architecture
 
 ### Features System
-The `src/features/` directory contains modular configurations that can be enabled per host or user:
+
+The `src/features/` directory contains modular configurations that can be
+enabled per host or user:
+
 - Core system features (boot, networking, audio)
 - Development tools (git, direnv, editors)
 - Desktop environments (GNOME, Sway)
 - Applications and services
 
 ### Host Configuration
+
 Each host in `src/hosts/` defines:
+
 - Hardware-specific settings
-- Enabled features and modules  
+- Enabled features and modules
 - User assignments
 - Deployment metadata
 
 ### User Management
+
 User configurations in `src/users/` provide:
+
 - Home Manager configurations
 - User-specific feature sets
 - Application preferences
@@ -90,6 +101,7 @@ User configurations in `src/users/` provide:
 ## Development Environment
 
 The project includes comprehensive development tooling:
+
 - Pre-commit hooks for Nix linting and formatting
 - Treefmt for consistent code formatting
 - Statix for Nix static analysis
@@ -99,13 +111,16 @@ The project includes comprehensive development tooling:
 ## Secret Management
 
 Secrets are managed using SOPS with age encryption:
+
 - Public keys stored in `ops/keys/`
 - Encrypted secrets in `secrets/`
 - Automatic key management via `.sops.yaml`
 
 ## Package Management
 
-Custom packages are defined in `src/packages/` and overlays in `overlays/`. The configuration supports:
+Custom packages are defined in `src/packages/` and overlays in `overlays/`.
+The configuration supports:
+
 - Package overrides and patches
 - Custom derivations
 - Binary cache integration (Cachix)
@@ -113,8 +128,11 @@ Custom packages are defined in `src/packages/` and overlays in `overlays/`. The 
 ## Testing
 
 The `tests/` directory contains:
+
 - NixOS VM tests
 - Feature integration tests
 - CI/CD validation
 
-This configuration emphasizes modularity, reproducibility, and maintainability while providing a rich desktop and development environment across multiple machines.
+This configuration emphasizes modularity, reproducibility, and maintainability
+while providing a rich desktop and development environment across multiple
+machines.
