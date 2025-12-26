@@ -39,6 +39,7 @@
           pkgs.quicktype # json schema toolkit
           pkgs.skate
           pkgs.universal-ctags
+          pkgs.zx
         ];
 
       # NOTE: This will significantly slow down builds.  However, it enables more

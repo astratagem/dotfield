@@ -102,6 +102,12 @@
     ##: customisation
     base16-schemes.url = "github:montchr/nix-base16-schemes";
     base16-schemes.inputs.nixpkgs.follows = "nixpkgs";
+    ironbar = {
+      # url = "github:JakeStanger/ironbar";
+      # TODO: https://github.com/JakeStanger/ironbar/pull/1299
+      url = "github:astratagem/ironbar?ref=astratagem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri = {
       url = "github:YaLTeR/niri";
       # It is important to keep the Mesa versions in sync.

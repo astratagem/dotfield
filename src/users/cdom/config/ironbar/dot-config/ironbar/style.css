@@ -1,0 +1,347 @@
+/* https://docs.gtk.org/gtk4/css-overview.html */
+
+/* ========================================================================
+   Custom Properties
+   ======================================================================== */
+
+:root {
+  /* Catppuccin Mocha - Base Colors */
+  --color-rosewater: #f5e0dc;
+  --color-flamingo: #f2cdcd;
+  --color-pink: #f5c2e7;
+  --color-mauve: #cba6f7;
+  --color-red: #f38ba8;
+  --color-maroon: #eba0ac;
+  --color-peach: #fab387;
+  --color-yellow: #f9e2af;
+  --color-green: #a6e3a1;
+  --color-teal: #94e2d5;
+  --color-sky: #89dceb;
+  --color-sapphire: #74c7ec;
+  --color-blue: #89b4fa;
+  --color-lavender: #b4befe;
+  --color-text: #cdd6f4;
+  --color-subtext1: #bac2de;
+  --color-subtext0: #a6adc8;
+  --color-overlay2: #9399b2;
+  --color-overlay1: #7f849c;
+  --color-overlay0: #6c7086;
+  --color-surface2: #585b70;
+  --color-surface1: #45475a;
+  --color-surface0: #313244;
+  --color-base: #1e1e2e;
+  --color-mantle: #181825;
+  --color-crust: #11111b;
+
+  /* Semantic Colors */
+  --color-bar: var(--color-surface0);
+  --color-border: var(--color-overlay2);
+
+  --font-size: 10px;
+  --border-radius: 4px;
+
+  --bar-height: 18px; /* Defined in config */
+  --bar-margin: 6px; /* Defined in config */
+  --bar-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
+  --bar-background: linear-gradient(
+    180deg,
+    var(--color-overlay0),
+    var(--color-surface0)
+  );
+
+  --section-gap: var(--bar-margin);
+  --section-border: 1px solid var(--color-overlay0);
+}
+
+/* ========================================================================
+   Reset
+   ======================================================================== */
+
+* {
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* ========================================================================
+   General
+   ======================================================================== */
+
+* {
+  color: var(--color-text);
+  font-family: "Berkeley Mono", "Symbols Nerd Font";
+  font-size: var(--font-size);
+}
+
+.background {
+  background-color: transparent;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 0;
+  /* Override libadwaita. */
+  min-height: var(--bar-height);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+button:hover,
+button:active {
+  background-color: var(--color-surface0);
+}
+
+button label {
+  font-weight: normal;
+}
+
+popover,
+popover contents {
+  border-radius: var(--border-radius);
+}
+
+switch {
+  margin: 0 0.75em;
+}
+
+switch:first-child {
+  margin-left: 0;
+}
+
+switch:last-child {
+  margin-right: 0;
+}
+
+tooltip {
+  border-radius: var(--border-radius);
+}
+
+.popup {
+  border-radius: 12px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+window,
+popover {
+  background-color: transparent;
+}
+
+popover contents {
+  background: var(--color-surface0);
+  border-radius: 12px;
+}
+
+.widget {
+  background: var(--bar-background);
+}
+
+/* ========================================================================
+   Power Management
+   ======================================================================== */
+
+.power-menu {
+  border-bottom-left-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+}
+
+/* ========================================================================
+   Applications Menu
+   ======================================================================== */
+
+.menu {
+  background-color: var(--color-bar);
+  border-bottom-right-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.menu:hover,
+.menu:active {
+  background-color: var(--color-surface0);
+}
+
+/* ========================================================================
+   Workspaces
+   ======================================================================== */
+
+.workspaces {
+  margin-left: var(--section-gap);
+  background: var(--bar-background);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.workspaces .item {
+  border-radius: 0;
+  padding: 0.5rem;
+}
+
+.workspaces .item.focused {
+  border-bottom: 2px solid var(--color-border);
+  background: linear-gradient(
+    180deg,
+    var(--color-surface2),
+    var(--color-base)
+  );
+}
+
+/* ========================================================================
+   Focused
+   ======================================================================== */
+
+.widget.focused {
+  padding: 0.5rem;
+  border-left: var(--section-border);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  background: linear-gradient(180deg, var(--color-surface2), var(--color-base));
+}
+
+/* ========================================================================
+   Network
+   ======================================================================== */
+
+.network_manager {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  padding: 0 0 0 1rem;
+}
+
+
+/* ========================================================================
+   Bluetooth
+   ======================================================================== */
+
+.bluetooth {
+
+}
+
+.popup-bluetooth {
+  padding: 0.25rem;
+}
+
+.popup-bluetooth .header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.popup-bluetooth .header .label {
+  font-size: 1.1rem;
+}
+
+.popup-bluetooth .device {
+  margin-bottom: 0.5rem;
+}
+
+.popup-bluetooth .device .status .header-label,
+.popup-bluetooth .device .status .footer-label {
+  font-size: 0.8rem;
+}
+
+.popup-bluetooth .device .icon-box {
+  margin-right: 0.75em;
+}
+
+/* ========================================================================
+   Volume
+   ======================================================================== */
+
+.volume {
+}
+
+/* ========================================================================
+   System Info
+   ======================================================================== */
+
+.sysinfo {
+  border-left: var(--section-border);
+  padding: 0 0.5rem;
+}
+
+/* ========================================================================
+   Battery
+   ======================================================================== */
+
+.battery {
+  border-left: var(--section-border);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+/* ========================================================================
+   Tray
+   ======================================================================== */
+
+.tray {
+  margin-left: var(--section-gap);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+/* ========================================================================
+   Clipboard
+   ======================================================================== */
+
+.clipboard {
+  border-left: var(--section-border);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  padding: 0 0.5rem;
+}
+
+/* ========================================================================
+   Notifications
+   ======================================================================== */
+
+.notifications {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.notifications label {
+  /* Account for notification count superscript. */
+  padding-right: 0.5rem;
+}
+
+/* ========================================================================
+   Weather
+   ======================================================================== */
+
+.weather {
+  margin-left: var(--section-gap);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.popup-weather .header {
+  font-size: 1.8em;
+  padding-bottom: 0.4em;
+  margin-bottom: 0.6em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.popup-weather .weather-date {
+  font-size: 1.5em;
+  padding-right: 1em;
+}
+
+.popup-weather .weather-avg {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/* ========================================================================
+   Clock
+   ======================================================================== */
+
+.clock {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.clock label {
+  font-size: 13px;
+  font-weight: bold;
+}

@@ -27,7 +27,7 @@ input {
 // https://yalter.github.io/niri/Configuration:-Layout
 // ==================================================================
 layout {
-    background-color "#313244"
+    background-color "#181825"
     gaps 8
     struts {
         top 4

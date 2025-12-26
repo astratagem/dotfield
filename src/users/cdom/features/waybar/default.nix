@@ -14,7 +14,7 @@
 
       stylix.targets.waybar.addCss = false;
 
-      programs.waybar.enable = true;
+      programs.waybar.enable = false;
       programs.waybar.systemd.enable = true;
       programs.waybar.systemd.target = "tray.target";
       programs.waybar.style = ''
