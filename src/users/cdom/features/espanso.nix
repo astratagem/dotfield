@@ -23,10 +23,8 @@
         configs = {
           default = {
             search_trigger = ";;snip";
-
             # <https://espanso.org/docs/configuration/options/#customizing-the-search-shortcut>
-            # TODO: verify
-            search_shortcut = if isDarwin then "CMD+ALT+SPACE" else "ALT+SHIFT+SPACE";
+            search_shortcut = if isDarwin then "CMD+ALT+SPACE" else "CMD+SPACE";
           };
         };
       };
