@@ -3,6 +3,8 @@ matches:
   - replace: '0x135EEDD0F71934F3'
     trigger: ;me;gpg
   - replace: 'chmont@protonmail.com'
+    trigger: 'chmont'
+  - replace: 'chmont@protonmail.com'
     trigger: 'me@@'
   - replace: 'chmont@proton.me'
     trigger: 'me@p'
