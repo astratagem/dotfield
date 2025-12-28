@@ -1,4 +1,5 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
+
 input {
     focus-follows-mouse max-scroll-amount="10%"
     warp-mouse-to-focus
@@ -24,10 +25,13 @@ input {
         accel-profile "adaptive"
     }
 }
+
 // https://yalter.github.io/niri/Configuration:-Layout
 // ==================================================================
+
 layout {
     background-color "#181825"
+
     gaps 8
     struts {
         top 4
@@ -35,9 +39,11 @@ layout {
         bottom 4
         left 0
     }
+
     tab-indicator {
         place-within-column
     }
+
     always-center-single-column
     center-focused-column "never"
     default-column-width {
@@ -51,6 +57,7 @@ layout {
     preset-window-heights {
 
     }
+
     focus-ring {
         off
         width 1
@@ -59,9 +66,11 @@ layout {
         active-gradient in="oklch longer hue" from="#89dceb" to="#a6e3a1" angle=45
         inactive-gradient in="oklch longer hue" from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
+
     border {
         off
     }
+
     // https://yalter.github.io/niri/Configuration%3A-Layout.html#shadow
     shadow {
         on
@@ -73,34 +82,43 @@ layout {
         color "#0007"
         // inactive-color "..."
     }
+
     insert-hint {
         gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
     }
 }
+
 animations {
     slowdown 3.0
 }
+
 // https://yalter.github.io/niri/Configuration%3A-Named-Workspaces.html
 // ==================================================================
+
 workspace "chat"
 workspace "main"
 workspace "dotfield"
 workspace "ceamx"
 workspace "scratch"
+
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 /// ==================================================================
+
 window-rule {
     opacity 0.7
 }
+
 window-rule {
     match is-focused=true
     opacity 1.0
 }
+
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="mpv"
     open-floating true
 }
+
 window-rule {
     match app-id="discord"
     match app-id="fluffychat"
@@ -109,6 +127,7 @@ window-rule {
     open-maximized true
     open-on-workspace "chat"
 }
+
 window-rule {
     match app-id="1Password$"
     match app-id="^org\\.keepassxc\\.KeePassXC$"
@@ -116,26 +135,35 @@ window-rule {
     block-out-from "screen-capture"
     open-focused true
 }
+
 window-rule {
     match app-id="ch.proton.bridge-gui"
     open-on-workspace "scratch"
 }
+
 window-rule {
     geometry-corner-radius 6
     clip-to-geometry true
 }
+
 // https://yalter.github.io/niri/Configuration%3A-Miscellaneous.html
 // ==================================================================
+
 prefer-no-csd
+
 // FIXME: not working
 spawn-at-startup "swww" "img" "~/Pictures/wallpapers/src/dark/rougier--recursive-voronoi--inverted.png" "--fill-color" "#000000" "--resizea" "fit"
+
 screenshot-path "~/Pictures/Screenshots/screenshot-%Y%m%dT%H%M%S.png"
+
 cursor {
     hide-when-typing
 }
+
 hotkey-overlay {
     skip-at-startup
 }
+
 overview {
     backdrop-color "#181825"
     workspace-shadow {
@@ -145,8 +173,10 @@ overview {
         color "#18182550"
     }
 }
+
 // https://yalter.github.io/niri/Configuration%3A-Key-Bindings.html
 // =====================================================================
+
 binds {
     Mod+Shift+Slash {
         show-hotkey-overlay
@@ -381,6 +411,7 @@ binds {
     Mod+Ctrl+Shift+WheelScrollUp {
         move-column-left
     }
+
     // Similarly, you can bind touchpad scroll "ticks".
     // Touchpad scrolling is continuous, so for these binds it is split into
     // discrete intervals.
@@ -389,6 +420,7 @@ binds {
     // touchpads by default.
     // Mod+TouchpadScrollDown { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
     // Mod+TouchpadScrollUp   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
+
     // You can refer to workspaces by index. However, keep in mind that
     // niri is a dynamic workspace system, so these commands are kind of
     // "best effort". Trying to refer to a workspace index bigger than
@@ -451,6 +483,7 @@ binds {
     Mod+Ctrl+9 {
         move-column-to-workspace 9
     }
+
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
     // Switches focus between the current and the previous workspace.
