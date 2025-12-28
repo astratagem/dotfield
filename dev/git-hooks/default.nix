@@ -27,7 +27,6 @@
             check-toml.enable = true;
             check-vcs-permalinks.enable = true;
             detect-private-keys.enable = true;
-            eclint.enable = true;
             markdownlint.enable = true;
             shellcheck.enable = true;
             yamllint.enable = true;
