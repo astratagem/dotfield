@@ -44,22 +44,15 @@
       # alternatively: posy-cursors / graphite-cursors / vanilla-dmz /
       # catppuccin-cursors / hackneyed-x11-cursors / openzone-cursors
       stylix.cursor = {
-        # name = "phinger-cursors-dark";
-        # package = pkgs.phinger-cursors;
-        # size = 24;
+        name = "phinger-cursors-dark";
+        package = pkgs.phinger-cursors;
+        size = 12;
         # name = "Posy_Cursor_Black";
         # package = pkgs.posy-cursors;
         # size = 32;
-        name = "Bibata-Modern-Classic";
-        package = pkgs.bibata-cursors;
-        size = 10;
-      };
-
-      stylix.iconTheme = {
-        enable = true;
-        package = pkgs.papirus-icon-theme;
-        dark = "Papirus Dark";
-        light = "Papirus Light";
+        # name = "Bibata-Modern-Classic";
+        # package = pkgs.bibata-cursors;
+        # size = 10;
       };
 
       stylix.targets.floorp.enable = false;
