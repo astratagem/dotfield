@@ -10,3 +10,5 @@ matches:
     trigger: 'me@p'
   - replace: 'chrismont@temple.edu'
     trigger: 'me@w'
+  - replace: 'Chris Montgomery <chmont@protonmail.com>'
+    trigger: ';me;author'
