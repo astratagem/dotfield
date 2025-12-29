@@ -186,6 +186,9 @@ binds {
     Mod+D hotkey-overlay-title="Launch Application: fuzzel" {
         spawn "fuzzel"
     }
+    Mod+E hotkey-overlay-title="Launch Emacs Everywhere" {
+        spawn-sh "emacsclient --eval '(emacs-everywhere)'"
+    }
     Super+Alt+L hotkey-overlay-title="Lock Screen: swaylock" {
         spawn "swaylock"
     }
