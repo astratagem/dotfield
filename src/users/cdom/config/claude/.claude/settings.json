@@ -144,7 +144,6 @@
     "document-skills@anthropic-agent-skills": true,
     "feature-dev@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true,
     "learning-output-style@claude-plugins-official": true,
     "compounding-engineering@every-marketplace": true,
     "code-refactoring@claude-code-workflows": true,
