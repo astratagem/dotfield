@@ -1,0 +1,153 @@
+let {
+    $apps_menu = { type = "menu" label = "󰍜" }
+    $workspaces = { type = "workspaces" sort = "index" }
+    $music = { type = "music" player_type = "mpd" }
+    $volume = { type = "volume" }
+    $tray = { type = "tray" }
+    $clock = { type = "clock" format = "%F %T" }
+
+    $focused = {
+        type = "focused"
+        show_icon = true
+        icon_size = 11
+        show_title = true
+        truncate = {
+            mode = "end"
+            max_length = 36
+        }
+    }
+
+    $network = {
+        type = "network_manager"
+        types_blacklist = [ "loopback" "bridge" ]
+        icon_size = 11
+    }
+
+    $bluetooth = {
+        type = "bluetooth"
+        format = {
+            disabled = "󰂲"
+            enabled = "󰂯"
+            connected = "󰂱 {device_alias}"
+            connected_battery = "󰥈 {device_alias} ({device_battery_percent}%)"
+        }
+        popup.header = "󰂯 [ BLUETOOTH ]"
+        icon_size = 16
+    }
+
+    $sysinfo = {
+        type = "sys_info"
+        format = [
+            " {cpu_percent}%"
+            " {memory_percent}%"
+        ]
+    }
+
+    $battery = {
+        type = "battery"
+        format = " {percentage}%"
+        show_icon = true
+    }
+
+    $clipboard = {
+        type = "clipboard"
+        max_items = 5
+        truncate.mode = "end"
+        truncate.length = 30
+    }
+
+    $power_menu = {
+        type = "custom"
+        name = "power-menu"
+        class = "power-menu"
+        bar = [ {
+            type = "button"
+            name = "power-btn"
+            label = "⏻"
+            on_click = "popup:toggle"
+        } ]
+        popup = [ {
+            type = "box"
+            orientation = "vertical"
+            widgets = [
+                { type = "label" name = "header" label = "Power menu" }
+                {
+                    type = "box"
+                    name = "buttons"
+                    widgets = [
+                        { type = "button" class="power-btn" label = "<span>󰐥</span>" on_click = "!shutdown now" }
+                        { type = "button" class="power-btn" label = "<span>󰜉</span>" on_click = "!reboot" }
+                    ]
+                }
+            ]
+        } ]
+    }
+
+    $weather = {
+        type = "custom"
+        class = "weather"
+
+        bar = [ { type = "button" label = "#weather_current" on_click = "popup:toggle" } ]
+        popup = [ {
+            type = "box"
+            orientation = "vertical"
+
+            widgets = [
+                { type = "label" name = "header" label = "Forecast" }
+                {
+                    type = "box"
+                    widgets = [
+                        { type = "box" name="dates" orientation = "vertical" widgets = [
+                            { type = "label" class="weather-date" label = "#weather_date_0" }
+                            { type = "label" class="weather-date" label = "#weather_date_1" }
+                            { type = "label" class="weather-date" label = "#weather_date_2" }
+                        ]}
+                        { type = "box" name="temps" orientation = "vertical" widgets = [
+                            {
+                              type = "box"
+                              widgets = [
+                                  { type = "label" class="weather-high" label = " #weather_high_0" }
+                                  { type = "label" class="weather-avg" label = " #weather_avg_0" }
+                                  { type = "label" class="weather-low" label = " #weather_low_0" }
+                              ]
+                          }
+                          {
+                              type = "box"
+                              widgets = [
+                                  { type = "label" class="weather-high" label = " #weather_high_1" }
+                                  { type = "label" class="weather-avg" label = " #weather_avg_1" }
+                                  { type = "label" class="weather-low" label = " #weather_low_1" }
+                              ]
+                          }
+                          {
+                              type = "box"
+                              widgets = [
+                                  { type = "label" class="weather-high" label = " #weather_high_2" }
+                                  { type = "label" class="weather-avg" label = " #weather_avg_2" }
+                                  { type = "label" class="weather-low" label = " #weather_low_2" }
+                              ]
+                          }
+                        ] }
+                    ]
+                }
+            ]
+        } ]
+    }
+} in {
+    position = "top"
+    height = 18
+    margin = {
+        top = 6
+        right = 6
+        left = 6
+    }
+
+    start = [
+        $power_menu
+        $apps_menu
+        $workspaces
+        $focused
+    ]
+    center = [ $music ]
+    end = [ $network $bluetooth $volume $tray $clipboard $weather $clock ]
+}
