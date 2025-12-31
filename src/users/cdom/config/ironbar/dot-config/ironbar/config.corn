@@ -8,8 +8,7 @@ let {
 
     $focused = {
         type = "focused"
-        show_icon = true
-        icon_size = 11
+        icon_size = 14
         show_title = true
         truncate = {
             mode = "end"
@@ -45,8 +44,8 @@ let {
 
     $battery = {
         type = "battery"
-        format = " {percentage}%"
-        show_icon = true
+        format = "{percentage}%"
+        icon_size = 11
     }
 
     $clipboard = {
@@ -135,7 +134,7 @@ let {
     }
 } in {
     position = "top"
-    height = 18
+    height = 24
     margin = {
         top = 6
         right = 6
@@ -149,5 +148,15 @@ let {
         $focused
     ]
     center = [ $music ]
-    end = [ $network $bluetooth $volume $tray $clipboard $weather $clock ]
+    end = [
+        $network
+        $bluetooth
+        $volume
+        $sysinfo
+        $battery
+        $tray
+        $clipboard
+        $weather
+        $clock
+    ]
 }
