@@ -14,6 +14,7 @@
             "\.(age|gpg)$"
             "secrets.ya?ml$"
             "blesh/init.sh$"
+            "CLAUDE.md$"
             "src/users/cdom/config/claude/.claude/skills/terminal-title/.+"
           ];
           hooks = {

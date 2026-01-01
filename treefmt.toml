@@ -6,6 +6,7 @@ excludes = [
   ".gitmodules",
   "npins/sources.json",
   "*secrets.yaml",
+  "CLAUDE.md",
   "src/users/cdom/config/claude/.claude/skills/terminal-title/*",
   "src/users/cdom/config/niri/dot-config-niri/config.kdl",
 ]
