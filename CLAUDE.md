@@ -63,6 +63,37 @@ just dark                  # Switch to dark theme
 
 ## Architecture
 
+### Aspects System
+
+Features are organized using an "aspects" pattern that separates NixOS and
+Home Manager configurations:
+
+```nix
+# Example feature structure (src/features/theme.nix)
+{
+  aspects.graphical.nixos = { pkgs, ... }: {
+    # NixOS-level configuration
+    stylix.enable = true;
+  };
+
+  aspects.graphical.home = { config, pkgs, ... }: {
+    # Home Manager configuration (applied per-user)
+  };
+}
+```
+
+Key patterns:
+
+- `aspects.<name>.nixos` - NixOS module configuration
+- `aspects.<name>.home` - Home Manager module configuration
+- Aspects can declare dependencies via a `requires` attribute
+- Host configurations reference aspects by name in their `aspects` list
+
+The module at `src/modules/flake/nixos.nix` assembles hosts by:
+1. Collecting NixOS modules from all host aspects
+2. Creating Home Manager configurations per-user from their aspects
+3. Applying overlays and baseline configurations
+
 ### Features System
 
 The `src/features/` directory contains modular configurations that can be
@@ -90,6 +121,29 @@ User configurations in `src/users/` provide:
 - User-specific feature sets
 - Application preferences
 - Development environments
+
+### Theme Specialisations
+
+Theme switching uses NixOS and Home Manager specialisations to provide
+pre-built dark/light variants:
+
+**NixOS Specialisations** (`src/features/theme.nix`):
+- System-level theme variants at `/run/current-system/specialisation/{dark,light}/`
+- Controls GTK, Qt, and system-wide Stylix theming
+
+**Home Manager Specialisations** (`src/users/*/features/theme.nix`):
+- User-level variants at `~/.local/state/nix/profiles/home-manager/specialisation/{dark,light}/`
+- Controls application-specific theming (Firefox, VS Code, cursor themes)
+
+**Switching themes:**
+```bash
+just dark   # or: just theme dark
+just light  # or: just theme light
+```
+
+The `just theme` command uses `nh home switch -s {kind}` to activate the
+Home Manager specialisation, plus additional commands for applications that
+need runtime updates (Emacs, kitty, GTK).
 
 ## Current Hosts
 
