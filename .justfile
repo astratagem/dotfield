@@ -101,6 +101,9 @@ init-package pname url:
   if [[ ! -L "{{ derealised }}.realised.bak" ]]; then >&2 echo "Realisation not found: {{ derealised }}.realised.bak"; exit; fi
   mv --backup --suffix ".derealised.bak" --verbose "{{ derealised }}.realised.bak" "{{ derealised }}"
 
+ironbar-dev:
+    watchexec -w src/users/cdom/config/ironbar/dot-config/ironbar -- \
+        systemctl --user restart ironbar
 
 ###: GENERATE/CONVERT =================================================================
 
