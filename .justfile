@@ -116,21 +116,17 @@ kitty-set-colors-cmd := "kitty @set-colors -a -c"
 gtk-ui-schema := "org.gnome.desktop.interface"
 
 # <- Set the theme for all applications
+# NOTE: Existing Ghostty windows require manual reload (Ctrl+Shift+,)
 [linux]
-theme kind='dark': && (wm-set-theme kind) (kitty-set-theme kind)
-  nh home switch {{prj-root}} -s {{kind}}
-  {{emacs-eval-cmd}} '(ceamx/load-{{kind}}-theme)'
+theme kind='dark': && (wm-set-theme kind)
+  nh home switch 'path:{{ prj-root }}' -c '{{ env("USER") }}@{{ `hostname` }}' -s {{ kind }}
+  {{ emacs-eval-cmd }} '(ceamx-ui/{{ kind }})'
 
 # <- Use the 'light' theme for all applications
 light: (theme "light")
 
 # <- Use the 'dark' theme for all applications
 dark: (theme "dark")
-
-# <- Switch the current kitty theme
-kitty-set-theme kind='dark':
-  @echo "Setting kitty '{{ kind }}' theme"
-  {{kitty-set-colors-cmd}} $KITTY_CONFIG_DIRECTORY/theme-{{ kind }}.conf
 
 [private]
 [linux]

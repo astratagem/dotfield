@@ -9,11 +9,34 @@
       ...
     }:
     let
-      colorScheme = "catppuccin-mocha";
+      toColorSchemePath = scheme: "${pkgs.base16-schemes}/share/themes/${scheme}.yaml";
+
+      schemes = {
+        dark = "catppuccin-mocha";
+        light = "catppuccin-latte";
+      };
+
+      cursors = {
+        dark = "phinger-cursors-dark";
+        light = "phinger-cursors-light";
+      };
     in
     {
       stylix.enable = true;
-      stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${colorScheme}.yaml";
+
+      # Default to dark theme (base configuration before specialisation)
+      stylix.base16Scheme = toColorSchemePath schemes.dark;
+
+      specialisation = {
+        dark.configuration = {
+          stylix.base16Scheme = lib.mkForce (toColorSchemePath schemes.dark);
+          stylix.cursor.name = lib.mkForce cursors.dark;
+        };
+        light.configuration = {
+          stylix.base16Scheme = lib.mkForce (toColorSchemePath schemes.light);
+          stylix.cursor.name = lib.mkForce cursors.light;
+        };
+      };
 
       stylix.fonts = {
         sizes = {
@@ -44,7 +67,7 @@
       # alternatively: posy-cursors / graphite-cursors / vanilla-dmz /
       # catppuccin-cursors / hackneyed-x11-cursors / openzone-cursors
       stylix.cursor = {
-        name = "phinger-cursors-dark";
+        name = cursors.dark;
         package = pkgs.phinger-cursors;
         size = 12;
         # name = "Posy_Cursor_Black";
