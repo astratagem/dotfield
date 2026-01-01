@@ -36,6 +36,10 @@ let
   collectTypedModules = type: lib.foldr (v: acc: acc ++ (v.${type}.imports or [ ])) [ ];
   collectNixosModules = collectTypedModules "nixos";
   collectHomeModules = collectTypedModules "home";
+
+  # Collects overlays from a list of aspects.
+  # self.overlays.default should be appended last at the call site to allow overrides.
+  collectOverlays = lib.foldr (v: acc: acc ++ (v.overlays or [ ])) [ ];
   collectNameMatches =
     own: others: own |> (map (v: others.${v.name} or null)) |> filter (v: v != null);
   collectRequires =
@@ -61,6 +65,68 @@ let
     in
     (op [ ] roots) |> filter (v: !(lib.elem v.name rootNames));
 
+  # Resolves the full list of user aspects given their spec and host context.
+  # This consolidates the fragile aspect dependency resolution logic.
+  resolveUserAspects =
+    {
+      username,
+      userSpec,
+      hostAspects,
+    }:
+    let
+      userAspects = config.users.${username}.aspects;
+      userAspectDeps =
+        (collectRequires config.aspects userSpec.aspects)
+        ++ (collectRequires userAspects userSpec.aspects);
+      userExtendedAspects = collectNameMatches (
+        hostAspects ++ userSpec.aspects ++ userAspectDeps
+      ) userAspects;
+      # NOTE: We only collect deps from config.aspects here, not from
+      # userAspects. Extended aspects should define their own dependencies
+      # directly. Attempting to source dependencies from multiple aspect
+      # groups can cause attribute-not-found errors when one group lacks
+      # the dependency. See the original comment in nixos.nix for details.
+      userExtendedAspectsDeps = collectRequires config.aspects userExtendedAspects;
+    in
+    userSpec.aspects
+    ++ userAspectDeps
+    ++ userExtendedAspects
+    ++ userExtendedAspectsDeps
+    ++ [ (userAspects.core or { }) ];
+
+  # Resolves all Home Manager modules for a user given their spec and host context.
+  resolveUserHomeModules =
+    {
+      username,
+      userSpec,
+      hostAspects,
+      baseHomeModules,
+    }:
+    let
+      resolvedUserAspects = resolveUserAspects { inherit username userSpec hostAspects; };
+    in
+    baseHomeModules
+    ++ (collectHomeModules hostAspects)
+    ++ (collectHomeModules resolvedUserAspects)
+    ++ (collectHomeModules config.users.${username}.baseline.aspects)
+    ++ [ userSpec.configuration ];
+
+  # Resolves all overlays for a user's standalone Home Manager configuration.
+  # Collects from host aspects, user aspects, and appends self.overlays.default last.
+  resolveUserOverlays =
+    {
+      username,
+      userSpec,
+      hostAspects,
+    }:
+    let
+      resolvedUserAspects = resolveUserAspects { inherit username userSpec hostAspects; };
+    in
+    (collectOverlays hostAspects)
+    ++ (collectOverlays resolvedUserAspects)
+    ++ (collectOverlays config.users.${username}.baseline.aspects)
+    ++ [ self.overlays.default ];
+
   mkDeferredModuleOpt =
     description:
     mkOption {
@@ -75,6 +141,11 @@ let
       type = types.listOf types.str;
       default = [ ];
       description = "List of names of aspects required by this aspect";
+    };
+    overlays = mkOption {
+      type = types.listOf (types.functionTo (types.functionTo types.attrs));
+      default = [ ];
+      description = "Nixpkgs overlays required by this aspect";
     };
     nixos = mkDeferredModuleOpt "A NixOS module for this aspect";
     home = mkDeferredModuleOpt "A Home-Manager module for this aspect";
@@ -134,6 +205,7 @@ in
       collectHomeModules
       collectNameMatches
       collectNixosModules
+      collectOverlays
       collectRequires
       collectTypedModules
       flakeSpecialArgs
@@ -141,6 +213,9 @@ in
       mkAspectListOpt
       mkAspectNameOpt
       mkDeferredModuleOpt
+      resolveUserAspects
+      resolveUserHomeModules
+      resolveUserOverlays
       ;
   };
 }
