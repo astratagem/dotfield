@@ -1,9 +1,7 @@
 { inputs, ... }:
 {
   aspects.development = {
-    nixos = {
-      nixpkgs.overlays = [ inputs.emacs-overlay.overlays.default ];
-    };
+    overlays = [ inputs.emacs-overlay.overlays.default ];
 
     home =
       { lib, pkgs, ... }:

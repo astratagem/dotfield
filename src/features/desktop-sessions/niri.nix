@@ -2,15 +2,12 @@
 {
   aspects.desktop-sessions__niri = {
     requires = [ "desktop-sessions__wayland-wm" ];
+    overlays = [ inputs.niri-flake.overlays.niri ];
 
     nixos = moduleWithSystem (
       perSystem@{ inputs' }:
       nixos@{ pkgs, ... }:
       {
-        nixpkgs.overlays = [
-          inputs.niri-flake.overlays.niri
-        ];
-
         programs.niri = {
           enable = true;
           package = pkgs.niri-stable;

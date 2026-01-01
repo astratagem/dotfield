@@ -1,12 +1,12 @@
 { inputs, lib, ... }:
 {
   aspects.hardware__apple__apple-silicon = {
+    overlays = [ inputs.nixos-apple-silicon.overlays.default ];
+
     nixos = {
       imports = [
         inputs.nixos-apple-silicon.nixosModules.apple-silicon-support
       ];
-
-      nixpkgs.overlays = lib.mkBefore [ inputs.nixos-apple-silicon.overlays.default ];
 
       hardware.asahi.enable = true;
 
