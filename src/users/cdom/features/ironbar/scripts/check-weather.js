@@ -39,6 +39,8 @@ let value = day;
 if (currentTime < sunriseTime || currentTime > sunsetTime) {
   value = night;
 }
+// Clean up the value.
+value = value.replace("   ", " ");
 
 await $`ironbar var set weather_current ${value}`;
 

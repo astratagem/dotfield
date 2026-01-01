@@ -85,12 +85,14 @@ let {
     $weather = {
         type = "custom"
         class = "weather"
-
-        bar = [ { type = "button" label = "#weather_current" on_click = "popup:toggle" } ]
+        bar = [ {
+            type = "button"
+            label = "#weather_current"
+            on_click = "popup:toggle"
+        } ]
         popup = [ {
             type = "box"
             orientation = "vertical"
-
             widgets = [
                 { type = "label" name = "header" label = "Forecast" }
                 {
