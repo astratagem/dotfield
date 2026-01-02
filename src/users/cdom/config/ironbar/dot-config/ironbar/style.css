@@ -93,6 +93,37 @@
   --color-crust: var(--color-mocha-crust);
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-rosewater: var(--color-latte-rosewater);
+    --color-flamingo: var(--color-latte-flamingo);
+    --color-pink: var(--color-latte-pink);
+    --color-mauve: var(--color-latte-mauve);
+    --color-red: var(--color-latte-red);
+    --color-maroon: var(--color-latte-maroon);
+    --color-peach: var(--color-latte-peach);
+    --color-yellow: var(--color-latte-yellow);
+    --color-green: var(--color-latte-green);
+    --color-teal: var(--color-latte-teal);
+    --color-sky: var(--color-latte-sky);
+    --color-sapphire: var(--color-latte-sapphire);
+    --color-blue: var(--color-latte-blue);
+    --color-lavender: var(--color-latte-lavender);
+    --color-text: var(--color-latte-text);
+    --color-subtext1: var(--color-latte-subtext1);
+    --color-subtext0: var(--color-latte-subtext0);
+    --color-overlay2: var(--color-latte-overlay2);
+    --color-overlay1: var(--color-latte-overlay1);
+    --color-overlay0: var(--color-latte-overlay0);
+    --color-surface2: var(--color-latte-surface2);
+    --color-surface1: var(--color-latte-surface1);
+    --color-surface0: var(--color-latte-surface0);
+    --color-base: var(--color-latte-base);
+    --color-mantle: var(--color-latte-mantle);
+    --color-crust: var(--color-latte-crust);
+  }
+}
+
 /* Customization
    ======================================================================== */
 
@@ -424,149 +455,4 @@ popover contents {
 .clock label {
   font-size: 13px;
   font-weight: bold;
-}
-
-/* ========================================================================
-   Light Theme Overrides
-   ======================================================================== */
-
-@media (prefers-color-scheme: light) {
-  /* Semantic Alias Overrides (may not work in GTK, but worth trying) */
-  :root {
-    --color-rosewater: var(--color-latte-rosewater);
-    --color-flamingo: var(--color-latte-flamingo);
-    --color-pink: var(--color-latte-pink);
-    --color-mauve: var(--color-latte-mauve);
-    --color-red: var(--color-latte-red);
-    --color-maroon: var(--color-latte-maroon);
-    --color-peach: var(--color-latte-peach);
-    --color-yellow: var(--color-latte-yellow);
-    --color-green: var(--color-latte-green);
-    --color-teal: var(--color-latte-teal);
-    --color-sky: var(--color-latte-sky);
-    --color-sapphire: var(--color-latte-sapphire);
-    --color-blue: var(--color-latte-blue);
-    --color-lavender: var(--color-latte-lavender);
-    --color-text: var(--color-latte-text);
-    --color-subtext1: var(--color-latte-subtext1);
-    --color-subtext0: var(--color-latte-subtext0);
-    --color-overlay2: var(--color-latte-overlay2);
-    --color-overlay1: var(--color-latte-overlay1);
-    --color-overlay0: var(--color-latte-overlay0);
-    --color-surface2: var(--color-latte-surface2);
-    --color-surface1: var(--color-latte-surface1);
-    --color-surface0: var(--color-latte-surface0);
-    --color-base: var(--color-latte-base);
-    --color-mantle: var(--color-latte-mantle);
-    --color-crust: var(--color-latte-crust);
-  }
-
-  /* Explicit Property Overrides (relies on :root override above) */
-
-  /* General */
-  * {
-    color: var(--color-text);
-  }
-
-  button:hover,
-  button:active {
-    background-color: var(--color-surface0);
-  }
-
-  popover contents {
-    background: var(--color-surface0);
-  }
-
-  .widget {
-    background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
-  }
-
-  /* Power Management */
-  .power-menu {
-    border-color: var(--color-base);
-  }
-
-  /* Applications Menu */
-  .menu {
-    background-color: var(--color-surface0);
-    border-color: var(--color-base);
-  }
-
-  .menu:hover,
-  .menu:active {
-    background-color: var(--color-surface0);
-  }
-
-  /* Workspaces */
-  .workspaces {
-    background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
-    border-color: var(--color-base);
-    border-left-color: var(--color-surface1);
-  }
-
-  .workspaces .item.focused {
-    background: linear-gradient(180deg, var(--color-surface1), var(--color-base));
-    border-left-color: var(--color-surface1);
-    border-right-color: var(--color-surface1);
-    border-bottom-color: var(--color-overlay2);
-  }
-
-  /* Focused */
-  .widget.focused {
-    border-color: var(--color-base);
-    border-left-color: var(--color-surface1);
-    background: linear-gradient(180deg, var(--color-surface2), var(--color-base));
-  }
-
-  /* Network */
-  .network_manager {
-    border-color: var(--color-base);
-  }
-
-  /* Bluetooth */
-  .bluetooth {
-    border-color: var(--color-base);
-  }
-
-  /* Volume */
-  .volume {
-    border-color: var(--color-base);
-  }
-
-  /* System Info */
-  .sysinfo {
-    border-color: var(--color-base);
-    border-left-color: var(--color-surface1);
-  }
-
-  /* Battery */
-  .battery {
-    border-color: var(--color-base);
-    border-left-color: var(--color-surface1);
-  }
-
-  /* Tray */
-  .tray {
-    border-color: var(--color-base);
-  }
-
-  /* Clipboard */
-  .clipboard {
-    border-color: var(--color-base);
-    border-left-color: var(--color-surface1);
-  }
-
-  /* Weather */
-  .weather {
-    border-color: var(--color-base);
-  }
-
-  .popup-weather .header {
-    border-bottom-color: var(--color-overlay2);
-  }
-
-  /* Clock */
-  .clock {
-    border-color: var(--color-base);
-  }
 }

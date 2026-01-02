@@ -142,7 +142,6 @@ let {
         right = 6
         left = 6
     }
-
     start = [
         $power_menu
         $apps_menu

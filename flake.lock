@@ -1233,11 +1233,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767375559,
-        "narHash": "sha256-6gPaMBQ364tloBcJRVFGAcPkSqSXRJWtklK1/K+Rez4=",
+        "lastModified": 1767392007,
+        "narHash": "sha256-DtvIdtNkpf8nuY1HLpsJnuyTZCR0BKZt1eR1wnHDj/k=",
         "owner": "astratagem",
         "repo": "ironbar",
-        "rev": "7a3db9d54ba128a3e2c2654380f7f56540ea891a",
+        "rev": "7e4c3f74e7b7f661f7a0cea28f69c5937c44de3d",
         "type": "github"
       },
       "original": {
