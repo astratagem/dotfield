@@ -63,6 +63,34 @@
   --color-latte-base: #eff1f5;
   --color-latte-mantle: #e6e9ef;
   --color-latte-crust: #dce0e8;
+
+  /* Semantic Aliases (default to Mocha/dark) */
+  --color-rosewater: var(--color-mocha-rosewater);
+  --color-flamingo: var(--color-mocha-flamingo);
+  --color-pink: var(--color-mocha-pink);
+  --color-mauve: var(--color-mocha-mauve);
+  --color-red: var(--color-mocha-red);
+  --color-maroon: var(--color-mocha-maroon);
+  --color-peach: var(--color-mocha-peach);
+  --color-yellow: var(--color-mocha-yellow);
+  --color-green: var(--color-mocha-green);
+  --color-teal: var(--color-mocha-teal);
+  --color-sky: var(--color-mocha-sky);
+  --color-sapphire: var(--color-mocha-sapphire);
+  --color-blue: var(--color-mocha-blue);
+  --color-lavender: var(--color-mocha-lavender);
+  --color-text: var(--color-mocha-text);
+  --color-subtext1: var(--color-mocha-subtext1);
+  --color-subtext0: var(--color-mocha-subtext0);
+  --color-overlay2: var(--color-mocha-overlay2);
+  --color-overlay1: var(--color-mocha-overlay1);
+  --color-overlay0: var(--color-mocha-overlay0);
+  --color-surface2: var(--color-mocha-surface2);
+  --color-surface1: var(--color-mocha-surface1);
+  --color-surface0: var(--color-mocha-surface0);
+  --color-base: var(--color-mocha-base);
+  --color-mantle: var(--color-mocha-mantle);
+  --color-crust: var(--color-mocha-crust);
 }
 
 /* Customization
@@ -88,7 +116,6 @@
   font-size: 100%;
   margin: 0;
   padding: 0;
-  vertical-align: middle;
 }
 
 /* ========================================================================
@@ -96,7 +123,7 @@
    ======================================================================== */
 
 * {
-  color: var(--color-mocha-text);
+  color: var(--color-text);
   font-family: "Berkeley Mono", "Symbols Nerd Font";
   font-size: var(--font-size);
 }
@@ -116,7 +143,7 @@ button {
 
 button:hover,
 button:active {
-  background-color: var(--color-mocha-surface0);
+  background-color: var(--color-surface0);
 }
 
 button label {
@@ -156,12 +183,12 @@ popover {
 }
 
 popover contents {
-  background: var(--color-mocha-surface0);
+  background: var(--color-surface0);
   border-radius: 12px;
 }
 
 .widget {
-  background: linear-gradient(180deg, var(--color-mocha-overlay0), var(--color-mocha-base));
+  background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
 }
 
 /* ========================================================================
@@ -171,7 +198,7 @@ popover contents {
 .power-menu {
   border-bottom-left-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-right: none;
   padding-right: 0;
 }
@@ -181,8 +208,8 @@ popover contents {
    ======================================================================== */
 
 .menu {
-  background-color: var(--color-mocha-surface0);
-  border: 1px solid var(--color-mocha-base);
+  background-color: var(--color-surface0);
+  border: 1px solid var(--color-base);
   border-left: none;
   border-right: none;
   padding-left: 0;
@@ -191,7 +218,7 @@ popover contents {
 
 .menu:hover,
 .menu:active {
-  background-color: var(--color-mocha-surface0);
+  background-color: var(--color-surface0);
 }
 
 /* ========================================================================
@@ -199,9 +226,9 @@ popover contents {
    ======================================================================== */
 
 .workspaces {
-  background: linear-gradient(180deg, var(--color-mocha-overlay0), var(--color-mocha-base));
-  border: 1px solid var(--color-mocha-base);
-  border-left: 1px solid var(--color-mocha-surface1);
+  background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
+  border: 1px solid var(--color-base);
+  border-left: 1px solid var(--color-surface1);
   border-right: none;
   padding: 0 0.5rem;
 }
@@ -211,10 +238,10 @@ popover contents {
 }
 
 .workspaces .item.focused {
-  background: linear-gradient(180deg, var(--color-mocha-surface1), var(--color-mocha-base));
-  border-left: 1px solid var(--color-mocha-surface1);
-  border-right: 1px solid var(--color-mocha-surface1);
-  border-bottom: 2px solid var(--color-mocha-overlay2);
+  background: linear-gradient(180deg, var(--color-surface1), var(--color-base));
+  border-left: 1px solid var(--color-surface1);
+  border-right: 1px solid var(--color-surface1);
+  border-bottom: 2px solid var(--color-overlay2);
   /* Visual alignment. */
   padding-top: 0.25em;
 }
@@ -227,9 +254,9 @@ popover contents {
   padding: 0 1rem 0 0.75rem;
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
-  border-left: 1px solid var(--color-mocha-surface1);
-  background: linear-gradient(180deg, var(--color-mocha-surface2), var(--color-mocha-base));
+  border: 1px solid var(--color-base);
+  border-left: 1px solid var(--color-surface1);
+  background: linear-gradient(180deg, var(--color-surface2), var(--color-base));
 }
 
 /* ========================================================================
@@ -239,7 +266,7 @@ popover contents {
 .network_manager {
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-right: none;
   padding-left: 1rem;
   padding-right: 0;
@@ -250,7 +277,7 @@ popover contents {
    ======================================================================== */
 
 .bluetooth {
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-left: none;
   border-right: none;
   padding-left: 0.5rem;
@@ -263,7 +290,6 @@ popover contents {
 
 .popup-bluetooth .header {
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .popup-bluetooth .header .label {
@@ -288,7 +314,7 @@ popover contents {
    ======================================================================== */
 
 .volume {
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-left: none;
   border-right: none;
   padding-left: 0;
@@ -300,8 +326,8 @@ popover contents {
    ======================================================================== */
 
 .sysinfo {
-  border: 1px solid var(--color-mocha-base);
-  border-left: 1px solid var(--color-mocha-surface1);
+  border: 1px solid var(--color-base);
+  border-left: 1px solid var(--color-surface1);
   border-right: none;
   padding: 0 0.5rem;
 }
@@ -311,8 +337,8 @@ popover contents {
    ======================================================================== */
 
 .battery {
-  border: 1px solid var(--color-mocha-base);
-  border-left: 1px solid var(--color-mocha-surface1);
+  border: 1px solid var(--color-base);
+  border-left: 1px solid var(--color-surface1);
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   padding-left: 0.5rem;
@@ -326,7 +352,7 @@ popover contents {
   margin-left: var(--section-gap);
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-right: none;
 }
 
@@ -341,8 +367,8 @@ popover contents {
 .clipboard {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
-  border-left: 1px solid var(--color-mocha-surface1);
+  border: 1px solid var(--color-base);
+  border-left: 1px solid var(--color-surface1);
   padding-left: 0.5rem;
   padding-right: 0.75rem;
 }
@@ -359,7 +385,7 @@ popover contents {
   margin-left: var(--section-gap);
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-right: none;
 }
 
@@ -371,7 +397,7 @@ popover contents {
   font-size: 1.8em;
   padding-bottom: 0.4em;
   margin-bottom: 0.6em;
-  border-bottom: 1px solid var(--color-mocha-overlay2);
+  border-bottom: 1px solid var(--color-overlay2);
 }
 
 .popup-weather .weather-date {
@@ -391,7 +417,7 @@ popover contents {
 .clock {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: 1px solid var(--color-mocha-base);
+  border: 1px solid var(--color-base);
   border-left: none;
 }
 
@@ -405,118 +431,142 @@ popover contents {
    ======================================================================== */
 
 @media (prefers-color-scheme: light) {
+  /* Semantic Alias Overrides (may not work in GTK, but worth trying) */
+  :root {
+    --color-rosewater: var(--color-latte-rosewater);
+    --color-flamingo: var(--color-latte-flamingo);
+    --color-pink: var(--color-latte-pink);
+    --color-mauve: var(--color-latte-mauve);
+    --color-red: var(--color-latte-red);
+    --color-maroon: var(--color-latte-maroon);
+    --color-peach: var(--color-latte-peach);
+    --color-yellow: var(--color-latte-yellow);
+    --color-green: var(--color-latte-green);
+    --color-teal: var(--color-latte-teal);
+    --color-sky: var(--color-latte-sky);
+    --color-sapphire: var(--color-latte-sapphire);
+    --color-blue: var(--color-latte-blue);
+    --color-lavender: var(--color-latte-lavender);
+    --color-text: var(--color-latte-text);
+    --color-subtext1: var(--color-latte-subtext1);
+    --color-subtext0: var(--color-latte-subtext0);
+    --color-overlay2: var(--color-latte-overlay2);
+    --color-overlay1: var(--color-latte-overlay1);
+    --color-overlay0: var(--color-latte-overlay0);
+    --color-surface2: var(--color-latte-surface2);
+    --color-surface1: var(--color-latte-surface1);
+    --color-surface0: var(--color-latte-surface0);
+    --color-base: var(--color-latte-base);
+    --color-mantle: var(--color-latte-mantle);
+    --color-crust: var(--color-latte-crust);
+  }
+
+  /* Explicit Property Overrides (relies on :root override above) */
+
   /* General */
   * {
-    color: var(--color-latte-text);
+    color: var(--color-text);
   }
 
   button:hover,
   button:active {
-    background-color: var(--color-latte-surface0);
+    background-color: var(--color-surface0);
   }
 
   popover contents {
-    background: var(--color-latte-surface0);
+    background: var(--color-surface0);
   }
 
   .widget {
-    background: linear-gradient(
-      180deg,
-      var(--color-latte-overlay0),
-      var(--color-latte-base)
-    );
+    background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
   }
 
   /* Power Management */
   .power-menu {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 
   /* Applications Menu */
   .menu {
-    background-color: var(--color-latte-surface0);
-    border-color: var(--color-latte-base);
+    background-color: var(--color-surface0);
+    border-color: var(--color-base);
   }
 
   .menu:hover,
   .menu:active {
-    background-color: var(--color-latte-surface0);
+    background-color: var(--color-surface0);
   }
 
   /* Workspaces */
   .workspaces {
-    background: linear-gradient(
-      180deg,
-      var(--color-latte-overlay0),
-      var(--color-latte-base)
-    );
-    border-color: var(--color-latte-base);
-    border-left-color: var(--color-latte-surface1);
+    background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
+    border-color: var(--color-base);
+    border-left-color: var(--color-surface1);
   }
 
   .workspaces .item.focused {
-    background: linear-gradient(180deg, var(--color-latte-surface1), var(--color-latte-base));
-    border-left-color: var(--color-latte-surface1);
-    border-right-color: var(--color-latte-surface1);
-    border-bottom-color: var(--color-latte-overlay2);
+    background: linear-gradient(180deg, var(--color-surface1), var(--color-base));
+    border-left-color: var(--color-surface1);
+    border-right-color: var(--color-surface1);
+    border-bottom-color: var(--color-overlay2);
   }
 
   /* Focused */
   .widget.focused {
-    border-color: var(--color-latte-base);
-    border-left-color: var(--color-latte-surface1);
-    background: linear-gradient(180deg, var(--color-latte-surface2), var(--color-latte-base));
+    border-color: var(--color-base);
+    border-left-color: var(--color-surface1);
+    background: linear-gradient(180deg, var(--color-surface2), var(--color-base));
   }
 
   /* Network */
   .network_manager {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 
   /* Bluetooth */
   .bluetooth {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 
   /* Volume */
   .volume {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 
   /* System Info */
   .sysinfo {
-    border-color: var(--color-latte-base);
-    border-left-color: var(--color-latte-surface1);
+    border-color: var(--color-base);
+    border-left-color: var(--color-surface1);
   }
 
   /* Battery */
   .battery {
-    border-color: var(--color-latte-base);
-    border-left-color: var(--color-latte-surface1);
+    border-color: var(--color-base);
+    border-left-color: var(--color-surface1);
   }
 
   /* Tray */
   .tray {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 
   /* Clipboard */
   .clipboard {
-    border-color: var(--color-latte-base);
-    border-left-color: var(--color-latte-surface1);
+    border-color: var(--color-base);
+    border-left-color: var(--color-surface1);
   }
 
   /* Weather */
   .weather {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 
   .popup-weather .header {
-    border-bottom-color: var(--color-latte-overlay2);
+    border-bottom-color: var(--color-overlay2);
   }
 
   /* Clock */
   .clock {
-    border-color: var(--color-latte-base);
+    border-color: var(--color-base);
   }
 }
