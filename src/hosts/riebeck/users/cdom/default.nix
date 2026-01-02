@@ -24,8 +24,8 @@ flake@{ ... }:
 
     users.cdom = {
       aspects = with flake.config.users.cdom.aspects; [
-        # mail
-        # music-production
+        mail
+        music-production
       ];
       configuration =
         { pkgs, ... }:
