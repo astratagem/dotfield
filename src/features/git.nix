@@ -46,11 +46,11 @@ in
             "*.bak"
           ];
 
-          aliases = {
-            snapshot = ''!git stash save "snapshot: $(date)" && git stash apply "stash@{0}"'';
-          };
+          settings = {
+            alias = {
+              snapshot = ''!git stash save "snapshot: $(date)" && git stash apply "stash@{0}"'';
+            };
 
-          extraConfig = {
             init.defaultBranch = lib.mkDefault "main";
             push.default = "current";
             fetch.recurseSubmodules = true;
