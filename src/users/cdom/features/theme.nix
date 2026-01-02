@@ -9,6 +9,8 @@
       ...
     }:
     let
+      wallpaperDir = "${config.home.homeDirectory}/Pictures/wallpapers/src";
+
       toColorSchemePath = scheme: "${pkgs.base16-schemes}/share/themes/${scheme}.yaml";
 
       schemes = {
@@ -20,6 +22,9 @@
         dark = "phinger-cursors-dark";
         light = "phinger-cursors-light";
       };
+
+      wallpaperDark = "rougier--recursive-voronoi--inverted.png";
+      wallpaperLight = "rougier--recursive-voronoi.png";
     in
     {
       stylix.enable = true;
@@ -27,12 +32,16 @@
       # Default to dark theme (base configuration before specialisation)
       stylix.base16Scheme = toColorSchemePath schemes.dark;
 
+      services.wpaperd.settings.any.path = "${wallpaperDir}/dark/${wallpaperDark}";
+
       specialisation = {
         dark.configuration = {
+          services.wpaperd.settings.any.path = lib.mkForce "${wallpaperDir}/dark/${wallpaperDark}";
           stylix.base16Scheme = lib.mkForce (toColorSchemePath schemes.dark);
           stylix.cursor.name = lib.mkForce cursors.dark;
         };
         light.configuration = {
+          services.wpaperd.settings.any.path = lib.mkForce "${wallpaperDir}/light/${wallpaperLight}";
           stylix.base16Scheme = lib.mkForce (toColorSchemePath schemes.light);
           stylix.cursor.name = lib.mkForce cursors.light;
         };
