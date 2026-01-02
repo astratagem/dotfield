@@ -13,6 +13,7 @@
             # "**/*.secrets.yaml"
             "\.(age|gpg)$"
             "secrets.ya?ml$"
+            "pnpm-lock.yaml$"
             "blesh/init.sh$"
             "CLAUDE.md$"
             "src/users/cdom/config/claude/.claude/skills/terminal-title/.+"

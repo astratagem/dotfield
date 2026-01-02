@@ -1,0 +1,11 @@
+{
+  "$schema": "https://www.schemastore.org/package.json",
+  "name": "dotfield",
+  "license": "GPL-3.0-or-later",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.6",
+    "typescript": "^5.9.3"
+  }
+}

@@ -8,7 +8,7 @@
     };
     Service = {
       Type = "oneshot";
-      ExecStart = "${lib.getExe pkgs.zx} ${./scripts/check-weather.js}";
+      ExecStart = "${lib.getExe pkgs.zx} ${./scripts/check-weather.ts}";
     };
   };
 

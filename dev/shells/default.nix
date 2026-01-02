@@ -25,6 +25,8 @@ in
         biome
         just
         npins
+        pnpm
+        zx
       ];
 
       checksPkgs = [

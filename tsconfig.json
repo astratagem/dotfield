@@ -1,0 +1,9 @@
+{
+  "$schema": "https://www.schemastore.org/tsconfig.json",
+  "extends": ["@tsconfig/strictest/tsconfig.json"],
+  "compilerOptions": {
+    "module": "esnext",
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

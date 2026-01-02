@@ -43,3 +43,4 @@ tmp/
 
 ##: misc
 /target/
+/node_modules/

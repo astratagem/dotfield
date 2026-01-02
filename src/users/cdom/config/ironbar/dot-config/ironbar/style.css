@@ -4,54 +4,79 @@
    Custom Properties
    ======================================================================== */
 
+/* Color Palette
+   ======================================================================== */
+
 :root {
-  /* Catppuccin Mocha - Base Colors */
-  --color-rosewater: #f5e0dc;
-  --color-flamingo: #f2cdcd;
-  --color-pink: #f5c2e7;
-  --color-mauve: #cba6f7;
-  --color-red: #f38ba8;
-  --color-maroon: #eba0ac;
-  --color-peach: #fab387;
-  --color-yellow: #f9e2af;
-  --color-green: #a6e3a1;
-  --color-teal: #94e2d5;
-  --color-sky: #89dceb;
-  --color-sapphire: #74c7ec;
-  --color-blue: #89b4fa;
-  --color-lavender: #b4befe;
-  --color-text: #cdd6f4;
-  --color-subtext1: #bac2de;
-  --color-subtext0: #a6adc8;
-  --color-overlay2: #9399b2;
-  --color-overlay1: #7f849c;
-  --color-overlay0: #6c7086;
-  --color-surface2: #585b70;
-  --color-surface1: #45475a;
-  --color-surface0: #313244;
-  --color-base: #1e1e2e;
-  --color-mantle: #181825;
-  --color-crust: #11111b;
+  /* Catppuccin Mocha (Dark) */
+  --color-mocha-rosewater: #f5e0dc;
+  --color-mocha-flamingo: #f2cdcd;
+  --color-mocha-pink: #f5c2e7;
+  --color-mocha-mauve: #cba6f7;
+  --color-mocha-red: #f38ba8;
+  --color-mocha-maroon: #eba0ac;
+  --color-mocha-peach: #fab387;
+  --color-mocha-yellow: #f9e2af;
+  --color-mocha-green: #a6e3a1;
+  --color-mocha-teal: #94e2d5;
+  --color-mocha-sky: #89dceb;
+  --color-mocha-sapphire: #74c7ec;
+  --color-mocha-blue: #89b4fa;
+  --color-mocha-lavender: #b4befe;
+  --color-mocha-text: #cdd6f4;
+  --color-mocha-subtext1: #bac2de;
+  --color-mocha-subtext0: #a6adc8;
+  --color-mocha-overlay2: #9399b2;
+  --color-mocha-overlay1: #7f849c;
+  --color-mocha-overlay0: #6c7086;
+  --color-mocha-surface2: #585b70;
+  --color-mocha-surface1: #45475a;
+  --color-mocha-surface0: #313244;
+  --color-mocha-base: #1e1e2e;
+  --color-mocha-mantle: #181825;
+  --color-mocha-crust: #11111b;
 
-  /* Semantic Colors */
-  --color-bar: var(--color-surface0);
-  --color-border: var(--color-overlay2);
+  /* Catppuccin Latte (Light) */
+  --color-latte-rosewater: #dc8a78;
+  --color-latte-flamingo: #dd7878;
+  --color-latte-pink: #ea76cb;
+  --color-latte-mauve: #8839ef;
+  --color-latte-red: #d20f39;
+  --color-latte-maroon: #e64553;
+  --color-latte-peach: #fe640b;
+  --color-latte-yellow: #df8e1d;
+  --color-latte-green: #40a02b;
+  --color-latte-teal: #179299;
+  --color-latte-sky: #04a5e5;
+  --color-latte-sapphire: #209fb5;
+  --color-latte-blue: #1e66f5;
+  --color-latte-lavender: #7287fd;
+  --color-latte-text: #4c4f69;
+  --color-latte-subtext1: #5c5f77;
+  --color-latte-subtext0: #6c6f85;
+  --color-latte-overlay2: #7c7f93;
+  --color-latte-overlay1: #8c8fa1;
+  --color-latte-overlay0: #9ca0b0;
+  --color-latte-surface2: #acb0be;
+  --color-latte-surface1: #bcc0cc;
+  --color-latte-surface0: #ccd0da;
+  --color-latte-base: #eff1f5;
+  --color-latte-mantle: #e6e9ef;
+  --color-latte-crust: #dce0e8;
+}
 
+/* Customization
+   ======================================================================== */
+
+:root {
   --font-size: 10px;
   --border-radius: 24px;
 
   --bar-height: 24px; /* Defined in config */
   --bar-margin: 6px; /* Defined in config */
   --bar-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
-  --bar-background: linear-gradient(
-    180deg,
-    var(--color-overlay0),
-    var(--color-base)
-  );
 
   --section-gap: 0.75rem;
-  --section-border: 1px solid var(--color-surface1);
-  --section-outer-border: 1px solid var(--color-base);
 }
 
 /* ========================================================================
@@ -71,7 +96,7 @@
    ======================================================================== */
 
 * {
-  color: var(--color-text);
+  color: var(--color-mocha-text);
   font-family: "Berkeley Mono", "Symbols Nerd Font";
   font-size: var(--font-size);
 }
@@ -91,7 +116,7 @@ button {
 
 button:hover,
 button:active {
-  background-color: var(--color-surface0);
+  background-color: var(--color-mocha-surface0);
 }
 
 button label {
@@ -131,12 +156,12 @@ popover {
 }
 
 popover contents {
-  background: var(--color-surface0);
+  background: var(--color-mocha-surface0);
   border-radius: 12px;
 }
 
 .widget {
-  background: var(--bar-background);
+  background: linear-gradient(180deg, var(--color-mocha-overlay0), var(--color-mocha-base));
 }
 
 /* ========================================================================
@@ -146,7 +171,7 @@ popover contents {
 .power-menu {
   border-bottom-left-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
-  border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-right: none;
   padding-right: 0;
 }
@@ -156,8 +181,8 @@ popover contents {
    ======================================================================== */
 
 .menu {
-  background-color: var(--color-bar);
-  border: var(--section-outer-border);
+  background-color: var(--color-mocha-surface0);
+  border: 1px solid var(--color-mocha-base);
   border-left: none;
   border-right: none;
   padding-left: 0;
@@ -166,7 +191,7 @@ popover contents {
 
 .menu:hover,
 .menu:active {
-  background-color: var(--color-surface0);
+  background-color: var(--color-mocha-surface0);
 }
 
 /* ========================================================================
@@ -174,12 +199,9 @@ popover contents {
    ======================================================================== */
 
 .workspaces {
-  /* margin-left: var(--section-gap); */
-  background: var(--bar-background);
-  /* border-top-left-radius: var(--border-radius); */
-  /* border-bottom-left-radius: var(--border-radius); */
-  border: var(--section-outer-border);
-  border-left: var(--section-border);
+  background: linear-gradient(180deg, var(--color-mocha-overlay0), var(--color-mocha-base));
+  border: 1px solid var(--color-mocha-base);
+  border-left: 1px solid var(--color-mocha-surface1);
   border-right: none;
   padding: 0 0.5rem;
 }
@@ -189,14 +211,10 @@ popover contents {
 }
 
 .workspaces .item.focused {
-  background: linear-gradient(
-    180deg,
-    var(--color-surface1),
-    var(--color-base)
-  );
-  border-left: var(--section-border);
-  border-right: var(--section-border);
-  border-bottom: 2px solid var(--color-border);
+  background: linear-gradient(180deg, var(--color-mocha-surface1), var(--color-mocha-base));
+  border-left: 1px solid var(--color-mocha-surface1);
+  border-right: 1px solid var(--color-mocha-surface1);
+  border-bottom: 2px solid var(--color-mocha-overlay2);
   /* Visual alignment. */
   padding-top: 0.25em;
 }
@@ -209,9 +227,9 @@ popover contents {
   padding: 0 1rem 0 0.75rem;
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: var(--section-outer-border);
-  border-left: var(--section-border);
-  background: linear-gradient(180deg, var(--color-surface2), var(--color-base));
+  border: 1px solid var(--color-mocha-base);
+  border-left: 1px solid var(--color-mocha-surface1);
+  background: linear-gradient(180deg, var(--color-mocha-surface2), var(--color-mocha-base));
 }
 
 /* ========================================================================
@@ -221,7 +239,7 @@ popover contents {
 .network_manager {
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-right: none;
   padding-left: 1rem;
   padding-right: 0;
@@ -232,7 +250,7 @@ popover contents {
    ======================================================================== */
 
 .bluetooth {
-  border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-left: none;
   border-right: none;
   padding-left: 0.5rem;
@@ -270,7 +288,7 @@ popover contents {
    ======================================================================== */
 
 .volume {
-    border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-left: none;
   border-right: none;
   padding-left: 0;
@@ -282,8 +300,8 @@ popover contents {
    ======================================================================== */
 
 .sysinfo {
-  border: var(--section-outer-border);
-  border-left: var(--section-border);
+  border: 1px solid var(--color-mocha-base);
+  border-left: 1px solid var(--color-mocha-surface1);
   border-right: none;
   padding: 0 0.5rem;
 }
@@ -293,8 +311,8 @@ popover contents {
    ======================================================================== */
 
 .battery {
-  border: var(--section-outer-border);
-  border-left: var(--section-border);
+  border: 1px solid var(--color-mocha-base);
+  border-left: 1px solid var(--color-mocha-surface1);
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   padding-left: 0.5rem;
@@ -308,7 +326,7 @@ popover contents {
   margin-left: var(--section-gap);
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-right: none;
 }
 
@@ -323,8 +341,8 @@ popover contents {
 .clipboard {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: var(--section-outer-border);
-  border-left: var(--section-border);
+  border: 1px solid var(--color-mocha-base);
+  border-left: 1px solid var(--color-mocha-surface1);
   padding-left: 0.5rem;
   padding-right: 0.75rem;
 }
@@ -341,15 +359,19 @@ popover contents {
   margin-left: var(--section-gap);
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-right: none;
+}
+
+.weather > revealer > button {
+  padding-right: 0;
 }
 
 .popup-weather .header {
   font-size: 1.8em;
   padding-bottom: 0.4em;
   margin-bottom: 0.6em;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-mocha-overlay2);
 }
 
 .popup-weather .weather-date {
@@ -369,11 +391,132 @@ popover contents {
 .clock {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: var(--section-outer-border);
+  border: 1px solid var(--color-mocha-base);
   border-left: none;
 }
 
 .clock label {
   font-size: 13px;
   font-weight: bold;
+}
+
+/* ========================================================================
+   Light Theme Overrides
+   ======================================================================== */
+
+@media (prefers-color-scheme: light) {
+  /* General */
+  * {
+    color: var(--color-latte-text);
+  }
+
+  button:hover,
+  button:active {
+    background-color: var(--color-latte-surface0);
+  }
+
+  popover contents {
+    background: var(--color-latte-surface0);
+  }
+
+  .widget {
+    background: linear-gradient(
+      180deg,
+      var(--color-latte-overlay0),
+      var(--color-latte-base)
+    );
+  }
+
+  /* Power Management */
+  .power-menu {
+    border-color: var(--color-latte-base);
+  }
+
+  /* Applications Menu */
+  .menu {
+    background-color: var(--color-latte-surface0);
+    border-color: var(--color-latte-base);
+  }
+
+  .menu:hover,
+  .menu:active {
+    background-color: var(--color-latte-surface0);
+  }
+
+  /* Workspaces */
+  .workspaces {
+    background: linear-gradient(
+      180deg,
+      var(--color-latte-overlay0),
+      var(--color-latte-base)
+    );
+    border-color: var(--color-latte-base);
+    border-left-color: var(--color-latte-surface1);
+  }
+
+  .workspaces .item.focused {
+    background: linear-gradient(180deg, var(--color-latte-surface1), var(--color-latte-base));
+    border-left-color: var(--color-latte-surface1);
+    border-right-color: var(--color-latte-surface1);
+    border-bottom-color: var(--color-latte-overlay2);
+  }
+
+  /* Focused */
+  .widget.focused {
+    border-color: var(--color-latte-base);
+    border-left-color: var(--color-latte-surface1);
+    background: linear-gradient(180deg, var(--color-latte-surface2), var(--color-latte-base));
+  }
+
+  /* Network */
+  .network_manager {
+    border-color: var(--color-latte-base);
+  }
+
+  /* Bluetooth */
+  .bluetooth {
+    border-color: var(--color-latte-base);
+  }
+
+  /* Volume */
+  .volume {
+    border-color: var(--color-latte-base);
+  }
+
+  /* System Info */
+  .sysinfo {
+    border-color: var(--color-latte-base);
+    border-left-color: var(--color-latte-surface1);
+  }
+
+  /* Battery */
+  .battery {
+    border-color: var(--color-latte-base);
+    border-left-color: var(--color-latte-surface1);
+  }
+
+  /* Tray */
+  .tray {
+    border-color: var(--color-latte-base);
+  }
+
+  /* Clipboard */
+  .clipboard {
+    border-color: var(--color-latte-base);
+    border-left-color: var(--color-latte-surface1);
+  }
+
+  /* Weather */
+  .weather {
+    border-color: var(--color-latte-base);
+  }
+
+  .popup-weather .header {
+    border-bottom-color: var(--color-latte-overlay2);
+  }
+
+  /* Clock */
+  .clock {
+    border-color: var(--color-latte-base);
+  }
 }
