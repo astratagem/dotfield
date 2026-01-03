@@ -3,7 +3,7 @@
     { inputs', pkgs, ... }:
     let
       inherit (pkgs) callPackage;
-      beets = inputs'.nixpkgs-for-beets-not-failing-build.legacyPackages.beetsPackages.beets-minimal;
+      beets = pkgs.beets-minimal;
     in
     {
       packages = rec {

@@ -1936,22 +1936,6 @@
         "type": "indirect"
       }
     },
-    "nixpkgs-for-beets-not-failing-build": {
-      "locked": {
-        "lastModified": 1748693115,
-        "narHash": "sha256-StSrWhklmDuXT93yc3GrTlb0cKSS0agTAxMGjLKAsY8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "910796cabe436259a29a72e8d3f5e180fc6dfacc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "910796cabe436259a29a72e8d3f5e180fc6dfacc",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1754788789,
@@ -2707,7 +2691,6 @@
           "nixos-apple-silicon",
           "nixpkgs"
         ],
-        "nixpkgs-for-beets-not-failing-build": "nixpkgs-for-beets-not-failing-build",
         "nixpkgs-lib": [
           "flake-parts",
           "nixpkgs-lib"
