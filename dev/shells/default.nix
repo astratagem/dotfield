@@ -75,9 +75,9 @@ in
         ++ maintenancePkgs
         ++ config.pre-commit.settings.enabledPackages
         ++ [
-          inputs'.nix-inspect.packages.default
           pkgs.cachix
           pkgs.nix-init
+          pkgs.nix-inspect
           pkgs.nixdoc
           pkgs.stow
         ];

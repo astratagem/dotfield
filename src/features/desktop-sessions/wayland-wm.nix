@@ -17,8 +17,6 @@
     nixos =
       { flake, pkgs, ... }:
       {
-        nix.settings.substituters = [ "https://nixpkgs-wayland.cachix.org" ];
-
         # Required for lockers to perform authentication.
         security.pam.services.swaylock = { };
         security.pam.services.waylock = { };
