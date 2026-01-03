@@ -41,7 +41,7 @@
   inputs = {
 
     ##: channels
-    nixpkgs.follows = "nixpkgs-apple-silicon";
+    nixpkgs.follows = "nixos-unstable";
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # nixos-unstable.url = "github:montchr/nixpkgs/nixos-unstable";
     nixos-stable.url = "github:NixOS/nixpkgs/nixos-25.11";

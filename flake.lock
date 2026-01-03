@@ -2701,7 +2701,7 @@
         "nixos-stable": "nixos-stable",
         "nixos-unstable": "nixos-unstable",
         "nixpkgs": [
-          "nixpkgs-apple-silicon"
+          "nixos-unstable"
         ],
         "nixpkgs-apple-silicon": [
           "nixos-apple-silicon",
