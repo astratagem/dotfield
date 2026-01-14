@@ -151,7 +151,8 @@
     "context-management@claude-code-workflows": true,
     "agent-orchestration@claude-code-workflows": true,
     "developer-essentials@claude-code-workflows": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
   "alwaysThinkingEnabled": true
