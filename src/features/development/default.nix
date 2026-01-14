@@ -17,7 +17,7 @@
           nixTools = [
             pkgs.nix-init
             pkgs.nix-inspect
-            pkgs.nixfmt-rfc-style
+            pkgs.nixfmt
             pkgs.nixpkgs-review
           ];
 

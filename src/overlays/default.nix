@@ -8,8 +8,14 @@
     { inputs', ... }:
     {
       overlayAttrs = {
-        inherit (inputs'.nixos-stable.legacyPackages) calibre zx;
-        inherit (inputs'.nixpkgs-trunk.legacyPackages) zellij;
+        inherit (inputs'.nixos-stable.legacyPackages)
+          calibre
+          igrep
+          zx
+          ;
+        inherit (inputs'.nixpkgs-trunk.legacyPackages)
+          zellij
+          ;
       };
     };
 }

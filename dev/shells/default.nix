@@ -44,7 +44,7 @@ in
         pkgs.kdlfmt
         pkgs.keep-sorted
         pkgs.mdformat
-        pkgs.nixfmt-rfc-style
+        pkgs.nixfmt
         pkgs.shfmt
         pkgs.taplo
         pkgs.yamlfmt

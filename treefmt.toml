@@ -57,7 +57,7 @@ excludes = []
 includes = ["*.md"]
 options = []
 
-[formatter.nixfmt-rfc-style]
+[formatter.nixfmt]
 command = "nixfmt"
 excludes = []
 includes = ["*.nix"]
