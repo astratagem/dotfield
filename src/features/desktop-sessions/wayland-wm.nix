@@ -79,11 +79,11 @@
           hyprpicker
 
           ## Screenshots/capture/annotation:
-          grim # image grabber
-          kooha # simple gui screen recorder
+          grim
           satty # annotator
-          slurp # capture region to stdout
-          wf-recorder # wlr screen recorder
+          slurp
+          wayfarer
+          wf-recorder
 
           ## Menus:
           wlogout
