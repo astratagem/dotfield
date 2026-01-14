@@ -26,7 +26,6 @@ in
         just
         npins
         pnpm
-        zx
       ];
 
       checksPkgs = [
