@@ -105,7 +105,7 @@ workspace "scratch"
 /// ==================================================================
 
 window-rule {
-    opacity 0.9
+    opacity 0.95
 }
 
 window-rule {
