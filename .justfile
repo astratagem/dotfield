@@ -23,6 +23,7 @@ cachix-exec := "cachix watch-exec " + cachix-cache-name + " --jobs " + cachix-jo
 prj-root := env_var('PRJ_ROOT')
 prj-data := env_var('PRJ_DATA_HOME')
 user-configs-dir := justfile_directory() / "src/users" / env("USER") / "config"
+ironbar-dir := user-configs-dir / "ironbar/dot-config/ironbar"
 
 push *ARGS="-b main":
   for remote in origin github; do \
@@ -102,8 +103,7 @@ init-package pname url:
   mv --backup --suffix ".derealised.bak" --verbose "{{ derealised }}.realised.bak" "{{ derealised }}"
 
 ironbar-dev:
-    watchexec -w src/users/cdom/config/ironbar/dot-config/ironbar -- \
-        systemctl --user restart ironbar
+    watchexec -w {{ ironbar-dir }} -- 'systemctl --user restart ironbar'
 
 ###: GENERATE/CONVERT =================================================================
 

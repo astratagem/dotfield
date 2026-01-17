@@ -128,14 +128,23 @@
    ======================================================================== */
 
 :root {
-  --font-size: 10px;
+  --font-size: 9px;
   --border-radius: 24px;
 
-  --bar-height: 24px; /* Defined in config */
+  --bar-height: 18px; /* Defined in config */
   --bar-margin: 6px; /* Defined in config */
   --bar-shadow: 10px 10px 5px 0 rgba(0, 0, 0, 0.75);
 
   --section-gap: 0.75rem;
+
+  --color-border: var(--color-surface0);
+  --color-divider: var(--color-surface1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-border: var(--color-base);
+  }
 }
 
 /* ========================================================================
@@ -143,6 +152,7 @@
    ======================================================================== */
 
 * {
+  opacity: 0.97;
   border: 0;
   font-size: 100%;
   margin: 0;
@@ -168,8 +178,7 @@ button {
   border-radius: 0;
   /* Override libadwaita. */
   min-height: var(--bar-height);
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 0.5rem;
 }
 
 button:hover,
@@ -227,11 +236,15 @@ popover contents {
    ======================================================================== */
 
 .power-menu {
-  border-bottom-left-radius: var(--border-radius);
-  border-top-left-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-right: none;
   padding-right: 0;
+}
+
+.power-menu,
+.power-menu button {
+  border-bottom-left-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
 }
 
 /* ========================================================================
@@ -240,11 +253,11 @@ popover contents {
 
 .menu {
   background-color: var(--color-surface0);
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-left: none;
   border-right: none;
-  padding-left: 0;
-  padding-right: 0.5rem;
+  /* padding-left: 0; */
+  /* padding-right: 0.5rem; */
 }
 
 .menu:hover,
@@ -257,21 +270,30 @@ popover contents {
    ======================================================================== */
 
 .workspaces {
+  margin: 0;
   background: linear-gradient(180deg, var(--color-overlay0), var(--color-base));
-  border: 1px solid var(--color-base);
-  border-left: 1px solid var(--color-surface1);
+  border: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-divider);
   border-right: none;
-  padding: 0 0.5rem;
+  padding: 0;
 }
 
 .workspaces .item {
   padding: 0 0.5rem;
 }
 
+.workspaces .item:first-child {
+  padding-left: 0.75rem;
+}
+
+.workspaces .item:last-child {
+  padding-right: 0.75rem;
+}
+
 .workspaces .item.focused {
   background: linear-gradient(180deg, var(--color-surface1), var(--color-base));
-  border-left: 1px solid var(--color-surface1);
-  border-right: 1px solid var(--color-surface1);
+  border-left: 1px solid var(--color-divider);
+  border-right: 1px solid var(--color-divider);
   border-bottom: 2px solid var(--color-overlay2);
   /* Visual alignment. */
   padding-top: 0.25em;
@@ -285,8 +307,8 @@ popover contents {
   padding: 0 1rem 0 0.75rem;
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
-  border-left: 1px solid var(--color-surface1);
+  border: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-divider);
   background: linear-gradient(180deg, var(--color-surface2), var(--color-base));
 }
 
@@ -297,10 +319,14 @@ popover contents {
 .network_manager {
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-right: none;
   padding-left: 1rem;
   padding-right: 0;
+}
+
+.network_manager .icon {
+  color: var(--color-text);
 }
 
 /* ========================================================================
@@ -308,7 +334,7 @@ popover contents {
    ======================================================================== */
 
 .bluetooth {
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-left: none;
   border-right: none;
   padding-left: 0.5rem;
@@ -345,7 +371,7 @@ popover contents {
    ======================================================================== */
 
 .volume {
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-left: none;
   border-right: none;
   padding-left: 0;
@@ -357,8 +383,8 @@ popover contents {
    ======================================================================== */
 
 .sysinfo {
-  border: 1px solid var(--color-base);
-  border-left: 1px solid var(--color-surface1);
+  border: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-divider);
   border-right: none;
   padding: 0 0.5rem;
 }
@@ -368,8 +394,8 @@ popover contents {
    ======================================================================== */
 
 .battery {
-  border: 1px solid var(--color-base);
-  border-left: 1px solid var(--color-surface1);
+  border: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-divider);
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   padding-left: 0.5rem;
@@ -381,14 +407,27 @@ popover contents {
 
 .tray {
   margin-left: var(--section-gap);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  padding: 0;
+}
+
+.tray,
+.tray button:first-child {
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
-  border-right: none;
+}
+
+.tray .item {
+  padding: 0 0.3333333333rem;
+}
+
+.tray .item:first-child {
+  padding-left: 0.75rem;
 }
 
 .tray .item:last-child {
-  padding-right: 0.5rem;
+  padding-right: 0.75rem;
 }
 
 /* ========================================================================
@@ -398,8 +437,8 @@ popover contents {
 .clipboard {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
-  border-left: 1px solid var(--color-surface1);
+  border: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-divider);
   padding-left: 0.5rem;
   padding-right: 0.75rem;
 }
@@ -416,7 +455,7 @@ popover contents {
   margin-left: var(--section-gap);
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-right: none;
 }
 
@@ -448,7 +487,7 @@ popover contents {
 .clock {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  border: 1px solid var(--color-base);
+  border: 1px solid var(--color-border);
   border-left: none;
 }
 

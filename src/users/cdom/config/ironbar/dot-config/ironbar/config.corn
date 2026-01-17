@@ -136,7 +136,7 @@ let {
     }
 } in {
     position = "top"
-    height = 24
+    height = 18
     margin = {
         top = 6
         right = 6
