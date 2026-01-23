@@ -1,11 +1,15 @@
+{ moduleWithSystem, ... }:
 {
-  aspects.workstation.home =
+  aspects.workstation.home = moduleWithSystem (
+    perSystem@{ config }:
     { pkgs, ... }:
     {
       home.packages = [
+        config.packages.aax-to-m4b
+
         pkgs.aaxtomp3
         pkgs.audible-cli
-        pkgs.libation
       ];
-    };
+    }
+  );
 }
