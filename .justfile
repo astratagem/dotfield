@@ -4,6 +4,7 @@
 ###: https://just.systems/man/en/
 
 mod nixify ".just/nixify.mod.just"
+mod secrets
 
 default:
   @just --choose
@@ -104,13 +105,6 @@ init-package pname url:
 
 ironbar-dev:
     watchexec -w {{ ironbar-dir }} -- 'systemctl --user restart ironbar'
-
-###: GENERATE/CONVERT =================================================================
-
-# <- Generate a hashed password compatible with the NixOS options
-generate-hashed-password:
-  mkpasswd -m sha-512
-
 
 ###: THEME =====================================================================
 
