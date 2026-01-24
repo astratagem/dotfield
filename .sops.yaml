@@ -19,6 +19,14 @@ creation_rules:
         pgp:
           - 64604147C434F65EC306A21F135EEDD0F71934F3
 
+  - path_regex: src/hosts/riebeck/secrets/[^/]+.yaml$
+    key_groups:
+      - age:
+          - age13mjzm8jq3jfg62kdz98jrz8nas6s6shhm5u8240xdmjkpxky5v9sl72jhy  # riebeck
+          - age15yyjuhudx0qaxrgshap4uwylvc6gek5dev7wsvc0zn32v6easp4qmyffmg  # <cdom>
+        pgp:
+          - 64604147C434F65EC306A21F135EEDD0F71934F3
+
   - path_regex: src/hosts/ryosuke/secrets/[^/]+.yaml$
     key_groups:
       - age:
@@ -50,6 +58,7 @@ creation_rules:
           - age15yyjuhudx0qaxrgshap4uwylvc6gek5dev7wsvc0zn32v6easp4qmyffmg  # <cdom>
           - age1wes6w27jntng7t0fl2scuz8l0s556e4m3x3q8qfczgah90kyfs3shuqvvl  # boschic
           - age1saydygdkg49p6g34ylds3m666x0nsr2f8clwcggsn9essqdkfqjsq9a25w  # hodgepodge
+          - age13mjzm8jq3jfg62kdz98jrz8nas6s6shhm5u8240xdmjkpxky5v9sl72jhy  # riebeck
           - age14rlwkyskyfz65vrvu2n4v3vslqvuqc8uk7vjsre9n52zpnhke30svsjvak  # ryosuke
           - age19kn70a9r8m40kf7xw0gkme07gvxzmgncsvh2dfnpdrp5d82xefcsc9ezzm  # tuuvok
         pgp:
