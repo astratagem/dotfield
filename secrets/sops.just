@@ -1,5 +1,7 @@
+prj-root := env("PRJ_ROOT")
+
 rotate-keys:
-    fd -e yaml secrets -x sops -r '{}'
+    for f in `fd -e yaml secrets {{ prj-root }}`; do sops -r "$f"; done
 
 update-keys:
-    fd -e yaml secrets -x sops updatekeys '{}'
+    for f in `fd -e yaml secrets {{ prj-root }}`; do sops updatekeys "$f"; done

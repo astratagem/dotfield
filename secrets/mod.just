@@ -1,3 +1,4 @@
+mod age
 mod sops
 
 [doc("Generate a hashed password suitable for use with immutable users")]
