@@ -72,6 +72,7 @@ in
         ++ checksPkgs
         ++ formatterPkgs
         ++ maintenancePkgs
+        ++ secretsPkgs
         ++ config.pre-commit.settings.enabledPackages
         ++ [
           pkgs.cachix
