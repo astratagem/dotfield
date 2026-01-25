@@ -24,9 +24,8 @@ in
       ];
     };
     users.cdom.keys = {
-      #     age = keys.age.cdom-at-riebeck;
+      age = keys.age.cdom-at-riebeck;
       ssh = [ keys.ssh.cdom-at-riebeck ];
     };
   };
-
 }
