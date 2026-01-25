@@ -91,6 +91,12 @@ let
         default = [ "cdom" ];
       };
 
+      host = mkOption {
+        type = with types; nullOr str;
+        description = "Host identifier for the host";
+        default = null;
+      };
+
       ipv4 = mkOption {
         type = ipv4Submodule;
         description = "IPv4 configuration for the host";
