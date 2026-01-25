@@ -13,12 +13,18 @@
       ];
     };
 
-  aspects.core.home = {
-    # Allow normal users to use sops.
-    home.sessionVariables = {
-      "AGE_KEY_DIR" = "$HOME/.age";
-      "SOPS_AGE_KEY_DIR" = "$XDG_CONFIG_HOME/sops/age";
-      "SOPS_AGE_KEY_FILE" = "$XDG_CONFIG_HOME/sops/age/keys";
+  aspects.core.home =
+    { config, ... }:
+    {
+      # Allow normal users to use sops.
+      home.sessionVariables = {
+        "AGE_KEY_DIR" = "$HOME/.age";
+        "SOPS_AGE_KEY_DIR" = "$XDG_CONFIG_HOME/sops/age";
+        "SOPS_AGE_KEY_FILE" = "$XDG_CONFIG_HOME/sops/age/keys";
+      };
+
+      sops.age.sshKeyPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
+      # TODO: what should this be?
+      # sops.defaultSopsFile =
     };
-  };
 }

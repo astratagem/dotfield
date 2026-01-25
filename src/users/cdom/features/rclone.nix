@@ -1,43 +1,35 @@
-{ lib, ... }:
+{ config, lib, ... }:
+let
+  inherit (config) meta;
+in
 {
   users.cdom.aspects.core.home =
     { pkgs, ... }:
+    {
+      home.packages = [ pkgs.rclone ];
+      home.sessionVariables.NNN_RCLONE = "rclone mount --fast-list";
+      programs.rclone.enable = true;
+    };
+
+  users.cdom.aspects.workstation.home =
+    { config, ... }:
     let
-      # FIXME: not available...?
-      rclone-start-mount =
-        {
-          readonly ? true,
-          expire ? "168h", # 7 days
-          mode ? "full", # or "writes"
-        }:
-        (pkgs.writeShellScriptBin "rclone-start-mount" ''
-          ${pkgs.rclone}/bin/rclone ${
-            lib.cli.toGNUCommandLineShell { } {
-              vfs-read-chunk-size = "64M";
-              vfs-read-chunk-size-limit = "2048M";
-              vfs-cache-mode = mode;
-              buffer-size = "128M";
-              max-read-ahead = "256M";
-              dir-cache-time = expire;
-              timeout = "10m";
-              transfers = 16;
-              checkers = 12;
-              drive-chunk-size = "64M";
-              # fuse-flag = ["sync_read" "auto_cache"];
-              read-only = readonly;
-              umask = "002";
-              verbose = true;
-            }
-          } mount ''${@}
-        '');
+      mountDir = "${config.home.homeDirectory}/mnt";
     in
     {
-      home.packages = [
-        pkgs.rclone
-        (rclone-start-mount { })
-      ];
-      home.sessionVariables = {
-        NNN_RCLONE = "rclone mount --fast-list";
+      programs.rclone = {
+        requiresUnit = "sops-nix.service";
+        remotes."synoxyn" = {
+          config = {
+            type = "sftp";
+            host = meta.hosts.synoxyn.ipv4.address;
+            key_file = "~/.ssh/id_ed25519";
+            shell_type = "unix";
+            md5sum_command = "none";
+            sha1sum_command = "none";
+          };
+          mounts."".mountPoint = "${mountDir}/synoxyn";
+        };
       };
     };
 }

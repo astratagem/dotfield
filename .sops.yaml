@@ -52,6 +52,14 @@ creation_rules:
         pgp:
           - 64604147C434F65EC306A21F135EEDD0F71934F3
 
+  - path_regex: src/users/cdom/secrets/[^/]+.yaml$
+    key_groups:
+      - age:
+          - age18yqe2svh9ck0san5uzthh6m774r2450hhz4ustguza2l8nttk30qxvtpf4  # <cdom@tuvix>
+          - age15yyjuhudx0qaxrgshap4uwylvc6gek5dev7wsvc0zn32v6easp4qmyffmg  # <cdom>
+        pgp:
+          - 64604147C434F65EC306A21F135EEDD0F71934F3
+
   - path_regex: secrets/[^/]+.yaml$
     key_groups:
       - age:
