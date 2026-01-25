@@ -110,6 +110,8 @@
 
       fonts.packages = [ perSystem.config.packages.berkeley-mono ];
 
+      users.mutableUsers = false;
+
       sops.defaultSopsFile = ./secrets/secrets.yaml;
 
       # This value determines the NixOS release from which the default

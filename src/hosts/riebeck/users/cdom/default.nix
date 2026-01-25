@@ -11,12 +11,12 @@ flake@{ ... }:
         username = "cdom";
       in
       {
-        #sops.secrets."users/${username}/hashed-password".neededForUsers = true;
+        sops.secrets."users/${username}/hashed_password".neededForUsers = true;
 
         users.users.${username} = {
           uid = 1000;
           isNormalUser = true;
-          # hashedPasswordFile = config.sops.secrets."users/${username}/hashed-password".path;
+          hashedPasswordFile = config.sops.secrets."users/${username}/hashed_password".path;
           openssh.authorizedKeys.keys = flake.config.meta.users.cdom.keys.ssh;
           extraGroups = [ "wheel" ];
         };
