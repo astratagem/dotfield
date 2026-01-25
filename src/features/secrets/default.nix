@@ -15,6 +15,9 @@
 
   aspects.core.home =
     { config, ... }:
+    let
+      inherit (config.home) username;
+    in
     {
       # Allow normal users to use sops.
       home.sessionVariables = {
@@ -24,7 +27,6 @@
       };
 
       sops.age.sshKeyPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
-      # TODO: what should this be?
-      # sops.defaultSopsFile =
+      sops.defaultSopsFile = ../../users/${username}/secrets/secrets.yaml;
     };
 }

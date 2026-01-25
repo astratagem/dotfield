@@ -26,6 +26,8 @@ let
       hostAspects = hostSpec.aspects ++ hostAspectDeps;
 
       homeModules = [
+        inputs.sops-nix.homeManagerModules.sops
+        inputs.stylix.homeModules.stylix
         config.aspects.core.home
         hostSpec.baseline.home
       ];
@@ -43,15 +45,12 @@ let
             flake = config;
           };
           modules = [
-            inputs.stylix.homeModules.stylix
-            (
-              { lib, ... }:
-              {
-                home.username = lib.mkDefault username;
-                home.homeDirectory = lib.mkDefault "/home/${username}";
-              }
-            )
-          ] ++ resolveUserHomeModules {
+            {
+              home.username = lib.mkDefault username;
+              home.homeDirectory = lib.mkDefault "/home/${username}";
+            }
+          ]
+          ++ resolveUserHomeModules {
             inherit username userSpec hostAspects;
             baseHomeModules = homeModules;
           };

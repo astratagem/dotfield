@@ -6,11 +6,6 @@
   ...
 }:
 let
-  inherit (lib)
-    filter
-    map
-    ;
-
   inherit (self.lib.modules)
     collectNixosModules
     collectOverlays
@@ -35,6 +30,10 @@ let
       ];
 
       homeModules = [
+        inputs.sops-nix.homeManagerModules.sops
+        # FIXME: can only be included in standalone configurations --
+        # causes error otherwise.
+        # inputs.stylix.homeModules.stylix
         config.aspects.core.home
         hostSpec.baseline.home
       ];
