@@ -6,12 +6,12 @@
 }:
 stdenv.mkDerivation {
   pname = "berkeley-mono";
-  version = "2.003";
+  version = "2.004";
 
   src = requireFile rec {
     name = "berkeley-mono-typeface.zip";
     url = "https://usgraphics.com/products/berkeley-mono";
-    sha256 = "1y5ps2im9abl3b6m4n952k7r390lqyprz2m23n0i6n5nvcb4hvvl";
+    sha256 = "1y67b7nj9y6xm0g1pd39ll0lh5rg9g5kw73595h82ailws1hszb0";
     message = ''
       ${name} font not found in nix store, to add it run:
       $ nix-store --add-fixed sha256 /path/to/${name}
