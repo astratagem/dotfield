@@ -19,6 +19,8 @@ auth.json
 *.key
 ops/keys/ssh/*
 !ops/keys/ssh/*.pub
+src/features/proton/*.pem
+!src/features/proton/protonmail-bridge-cert.pem
 .ssh
 
 # Dependencies
