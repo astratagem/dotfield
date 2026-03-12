@@ -74,8 +74,8 @@
         enable = true;
         createDirectories = true;
         extraConfig = {
-          XDG_MAIL_DIR = "${config.home.homeDirectory}/Mail";
-          XDG_PROJECTS_DIR = config.home.homeDirectory + "/Projects";
+          "MAIL" = "${config.home.homeDirectory}/Mail";
+          "PROJECTS" = config.home.homeDirectory + "/Projects";
         };
       };
 

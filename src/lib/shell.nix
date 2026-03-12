@@ -4,7 +4,7 @@ let
     pkg: args:
     lib.concatStringsSep " " [
       (lib.getExe pkg)
-      (toString (lib.cli.toGNUCommandLine { } args))
+      (toString (lib.cli.toCommandLineGNU { } args))
     ];
 in
 {
