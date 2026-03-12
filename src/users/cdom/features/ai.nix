@@ -9,7 +9,6 @@
       ]
       ++ (with perSystem.inputs'.llm-agents.packages; [
         backlog-md
-        beads
         crush
       ]);
     }
