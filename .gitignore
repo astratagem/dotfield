@@ -1,46 +1,45 @@
-# SPDX-FileCopyrightText: 2022-2023 Chris Montgomery <chris@cdom.io>
+# SPDX-FileCopyrightText: 2022-2026 Chris Montgomery <chmont@protonmail.com>
 # SPDX-License-Identifier: CC0-1.0
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-##: nix
-.std
-.data
-
-##: build artifacts
-build
-result
-/nix.profile
-
-##: private/local files
-*.local
-*.log
-*.pem
-.env*.local
-ops/keys/ssh/*
-!ops/keys/ssh/*.pub
-.scratch
-
-##: editors
-.idea
-
-##: cache/state files
+# Data/logs/testing
+*.cache
+.data/
 .direnv/
-
-##: virtual machine images
-*.qcow2
-*.img
-
-##: os clutter
-.DS_Store
-
-##: temporary files
+*.log
+nix.profile
+*.sql
 *.tmp
 tmp/
 
-##: generated
-.pre-commit-config.yaml
+# Secrets
+auth.json
+.env
+.env.*
+!.env.example
+*.key
+ops/keys/ssh/*
+!ops/keys/ssh/*.pub
+.ssh
 
-##: misc
-/target/
-/node_modules/
+# Dependencies
+node_modules/
+vendor/
+
+# Context-specific
+*.local
+*.local.*
+!*.local*.example
+
+# Build artifacts
+*.qcow2
+*.img
+build
+hot
+result
+target
+
+# Editor
+.idea/
+
+# Generated
+.pre-commit-config.yaml
