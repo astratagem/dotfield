@@ -77,6 +77,7 @@
 
         home.packages = with pkgs; [
           hyprpicker
+          wdisplays
 
           ## Screenshots/capture/annotation:
           grim

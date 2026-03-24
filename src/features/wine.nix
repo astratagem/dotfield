@@ -1,5 +1,4 @@
 {
-
   aspects.workstation.nixos =
     { pkgs, ... }:
     {

@@ -18,10 +18,8 @@
         };
       };
       environment.systemPackages = [
-        pkgs.blueberry
         pkgs.blueman
         pkgs.bluetui
-        pkgs.overskride
       ];
     };
 }
