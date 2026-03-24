@@ -38,6 +38,8 @@ flake@{ ... }:
           programs.jujutsu.signing.gpg.enable = true;
           programs.jujutsu.signing.onPush = true;
 
+          programs.rclone.remotes."whatbox".mounts."".enable = true;
+
           home.packages = with pkgs; [
             zed-editor
           ];
