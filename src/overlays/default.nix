@@ -11,6 +11,10 @@
         inherit (inputs'.nixos-stable.legacyPackages)
           calibre
           igrep
+          inkscape
+          wineasio
+          winetricks
+          wineWowPackages
           zx
           ;
         inherit (inputs'.nixpkgs-trunk.legacyPackages)

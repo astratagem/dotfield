@@ -20,7 +20,7 @@
         pkgs.bakoma_ttf
         # <https://software.sil.org/charis/>
         # <https://practicaltypography.com/charter.html>
-        pkgs.charis-sil
+        pkgs.charis
         pkgs.commit-mono
         pkgs.departure-mono
       ];
