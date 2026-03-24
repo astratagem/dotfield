@@ -15,12 +15,19 @@
         profile.outputs = [
           {
             criteria = "eDP-1";
-            status = "disable";
+            status = "enable";
+            position = "0,638";
           }
           {
             criteria = "LG Electronics LG Ultra HD 0x000668B9";
             status = "enable";
-            position = "0,0";
+            position = "2520,458";
+          }
+          {
+            criteria = "Acer Technologies CB241Y 0x33340DC8F";
+            status = "enable";
+            transform = "270";
+            position = "1440,0";
           }
         ];
       }
@@ -29,12 +36,15 @@
         profile.outputs = [
           {
             criteria = "eDP-1";
-            status = "disable";
+            status = "enable";
+            position = "0,0";
           }
           {
             criteria = "LG Electronics LG ULTRAGEAR 107NTBKA5869";
             status = "enable";
-            position = "0,0";
+            # FIXME: this needs to be variable based on the machine's
+            # internal display.
+            position = "1440,0";
           }
         ];
       }

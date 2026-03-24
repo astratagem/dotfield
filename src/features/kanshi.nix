@@ -26,6 +26,12 @@
             output.scale = 1.0;
             output.mode = "2560x1440";
           }
+          {
+            output.criteria = "Acer Technologies CB241Y 0x33340DC8F";
+            output.scale = 1.0;
+            output.mode = "1920x1080";
+            output.transform = "270";
+          }
         ];
         profiles = { };
       };
