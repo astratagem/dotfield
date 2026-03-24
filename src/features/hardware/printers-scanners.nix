@@ -1,8 +1,16 @@
 {
   aspects.workstation.nixos =
-    { config, ... }:
+    { pkgs, config, ... }:
     {
-      services.printing.enable = true;
+      services.printing = {
+        enable = true;
+        drivers = [
+          pkgs.cups-browsed
+          pkgs.cups-filters
+          pkgs.hplip
+        ];
+      };
+
       services.avahi.openFirewall = true;
 
       # scanner support
