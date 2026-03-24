@@ -2,13 +2,12 @@
   aspects.workstation.nixos =
     { config, pkgs, ... }:
     {
-      # PulseAudio server uses this to acquire realtime priority.
       security.rtkit.enable = true;
 
       environment.systemPackages = [
         pkgs.alsa-utils
         pkgs.easyeffects
-        pkgs.pwvucontrol
+        pkgs.pavucontrol
       ];
 
       services.pulseaudio.enable = false;
