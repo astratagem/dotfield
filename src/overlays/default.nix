@@ -18,6 +18,7 @@
           zx
           ;
         inherit (inputs'.nixpkgs-trunk.legacyPackages)
+          ddev
           zellij
           ;
       };

@@ -20,4 +20,10 @@
         '')
       ];
     };
+
+  aspects.development.home =
+    { pkgs, ... }:
+    {
+      home.file.".docker/cli-plugins".source = "${pkgs.docker-buildx}/libexec/docker/cli-plugins";
+    };
 }
