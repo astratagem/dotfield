@@ -72,6 +72,7 @@ in
           less
           lm_sensors
           lnav # log file pager
+          lsof
           lynx
           moreutils
           nh
@@ -81,6 +82,7 @@ in
           openssl
           pciutils
           procs
+          psmisc # utils for working with proc fs (e.g. fuser, killall, pstree)
           pv # monitor the progress of data through a pipeline
           rclone # rsync for "the cloud"
           reptyr # reparent a running process to another tty

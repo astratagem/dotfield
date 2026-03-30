@@ -4,6 +4,8 @@
     { config, pkgs, ... }:
     {
       programs.mergiraf.enable = true;
+      programs.mergiraf.enableGitIntegration = true;
+      programs.mergiraf.enableJujutsuIntegration = true;
 
       home.packages =
         let
