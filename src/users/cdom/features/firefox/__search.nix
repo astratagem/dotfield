@@ -48,6 +48,25 @@ in
       ];
       icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
     };
+    nixpkgs-pr = {
+      definedAliases = [
+        "@nixpkgs-pr"
+        "@nixpr"
+      ];
+
+      urls = [
+        {
+          template = "https://nixpk.gs/pr-tracker.html";
+          params = [
+            {
+              name = "pr";
+              value = "{searchTerms}";
+            }
+          ];
+        }
+      ];
+      icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+    };
     nixos-options = {
       definedAliases = [
         "@nixos"
