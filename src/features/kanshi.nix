@@ -22,6 +22,11 @@
             output.mode = "3840x2160";
           }
           {
+            output.criteria = "LG Electronics LG UltraFine 901NTEPB3220";
+            output.scale = 2.0;
+            output.mode = "3840x2160";
+          }
+          {
             output.criteria = "LG Electronics LG ULTRAGEAR 107NTBKA5869";
             output.scale = 1.0;
             output.mode = "2560x1440";

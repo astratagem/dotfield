@@ -37,14 +37,17 @@
           {
             criteria = "eDP-1";
             status = "enable";
-            position = "0,0";
+            position = "4000,1090";
+          }
+          {
+            criteria = "LG Electronics LG UltraFine 901NTEPB3220";
+            status = "enable";
+            position = "1440,550";
           }
           {
             criteria = "LG Electronics LG ULTRAGEAR 107NTBKA5869";
             status = "enable";
-            # FIXME: this needs to be variable based on the machine's
-            # internal display.
-            position = "1440,0";
+            position = "0,0";
           }
         ];
       }

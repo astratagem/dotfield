@@ -32,7 +32,7 @@ input {
 layout {
     background-color "#181825"
 
-    gaps 8
+    gaps 12
     struts {
         top 4
         right 0
@@ -59,8 +59,7 @@ layout {
     }
 
     focus-ring {
-        off
-        width 1
+        width 4
         active-color "#a6e3a1"
         inactive-color "#6c7086"
         active-gradient in="oklch longer hue" from="#89dceb" to="#a6e3a1" angle=45
