@@ -34,6 +34,7 @@
       { pkgs, ... }:
       {
         home.packages = [
+          pkgs.ffmpeg
           pkgs.harper
           pkgs.kdePackages.okular
           pkgs.libreoffice-fresh
