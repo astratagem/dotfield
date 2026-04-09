@@ -35,7 +35,7 @@ flake@{ lib, inputs, ... }:
           experimental-features = [
             "flakes"
             "nix-command"
-            "pipe-operators"
+            (if cfg.package.pname == "lix" then "pipe-operator" else "pipe-operators")
           ];
 
           system-features = flake.config.meta.hosts.${config.networking.hostName}.supportedFeatures;
