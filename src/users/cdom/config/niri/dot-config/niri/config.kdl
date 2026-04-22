@@ -95,11 +95,6 @@ animations {
 // ==================================================================
 
 workspace "chat"
-workspace "main"
-workspace "kleinweb"
-workspace "dotfield"
-workspace "ceamx"
-workspace "scratch"
 
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 /// ==================================================================
