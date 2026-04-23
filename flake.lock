@@ -250,19 +250,19 @@
           "apparat"
         ],
         "devshell": "devshell_3",
+        "emacs-overlay": "emacs-overlay",
         "flake-parts": "flake-parts_3",
         "nix-nil-lsp": "nix-nil-lsp",
-        "nix-treesitter": "nix-treesitter",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1776953517,
-        "narHash": "sha256-Uw75MpdIALfGIPxh2XOL/rVkVzLp5Nbq7X8ZPdcrT4w=",
+        "lastModified": 1776969232,
+        "narHash": "sha256-5OyJeaEvoMenokbGUK7jfFllmlkYbrYSlj3Qvskeobw=",
         "owner": "montchr",
         "repo": "ceamx",
-        "rev": "f1d95b2403477d04c0dae3f19f3045c9263a0973",
+        "rev": "b02b91b62a2a533875d907d0e6d2938e937eab7d",
         "type": "github"
       },
       "original": {
@@ -290,28 +290,6 @@
       "original": {
         "owner": "zhaofengli",
         "repo": "colmena",
-        "type": "github"
-      }
-    },
-    "conflake": {
-      "inputs": {
-        "nixpkgs": [
-          "ceamx",
-          "nix-treesitter",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739025932,
-        "narHash": "sha256-8BbSpXfJfy3R7XYX43dQeYZJ7K+IDCfGZb1KgRHN0Pg=",
-        "owner": "ratson",
-        "repo": "conflake",
-        "rev": "69b5b014b79ecd457aa698e383602b07d52683c4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ratson",
-        "repo": "conflake",
         "type": "github"
       }
     },
@@ -481,9 +459,31 @@
     "emacs-overlay": {
       "inputs": {
         "nixpkgs": [
+          "ceamx",
           "nixpkgs"
         ],
         "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1776967792,
+        "narHash": "sha256-O3YfkXQz8P2kec6Ani8fmuXvuXRAyl5/qPdt0kDNFWk=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "0041dd571ebebe8fa779b940fb13b6d447a48b87",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
+    "emacs-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
         "lastModified": 1776936542,
@@ -1220,7 +1220,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-stable": "nixpkgs-stable_2",
+        "nixpkgs-stable": "nixpkgs-stable_3",
         "xwayland-satellite-stable": "xwayland-satellite-stable",
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
@@ -1379,28 +1379,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
-        "type": "github"
-      }
-    },
-    "nix-treesitter": {
-      "inputs": {
-        "conflake": "conflake",
-        "nixpkgs": [
-          "ceamx",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739028560,
-        "narHash": "sha256-7joUNhdZfSkuGL65Lbsmuf/NviUjuGtAhbfdPYuFGjk=",
-        "owner": "ratson",
-        "repo": "nix-treesitter",
-        "rev": "d9d35e37a5b2aee2f3f4d14c66e2bf0604dae4ce",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ratson",
-        "repo": "nix-treesitter",
         "type": "github"
       }
     },
@@ -1686,6 +1664,22 @@
       }
     },
     "nixpkgs-stable_2": {
+      "locked": {
+        "lastModified": 1776734388,
+        "narHash": "sha256-vl3dkhlE5gzsItuHoEMVe+DlonsK+0836LIRDnm6MXQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "10e7ad5bbcb421fe07e3a4ad53a634b0cd57ffac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable_3": {
       "locked": {
         "lastModified": 1776734388,
         "narHash": "sha256-vl3dkhlE5gzsItuHoEMVe+DlonsK+0836LIRDnm6MXQ=",
@@ -2080,7 +2074,7 @@
         "colmena": "colmena",
         "disko": "disko",
         "dmerge": "dmerge_2",
-        "emacs-overlay": "emacs-overlay",
+        "emacs-overlay": "emacs-overlay_2",
         "flake-parts": "flake-parts_4",
         "git-hooks": "git-hooks",
         "globset": "globset_2",
