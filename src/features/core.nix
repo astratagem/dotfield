@@ -129,7 +129,6 @@ in
         home.sessionVariables = {
           "EDITOR" = lib.mkDefault "vim";
           "LESSHISTFILE" = "${config.xdg.stateHome}/lesshst";
-          "XDG_BIN_HOME" = binHome;
         };
 
         home.packages = [

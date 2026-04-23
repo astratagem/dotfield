@@ -10,8 +10,8 @@
       {
         home.packages = with pkgs; [
           proton-authenticator
+          proton-vpn
           protonmail-bridge-gui
-          protonvpn-gui
         ];
       };
   };

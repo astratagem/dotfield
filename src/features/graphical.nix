@@ -73,6 +73,7 @@
       xdg.userDirs = {
         enable = true;
         createDirectories = true;
+        setSessionVariables = true;
         extraConfig = {
           "MAIL" = "${config.home.homeDirectory}/Mail";
           "PROJECTS" = config.home.homeDirectory + "/Projects";
