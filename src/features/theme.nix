@@ -19,4 +19,10 @@
         };
       };
     };
+
+  aspects.graphical.home = {
+    # Adopt the new default from NixOS 26.05+, regardless of system
+    # state version.
+    gtk.gtk4.theme = null;
+  };
 }
