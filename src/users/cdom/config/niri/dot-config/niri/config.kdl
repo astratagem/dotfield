@@ -99,13 +99,10 @@ workspace "chat"
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 /// ==================================================================
 
+// Make inactive windows semi-transparent.
 window-rule {
+    match is-active=false
     opacity 0.98
-}
-
-window-rule {
-    match is-focused=true
-    opacity 1.0
 }
 
 window-rule {
