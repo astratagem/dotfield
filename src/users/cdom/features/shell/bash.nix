@@ -10,9 +10,6 @@
         shellAliases = shellAbbrs;
         shellOptions = lib.mkOptionDefault [
           "cdspell"
-          "dirspell"
-          "histreedit"
-          "histverify"
         ];
         historyFileSize = 100000;
         historySize = 100000;
