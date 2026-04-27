@@ -76,7 +76,7 @@ layout {
         // "softness" (aka blur radius) is measured in logical pixels
         softness 88  // orig. 80
         // "spread" :: distance to expand the window rectangle in logical pixels (signed)
-        spread 55  // orig. 5
+        spread 16  // orig. 5
         offset x=0 y=5
         color "#0007"
         // inactive-color "..."
@@ -88,7 +88,7 @@ layout {
 }
 
 animations {
-    slowdown 3.0
+    // slowdown 2.0
 }
 
 // https://yalter.github.io/niri/Configuration%3A-Named-Workspaces.html
