@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   aspects.core = {
     nixos =
@@ -12,6 +13,10 @@
     home =
       { pkgs, ... }:
       {
+        imports = [
+          self.modules.homeManager.fzf-tab-completion
+        ];
+
         programs.bat.enable = true;
         programs.bottom.enable = true;
         programs.carapace.enable = true;

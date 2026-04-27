@@ -1,11 +1,8 @@
-{ moduleWithSystem, lib, ... }:
+{ lib, ... }:
 {
-  users.cdom.aspects.core.home = moduleWithSystem (
-    perSystem@{ config }:
+  users.cdom.aspects.core.home =
     { config, pkgs, ... }:
     let
-      inherit (perSystem.config.packages) fzf-tab-completion;
-
       shellAbbrs = import ./__abbrs.nix { inherit pkgs; };
     in
     {
@@ -40,12 +37,7 @@
         initExtra = lib.mkAfter ''
           # Must C-d at least thrice to close shell.
           export IGNOREEOF=2
-
-          # fzf tab completion interface
-          source ${fzf-tab-completion}/share/bash/fzf-bash-completion.sh
-          bind -x '"\t": fzf_bash_completion'
         '';
       };
-    }
-  );
+    };
 }
