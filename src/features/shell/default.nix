@@ -7,11 +7,6 @@
           pkgs.bashInteractive
           pkgs.fish
         ];
-
-        # Install completions for system packages.
-        environment.pathsToLink = [
-          "/share/bash-completion"
-        ];
       };
 
     home =

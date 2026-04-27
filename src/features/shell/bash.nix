@@ -1,13 +1,15 @@
 { self, ... }:
 {
+  aspects.core.nixos = {
+    environment.pathsToLink = [ "/share/bash-completion" ];
+  };
+
   aspects.core.home =
     { config, ... }:
     {
       imports = [
         self.modules.homeManager.bash-trampoline
       ];
-
-      home.extraOutputsToInstall = [ "/share/bash-completion" ];
 
       programs.bash = {
         enable = true;
