@@ -1,5 +1,5 @@
 {
-  aspects.core.nixos =
+  aspects.lix.nixos =
     { pkgs, ... }:
     {
       # FIXME: suggested by manual, but results in infinite recursion

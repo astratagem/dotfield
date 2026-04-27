@@ -17,12 +17,6 @@ let
 in
 {
   aspects.core = {
-    # FIXME: require has no effect.  lix feature must be added to `core` aspect directly.
-    # FIXME: use lix temporarily to mitigate critical sandbox escape vulnerability CVE-2026-39860
-    # https://github.com/NixOS/nix/security/advisories/GHSA-g3g9-5vj6-r3gj
-    # https://discourse.nixos.org/t/nix-security-advisory-privilege-escalation-via-symlink-following-during-fod-output-registration/76900/8
-    requires = [ "lix" ];
-
     nixos =
       { config, pkgs, ... }:
       {
