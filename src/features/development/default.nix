@@ -19,6 +19,7 @@
           nixTools = [
             pkgs.nix-init
             pkgs.nix-inspect
+            pkgs.nix-update
             pkgs.nixfmt
             pkgs.nixpkgs-review
           ];

@@ -35,9 +35,9 @@
       {
         home.packages = [
           pkgs.ffmpeg
-          pkgs.harper
           pkgs.kdePackages.okular
           pkgs.libreoffice-fresh
+          pkgs.pdfarranger
           # TODO: ideally this would only be included at the
           # intersection of "graphical" and "mail" aspects, but there is
           # currently no mechanism to achieve that. (i'm thinking
