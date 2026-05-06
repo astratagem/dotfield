@@ -6,6 +6,15 @@
 - Avoid generating or suggesting quick hacks unless the situation
   specifically warrants it (e.g. prototyping, experimenting)
 
+## Nix
+
+- Do not interact with the Nix store (`/nix/store`) as a filesystem
+  (no `ls`, `find`, `cat`, etc. on store paths). Use `nix` commands
+  instead — e.g. `nix eval`, `nix flake metadata`, `nix flake show`,
+  `nix derivation show`, `nix-instantiate --eval`, `nix repl`. Store
+  paths are an implementation detail and traversing them directly is
+  slow, fragile, and not a supported interface.
+
 ## Communication style preferences
 
 - Avoid exclamation points
