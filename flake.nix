@@ -88,7 +88,6 @@
     nix-unit = {
       url = "github:nix-community/nix-unit";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -109,6 +108,10 @@
     niri-flake = {
       url = "github:sodiboo/niri-flake";
       # It is important to keep the Mesa versions in sync.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
