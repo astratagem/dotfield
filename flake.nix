@@ -110,10 +110,6 @@
       # It is important to keep the Mesa versions in sync.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix.url = "github:danth/stylix";
 
     ##: apps/tools
