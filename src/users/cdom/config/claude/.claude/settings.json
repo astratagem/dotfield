@@ -155,5 +155,7 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "verbose": true,
+  "model": "opus"
 }
