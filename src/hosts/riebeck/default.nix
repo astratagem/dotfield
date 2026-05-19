@@ -22,6 +22,7 @@
     {
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
+
       # NOTE: Due to the this machine being initially-provisioned for
       # Windows, the boot partition is small (200MiB), which is very
       # much a Microsoft-ism (i.e. unreasonable).  While dual-boot is
@@ -37,31 +38,37 @@
       # space for a re-created EFI partition without altering the start
       # sector for the NTFS partition (moving the start sector from the
       # left to the right), which is very likely to result in corruption
-      # of the Windows operating system files. I already did that once
+      # of the Windows operating system files.  I already did that once
       # when I mistakenly tried to shrink the Windows partition from the
       # left to the right via GParted -- the entire Windows partition
-      # then had to be deleted and re-provisioned by Klein IT support
-      # staff.  That would have been fine, but the expanded EFI
-      # partition I had created was accidentally deleted in the process
-      # due to human error, thus resulting in the same tiny-EFI state I
-      # was in before.  The second time around, I was able to shrink the
-      # NTFS partition from within Windows, but the shrink moves the end
-      # sector from right to left, which resulted in the desired total
-      # space allocation for the EFI partition to be sandwiching the
-      # NTFS partition.  The Windows disk management tool does not allow
-      # for "moving" partitions, so I had to use GParted.  When I
-      # attempted to move the NTFS partition to the right, however,
-      # GParted warned that this would likely result in a corrupted
-      # filesystem.  Not an experience I would like to put myself in
-      # again.  One solution to the limited generation capacity in the
-      # EFI partition could be storing the kernels and initrd on the
-      # primary Linux partition, but that would require switching from
-      # systemd-boot to GRUB.  Perhaps a project for a rainy day, as
-      # long as there's nothing in my configuration that requires
-      # systemd-boot.  For more on this subject, refer to:
+      # then had to be deleted and re-provisioned.  That would have been
+      # fine, but the expanded EFI partition I had created was
+      # accidentally deleted in the process due to human error, thus
+      # resulting in the same tiny-EFI state I was in before.  The
+      # second time around, I was able to shrink the NTFS partition from
+      # within Windows, but the shrink moves the end sector from right
+      # to left, which resulted in the desired total space allocation
+      # for the EFI partition to be sandwiching the NTFS partition.  The
+      # Windows disk management tool does not allow for "moving"
+      # partitions, so I had to use GParted.  When I attempted to move
+      # the NTFS partition to the right, however, GParted warned that
+      # this would likely result in a corrupted filesystem.  Not an
+      # experience I would like to put myself in again.  One solution to
+      # the limited generation capacity in the EFI partition could be
+      # storing the kernels and initrd on the primary Linux partition,
+      # but that would require switching from systemd-boot to GRUB.
+      # Perhaps a project for a rainy day, as long as there's nothing in
+      # my configuration that requires systemd-boot.  For more on this
+      # subject, refer to:
       #
       # <https://wiki.nixos.org/wiki/Bootloader#Keeping_kernels/initrd_on_the_main_partition>
-      boot.loader.systemd-boot.configurationLimit = 3;
+      #
+      # [2026-05-18]: Reduced from 3 to 2.  Boot device ran out of space
+      # again; `nix-collect-garbage -d` did not help.  This happened
+      # just after a `nix flake update`; keep in mind that the 26.05
+      # release cycle is currently active, which *could* explain such a
+      # change in storage requirements.  So be careful!
+      boot.loader.systemd-boot.configurationLimit = 2;
 
       boot.kernelPackages = pkgs.linuxPackages_latest;
 
