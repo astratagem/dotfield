@@ -16,6 +16,10 @@
             pkgs.xq-xml # XML formatter and scraper
           ];
 
+          packagingTools = [
+            pkgs.dpkg
+          ];
+
           nixTools = [
             pkgs.nix-init
             pkgs.nix-inspect
@@ -33,6 +37,8 @@
           pkgs.asciinema
           pkgs.ast-grep
           pkgs.copier
+          pkgs.jira-cli-go
+          pkgs.jiratui
           # Although git hooks should obviously be managed on a
           # per-project basis, `jj-git-push` expects the `pre-commit`
           # binary to be available (normally it is not).
