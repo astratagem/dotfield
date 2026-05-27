@@ -6,7 +6,8 @@
 
       "hardware__epson__wf-3520"
       "hardware__focusrite__scarlett-18i20-mk1"
-      "hardware__razer"
+      # FIXME: build failure on openrazer kernel module
+      # "hardware__razer"
       "hardware__yubico__yubikey"
     ];
 
