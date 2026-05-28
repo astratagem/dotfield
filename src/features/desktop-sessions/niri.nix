@@ -2,7 +2,6 @@
 {
   aspects.desktop-sessions__niri = {
     requires = [ "desktop-sessions__wayland-wm" ];
-    overlays = [ inputs.niri-flake.overlays.niri ];
 
     nixos = moduleWithSystem (
       perSystem@{ inputs' }:
@@ -10,7 +9,7 @@
       {
         programs.niri = {
           enable = true;
-          package = pkgs.niri-stable;
+          package = pkgs.niri;
         };
 
         xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gnome ];

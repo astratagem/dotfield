@@ -100,16 +100,6 @@
       url = "github:astratagem/ironbar?ref=astratagem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:YaLTeR/niri";
-      # It is important to keep the Mesa versions in sync.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    niri-flake = {
-      url = "github:sodiboo/niri-flake";
-      # It is important to keep the Mesa versions in sync.
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix.url = "github:danth/stylix";
 
     ##: apps/tools
