@@ -181,9 +181,13 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock Screen: swaylock" {
         spawn "swaylock"
     }
+
     // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+
+    // Volume key mappings for PipeWire & WirePlumber
+    // "-l 1.0" limits the volume to 100%
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ && dunst-meter-notify audio"
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0 && dunst-meter-notify audio"
     }
     XF86AudioLowerVolume allow-when-locked=true {
         spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1- && dunst-meter-notify audio"
