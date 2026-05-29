@@ -99,12 +99,6 @@ workspace "chat"
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 /// ==================================================================
 
-// Make inactive windows semi-transparent.
-window-rule {
-    match is-active=false
-    opacity 0.98
-}
-
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="mpv"
