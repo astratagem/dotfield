@@ -12,7 +12,7 @@
     };
 
   aspects.graphical.home =
-    hmArgs@{ pkgs, ... }:
+    hmArgs@{ config, pkgs, ... }:
     {
       programs.firefox = {
         enable = true;
@@ -21,6 +21,7 @@
             (hmArgs.osConfig.programs.firefox.package or pkgs.firefox)
           else
             pkgs.firefox;
+        configPath = "${config.xdg.configHome}/mozilla/firefox";
       };
     };
 
