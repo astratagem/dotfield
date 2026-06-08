@@ -44,7 +44,7 @@
     nixpkgs.follows = "nixos-unstable";
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # nixos-unstable.url = "github:montchr/nixpkgs/nixos-unstable";
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixos-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-trunk.url = "github:NixOS/nixpkgs/master";
     nixpkgs-apple-silicon.follows = "nixos-apple-silicon/nixpkgs";
 
