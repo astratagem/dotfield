@@ -1,6 +1,7 @@
+{ lib, ... }:
 {
   aspects.graphical.nixos =
-    { lib, pkgs, ... }:
+    { pkgs, ... }:
     let
       toColorSchemePath = scheme: "${pkgs.base16-schemes}/share/themes/${scheme}.yaml";
     in
@@ -23,6 +24,6 @@
   aspects.graphical.home = {
     # Adopt the new default from NixOS 26.05+, regardless of system
     # state version.
-    gtk.gtk4.theme = null;
+    gtk.gtk4.theme = lib.mkDefault null;
   };
 }
