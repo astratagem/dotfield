@@ -20,6 +20,10 @@
     perSystem@{ config }:
     { config, pkgs, ... }:
     {
+      imports = [ inputs.beams.modules.nixos.citrix-secure-access ];
+
+      services.citrix-secure-access.enable = true;
+
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
 

@@ -156,11 +156,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1776870093,
-        "narHash": "sha256-1GDiDwxXxHMT3dgYn0uttFac8xAm+dlDir+LCECw4KE=",
+        "lastModified": 1780076555,
+        "narHash": "sha256-j6x+AjRJ63IG3YgCtUS7sZLDF9DYSaBfJm2FcGowoSM=",
         "owner": "kleinweb",
         "repo": "beams",
-        "rev": "d301463381a469507e8d26a15394d80f020ee3ab",
+        "rev": "59d0988c2b41e677cb941cd54ad9e7f0b9e567a6",
         "type": "github"
       },
       "original": {
