@@ -63,8 +63,8 @@
         };
 
         serif = {
-          name = "Aporetic Serif";
-          package = pkgs.aporetic;
+          name = "NewComputerModern10";
+          package = pkgs.newcomputermodern;
         };
 
         monospace = {
