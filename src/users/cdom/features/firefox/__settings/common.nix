@@ -89,6 +89,9 @@
   "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
   "services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.includePocket" =
     false;
+
+  # Firefox 150+: Disable GTK emoji picker, which is force-bound to [Ctrl-.]
+  "widget.gtk.native-emoji-dialog" = false;
 }
 ##: Sources:
 # - https://git.sr.ht/~rycee/configurations/tree/5ef3e3b2bd400841be7ec641812b8006191bb7fc/item/user/firefox.nix
