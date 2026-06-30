@@ -76,9 +76,12 @@
       # alternatively: posy-cursors / graphite-cursors / vanilla-dmz /
       # catppuccin-cursors / hackneyed-x11-cursors / openzone-cursors
       stylix.cursor = {
-        name = cursors.dark;
-        package = pkgs.phinger-cursors;
-        size = 12;
+        name = "Hackneyed";
+        package = pkgs.hackneyed;
+        size = 24;
+        # name = cursors.dark;
+        # package = pkgs.phinger-cursors;
+        # size = 12;
         # name = "Posy_Cursor_Black";
         # package = pkgs.posy-cursors;
         # size = 32;
