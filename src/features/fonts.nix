@@ -29,7 +29,6 @@
           atkinson-hyperlegible-mono
           atkinson-hyperlegible-next
           fira
-          gentium
           libre-baskerville
           newcomputermodern
           stix-two
