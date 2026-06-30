@@ -42,6 +42,7 @@ in
           bashInteractive
           bat # :: better cat
           bc # :: GNU software calculator
+          btop
           cacert
           coreutils
           curl
@@ -64,6 +65,7 @@ in
           gnused
           gnutar
           grc
+          htop
           hyperfine
           ijq # interactive jq
           inetutils
