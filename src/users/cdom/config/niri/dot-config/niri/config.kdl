@@ -169,9 +169,9 @@ binds {
     Mod+D hotkey-overlay-title="Launch Application: fuzzel" {
         spawn "fuzzel"
     }
-    Mod+E hotkey-overlay-title="Launch Emacs Everywhere" {
-        spawn-sh "emacsclient --eval '(emacs-everywhere)'"
-    }
+    // Mod+E hotkey-overlay-title="Launch Emacs Everywhere" {
+    //     spawn-sh "emacsclient --eval '(emacs-everywhere)'"
+    // }
     Super+Alt+L hotkey-overlay-title="Lock Screen: swaylock" {
         spawn "swaylock"
     }
@@ -217,29 +217,30 @@ binds {
 
 
     Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-or-workspace-down; }
-    Mod+K     { focus-window-or-workspace-up; }
-    Mod+L     { focus-column-right; }
-
-    Mod+Ctrl+Left  { move-column-left; }
-    Mod+Ctrl+Down  { move-window-down; }
-    Mod+Ctrl+Up    { move-window-up; }
-    Mod+Ctrl+Right { move-column-right; }
-    Mod+Ctrl+H     { move-column-left; }
-    Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
-    Mod+Ctrl+L     { move-column-right; }
-
-    // Alternative commands that move across workspaces when reaching
-    // the first or last window in a column.
+    // Mod+H     { focus-column-left; }
     // Mod+J     { focus-window-or-workspace-down; }
     // Mod+K     { focus-window-or-workspace-up; }
+    // Mod+L     { focus-column-right; }
+    Mod+M     { focus-column-left; }
+    Mod+N     { focus-window-or-workspace-down; }
+    Mod+E     { focus-window-or-workspace-up; }
+    Mod+I     { focus-column-right; }
+
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Down  { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+Up    { move-window-up-or-to-workspace-up; }
+    Mod+Ctrl+Right { move-column-right; }
+    // Mod+Ctrl+H     { move-column-left; }
     // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
     // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    // Mod+Ctrl+L     { move-column-right; }
+    Mod+Ctrl+M     { move-column-left; }
+    Mod+Ctrl+N     { move-window-down-or-to-workspace-down; }
+    Mod+Ctrl+E     { move-window-up-or-to-workspace-up; }
+    Mod+Ctrl+I     { move-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
@@ -250,19 +251,27 @@ binds {
     Mod+Shift+Down  { focus-monitor-down; }
     Mod+Shift+Up    { focus-monitor-up; }
     Mod+Shift+Right { focus-monitor-right; }
-    Mod+Shift+H     { focus-monitor-left; }
-    Mod+Shift+J     { focus-monitor-down; }
-    Mod+Shift+K     { focus-monitor-up; }
-    Mod+Shift+L     { focus-monitor-right; }
+    // Mod+Shift+H     { focus-monitor-left; }
+    // Mod+Shift+J     { focus-monitor-down; }
+    // Mod+Shift+K     { focus-monitor-up; }
+    // Mod+Shift+L     { focus-monitor-right; }
+    Mod+Shift+M     { focus-monitor-left; }
+    Mod+Shift+N     { focus-monitor-down; }
+    Mod+Shift+E     { focus-monitor-up; }
+    Mod+Shift+I     { focus-monitor-right; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
     Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+M     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+N     { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+E     { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+I     { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
@@ -274,12 +283,12 @@ binds {
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
-    Mod+U              { focus-workspace-down; }
-    Mod+I              { focus-workspace-up; }
+    Mod+L              { focus-workspace-down; }
+    Mod+U              { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+Ctrl+L         { move-column-to-workspace-down; }
+    Mod+Ctrl+U         { move-column-to-workspace-up; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
@@ -287,8 +296,8 @@ binds {
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
-    Mod+Shift+U         { move-workspace-down; }
-    Mod+Shift+I         { move-workspace-up; }
+    Mod+Shift+L         { move-workspace-down; }
+    Mod+Shift+U         { move-workspace-up; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
@@ -381,7 +390,7 @@ binds {
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
     // This bind corresponds to normal window maximizing,
     // e.g. by double-clicking on the titlebar.
-    Mod+M { maximize-window-to-edges; }
+    // Mod+M { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -439,7 +448,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    // Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
