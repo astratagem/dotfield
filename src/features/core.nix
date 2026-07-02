@@ -128,7 +128,7 @@ in
         };
 
         home.packages = [
-          pkgs.biff # BurntSushi's datetime calc/parser/formatting utility
+          pkgs.bttf # BurntSushi's datetime calc/parser/formatting utility
           pkgs.csvkit # Standard toolkit for CSV manipulation
         ];
       };
