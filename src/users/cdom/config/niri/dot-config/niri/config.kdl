@@ -102,7 +102,16 @@ workspace "chat"
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="mpv"
+
     open-floating true
+}
+
+window-rule {
+    match app-id="^1password$" title="^.+ — Password — 1Password$"
+
+    open-floating true
+    default-column-width { fixed 640; }
+    default-window-height { fixed 320; }
 }
 
 window-rule {
