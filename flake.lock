@@ -159,11 +159,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1781101720,
-        "narHash": "sha256-9bIzUG6FfMebvgdohB1X5LqtNvxLGsZ23YGNyRythLw=",
+        "lastModified": 1783714364,
+        "narHash": "sha256-U8MSJ/rskZJt/gmZIBCisVVr5I1MTWsiQEy4uQiQhxo=",
         "owner": "kleinweb",
         "repo": "beams",
-        "rev": "142fa65fe61a1bee5de78eb6e307db4f6aa644c3",
+        "rev": "ba45b2913c011d9da87753cce7c770dcfd6d7b44",
         "type": "github"
       },
       "original": {
