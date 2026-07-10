@@ -115,7 +115,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="1Password$"
+    match app-id="^1password$"
     match app-id="^org\\.keepassxc\\.KeePassXC$"
     match app-id="^org\\.gnome\\.World\\.Secrets$"
     block-out-from "screen-capture"
