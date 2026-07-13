@@ -22,6 +22,7 @@ in
       });
 
       commonPkgs = with pkgs; [
+        bashInteractive
         biome
         just
         npins

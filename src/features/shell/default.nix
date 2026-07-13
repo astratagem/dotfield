@@ -28,6 +28,7 @@
         programs.zellij.enable = true;
 
         home.packages = [
+          pkgs.bashInteractive
           pkgs.duf # <- du/df alternative
           pkgs.fx
           pkgs.glow
