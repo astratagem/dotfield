@@ -139,6 +139,7 @@
     "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
     "defaultMode": "default"
   },
+  "model": "opus",
   "enabledPlugins": {
     "commit-commands@claude-plugins-official": true,
     "document-skills@anthropic-agent-skills": true,
@@ -156,6 +157,7 @@
   },
   "outputStyle": "Explanatory",
   "alwaysThinkingEnabled": true,
+  "tui": "fullscreen",
   "verbose": true,
-  "model": "opus"
+  "effortLevel": "medium"
 }
