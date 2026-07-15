@@ -92,14 +92,8 @@
 
       stylix.targets.floorp.enable = false;
       stylix.targets.librewolf.enable = false;
-      stylix.targets.firefox.profileNames = [
-        "home"
-        "work"
-      ];
+      stylix.targets.firefox.profileNames = [ "primary" ];
       stylix.targets.vscode.profileNames = [ "default" ];
-      # FIXME: infinite recursion why?
-      # stylix.targets.firefox.profileNames = builtins.attrNames config.programs.firefox.profiles;
-      # stylix.targets.vscode.profileNames = builtins.attrNames config.programs.vscode.profiles;
 
       # TODO: move this to common aspect
       fonts.fontconfig.enable = true;

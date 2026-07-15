@@ -80,8 +80,6 @@ flake@{ ... }:
         };
 
         startup = [
-          # { command = app "firefox --profile ~/.mozilla/firefox/home"; }
-          # { command = app "firefox --profile ~/.mozilla/firefox/work"; }
           { command = "emacs"; }
           { command = "waypaper --restore"; }
         ];

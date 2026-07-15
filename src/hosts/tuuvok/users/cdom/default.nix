@@ -31,10 +31,6 @@ flake@{ ... }:
       configuration =
         { pkgs, ... }:
         {
-          # FIXME: maybe?
-          # programs.firefox.profiles.work.isDefault = true;
-          # programs.firefox.profiles.home.isDefault = false;
-
           programs.jujutsu.signing.gpg.enable = true;
           programs.jujutsu.signing.onPush = true;
 
