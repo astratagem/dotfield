@@ -1,20 +1,23 @@
-# https://github.com/wp-cli/wp-cli/blob/349cf0c4ff3135a063184b49a9a6f85654b50c45/utils/wp.fish
-function __wp_cli_complete
-    # Get current buffer and cursor
-    set --local COMP_LINE (commandline)
-    set --local COMP_POINT (commandline -C)
+# https://gist.github.com/peterjaffray/0f2bdc0b297a87d5aada90e62816e11d
 
-    # Get valid completions from wp-cli
-    set --local opts (wp cli completions --line=$COMP_LINE --point=$COMP_POINT)
+function __wp_complete
+    set -l old_ifs $IFS
+    set -l cur (commandline -ct)
 
-    # wp-cli will indicate if it needs a file
-    if string match -qe "<file> " -- $opts
-        command ls -1
+    set IFS \n
+    set -l opts (wp cli completions --line=(commandline) --point=(commandline -C))
+
+    if string match -q --regex "\<file\>\s*" $opts
+        return (commandline -f)
+    else if test -z "$opts"
+        return (commandline -f)
     else
-        # Remove unnecessary double spaces that wp-cli splits options with
-        string trim -- $opts
-        # `string` echoes each result on a newline.
-        # Which is then collected for use with the `-a` flag for `complete`.
+        for opt in $opts
+            printf '%s\n' $opt
+        end
     end
+
+    set IFS $old_ifs
 end
-complete -f -a "(__wp_cli_complete)" wp
+
+complete -c wp -f -a "(__wp_complete)"
