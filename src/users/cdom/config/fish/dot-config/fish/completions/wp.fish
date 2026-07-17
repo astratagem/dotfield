@@ -7,7 +7,7 @@ function __wp_complete
     set IFS \n
     set -l opts (wp cli completions --line=(commandline) --point=(commandline -C))
 
-    if string match -q --regex "\<file\>\s*" $opts
+    if string match -q --regex -- "\<file\>\s*" $opts
         return (commandline -f)
     else if test -z "$opts"
         return (commandline -f)
