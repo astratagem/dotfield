@@ -2,47 +2,47 @@
 matches:
   - replace: ←
     triggers:
-      - :arrll
-      - :arrww
+      - ;arrll
+      - ;arrww
   - replace: →
     triggers:
-      - :arrrr
-      - :arree
+      - ;arrrr
+      - ;arree
   - replace: ↑
     triggers:
-      - :arrnn
+      - ;arrnn
   - replace: ↓
     triggers:
-      - :arrss
+      - ;arrss
   - replace: ↖
     triggers:
-      - :arrnw
+      - ;arrnw
   - replace: ↗
     triggers:
-      - :arrne
+      - ;arrne
   - replace: ↘
     triggers:
-      - :arrse
+      - ;arrse
   - replace: ↙
     triggers:
-      - :arrsw
+      - ;arrsw
   - replace: ↕
     triggers:
-      - :arrns
+      - ;arrns
   - replace: ↔
     triggers:
-      - :arrlr
+      - ;arrlr
   - replace: ⇑
     triggers:
-      - :arr=nn
+      - ;arr=nn
   - replace: ⇓
     triggers:
-      - :arr=ss
+      - ;arr=ss
   - replace: ⇒
     triggers:
-      - :arr=ee
-      - :arr=rr
+      - ;arr=ee
+      - ;arr=rr
   - replace: ⇐
     triggers:
-      - :arr=ww
-      - :arr=ll
+      - ;arr=ww
+      - ;arr=ll
