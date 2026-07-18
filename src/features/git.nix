@@ -66,7 +66,7 @@ in
         };
 
         home.packages = [
-          pkgs.codeberg-cli
+          pkgs.forgejo-cli # +Codeberg
           pkgs.gh
           pkgs.glab
           pkgs.hub
