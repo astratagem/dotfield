@@ -25,5 +25,37 @@
         };
         directories.cache_dir = "${xdg.cacheHome}/tealdeer";
       };
+
+      programs.television.channels = {
+        tldr = {
+          metadata = {
+            description = "Browse and preview TLDR help pages";
+            name = "tldr";
+            requirements = [ "tldr" ];
+          };
+          actions = {
+            open = {
+              command = "tldr '{}' | less";
+              description = "Open TLDR page in pager";
+              mode = "fork";
+            };
+          };
+          keybindings = {
+            ctrl-e = "actions:open";
+          };
+          preview = {
+            command = "tldr '{}'";
+          };
+          source = {
+            command = "tldr --list";
+          };
+          ui = {
+            preview_panel = {
+              size = 60;
+            };
+          };
+        };
+
+      };
     };
 }
