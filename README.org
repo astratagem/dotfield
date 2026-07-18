@@ -1,8 +1,6 @@
 #+name: Dotfield
-#+author: Chris Montgomery <chmont@proton.me>
+#+author: Chris Montgomery <chmont@protonmail.com>
 #+language: en
-
-[[https://builtwithnix.org][https://builtwithnix.org/badge.svg]]
 
 #+begin_quote
 The map is open and connectable in all of its dimensions; it is
@@ -11,19 +9,16 @@ map has to do with performance, whereas the tracing always involves an
 alleged "competence".
 #+end_quote
 
-My worlds and systems, a nutrient-rich collection of typos feeding the
-hungry heads of a talking planet, "oriented toward an experimentation in
-contact with the real".
+You are currently viewing the README for someone's collection of
+personal computer system configurations.
 
-* Disclaimerisms
-:PROPERTIES:
-:CUSTOM_ID: disclaimerisms
-:END:
-
-These are my personal configurations and are not intended for use as a
-template, but you are welcome to do so if you like!  I hope visitors
-manage to find something helpful/inspiring/interesting, but please keep
-in mind that /I have no idea what I'm doing/.
+These are personal configurations and are not intended for anyone else's
+direct usage.  I do not recommend starting a journey by copying someone
+else's world-view and claiming it as your own—beware all frameworks!—but
+I do recommend considering multiple perspectives as you develop your
+own.  Perhaps you will find some ideas contained in this project helpful
+in your own computing experiments.  While there is and never will be a
+warranty, I will gladly discuss or attempt to address any questions.
 
 Dotfield does not embody "best practices" or "the right way to Nix".  The
 project exists as an evolving and unstable result of one amateur's take
@@ -173,49 +168,6 @@ pass show age--secret-key >> $XDG_CONFIG_HOME/sops/age/keys
 I still don't know what I'm doing.  Maybe one day I will have enough of
 an idea that I can write it down with any amount of coherence.  Or maybe
 I'm doing it all backwards...?
-
-* Grafts
-:PROPERTIES:
-:CUSTOM_ID: grafts
-:END:
-
-- Note taken on [2024-04-10 Wed 20:39] \\
-  I began the process of converting some of these items to Org headings with tags.
-
-Generally in order of [[https://en.wikipedia.org/wiki/Frecency][frecency]], along with an optional description of reasons
-for inclusion.
-
-More recently, I've aimed to reference sources with comments and SPDX
-headings in relevant files.
-
-** [[https://m7.rs/git/nix-config/][m7.rs/git/nix-config]] :desktop:
-
-** [[https://github.com/Mic92/dotfiles][github:Mic92/dotfiles]] :networking:secrets_management:
-
-** [[https://github.com/oddlama/nix-config][github:oddlama/nix-config]] :sso:good_docs:microvms:
-
-** [[https://github.com/edmundmiller/dotfiles][github:edmundmiller/dotfiles]] :email:emacs:
-
-** TODO Headings with tags
-
-- [[https://github.com/lovesegfault/nix-config]] :: nixos
-- [[https://github.com/srid/nixos-config]] :: nixos, nix-darwin, vms,
-  simple, nixos-shell
-- [[https://github.com/viperML/dotfiles]] :: nixos, flake-parts,
-  structure
-- [[https://github.com/TLATER/dotfiles]] :: home-manager, structure
-- [[https://github.com/d12frosted/environment]] :: nixos, nix-darwin,
-  world-building, emacs, docs
-- [[https://github.com/colemickens/nixcfg]] :: nixos, extensive, fun
-- [[https://github.com/cole-h/nixos-config/]] :: nixos, media server
-- [[https://github.com/kclejeune/system]] :: nixos, home-manager
-- [[https://github.com/Xe/nixos-configs]] :: networking, extensive
-- [[https://github.com/sei40kr/dotfiles]]
-- [[https://github.com/hlissner/dotfiles]] :: nixos, libs, original,
-  structure, homes w/o home-manager
-- [[https://github.com/malob/nixpkgs]] :: nix-darwin, docs
-- [[https://github.com/ahmedelgabri/dotfiles]]
-- [[https://github.com/cmacrae/config]] :: nix-darwin, nixos, emacs
 
 * Systems
 :PROPERTIES:
@@ -481,173 +433,3 @@ chewed through the LCD screen.  We did not speak for a week.
 
 Still works, but unusable without external display.  Suffers from
 congenital Butterfly Keyboard Syndrome.
-
-* Notes
-:PROPERTIES:
-:CUSTOM_ID: notes
-:END:
-
-Mostly opinions and rants, some of which will likely be removed in time.
-
-** GNOME Desktop
-:PROPERTIES:
-:CUSTOM_ID: gnome-desktop
-:END:
-
-It's been the default desktop environment for my graphical NixOS
-configurations, but only because it "just works".  In actuality, while it
-"works", it *just* works.  Its primary method of configuration is based
-on the state of user-selected options in GUIs, hiding the configuration
-behind opaque UX
-
-There is, I'm sure, a specific term for this particular application
-design fallacy, perhaps best summarized by WordPress' infamous
-"decisions not options" aphorism and embodied in Apple software and
-hardware.  While it looks pretty and looks like it has "good UX", like
-macOS (and Apple software in general), it has so much useless clutter
-and ends up breaking in weird ways.
-
-*** Definitions + Resources
-:PROPERTIES:
-:CUSTOM_ID: definitions-resources
-:END:
-
-=gsettings= is a command-line interface for =dconf= schema
-introspection.  It's useful for getting/setting the current value of a
-setting and for scripting necessarily-stateful settings like theme
-appearance variants.
-
-=dconf= is the underlying backend, a database store.
-
-"dconf Editor" is a GUI application for quick and direct interaction
-with available settings, similar to Firefox's =about:config= page.
-
-*** Configuring GNOME via =home-manager=
-:PROPERTIES:
-:CUSTOM_ID: configuring-gnome-via-home-manager
-:ID:       5da0abed-8fc0-4cff-921c-bdfc12107c60
-:END:
-
-
-Use [[https://github.com/gvolpe/dconf2nix][gvolpe/dconf2nix: :feet: Convert
-Dconf files (e.g. Gnome Shell) to Nix, as expected by Home Manager]] in
-combination with [[https://github.com/nix-community/home-manager/blob/master/modules/misc/dconf.nix][home-manager/modules/misc/dconf.nix at master ·
-nix-community/home-manager]]
-
-*** Seahorse / =gnome-keyring-daemon=
-:PROPERTIES:
-:CUSTOM_ID: seahorse-gnome-keyring-daemon
-:END:
-
-Unreliable and clunky.
-
-**** Default keyring lockouts
-:PROPERTIES:
-:CUSTOM_ID: default-keyring-lockouts
-:END:
-
-On multiple occasions, I've gotten locked out of the default keyring,
-which is supposed to be the same as the login password.  Deleting a
-couple files resets it:
-
-#+begin_src sh
-rm ~/.local/share/keyrings/{login.keyring,user.keystore}
-#+end_src
-
-[[https://github.com/NixOS/nixpkgs/issues/174099]]
-
-**** Undismissible modal prompt
-:PROPERTIES:
-:CUSTOM_ID: undismissible-modal-prompt
-:END:
-
-When I first activated the Nextcloud Client application on boschic, I
-was prompted to unlock the =default= keyring.  But because I was locked
-out, I needed to dismiss the prompt.  The prompt immediately reappeared.
-
-Because the GNOME prompts are "accessible", there is no way to escape
-focus other than pressing cancel.  That means that a process can spam
-request a prompt indefinitely, with no way to kill the process from
-within the GNOME session.  I had to resort to C-M-F1 to switch to the
-virtual console / getty.
-
-On that note, considering that I've disabled getty@tty1 when autologin
-is enabled (due to a NixOS issue), switching tty might not work in those
-scenarios...
-
-** wlroots
-
-*** Compositors
-
-**** Sway (Preferred)
-:PROPERTIES:
-:ID:       5de9ebe0-fd6b-408e-9dc0-24bb8dc12422
-:END:
-
-Nothing to comment upon.  It is the standard.
-
-**** Hyprland (Avoid)
-:PROPERTIES:
-:ID:       95e06cb3-aeff-436f-8e74-3fa269b6cb1d
-:END:
-
-Its maintainer and community have a tendancy towards the toxic.  I am
-not doing this for “the rice”.  While the tool itself looks great, I
-would rather not bother.  I would rather suck less.  This is supposed
-to be enjoyable, and I would prefer to stay away from a fucking window
-manager that leaves me with a bad aftertaste.
-
-*** Tools
-
-**** Launchers
-
-***** =fuzzel= (Preferred)
-:PROPERTIES:
-:ID:       662f50f4-095d-4c7e-ac28-9686c014a4dc
-:END:
-
-**** Lockscreens
-:PROPERTIES:
-:ID:       1a378419-9468-49df-9302-63b43b16bda6
-:END:
-
-***** =waylock= (Avoid)
-:PROPERTIES:
-:ID:       9143f3f7-1c60-4912-9d01-2a468ed43fe4
-:END:
-
-Avoid.
-
-+ Maybe locks after three unsuccessful attempts for an unknown number
-  of minutes.
-+ I got locked out after waiting.
-+ Its charm – minimalism – is also its biggest flaw.
-
-** Firefox
-:PROPERTIES:
-:CUSTOM_ID: firefox
-:END:
-
-I really do want a browser to "just work", but with the option to
-configure frustrating things like...  keyboard shortcuts...  which Firefox
-does not support.  The question is: do any browsers?  I am not yet sure.
-
-*** Customizing keyboard shortcuts
-:PROPERTIES:
-:CUSTOM_ID: customizing-keyboard-shortcuts
-:END:
-
-TL;DR Nope, forget it.
-
-[[https://support.mozilla.org/bm/questions/1381773]]
-
-there is no way to customize internal keyboard shortcuts.  this should be
-considered a bug, not a feature request.  but it's considered an "idea"
-in a community feedback forum, with no indication as to whether it
-matters to Mozilla or not.
-
-i wonder whether the community forum is intended to act as a buffer zone
-/ feedback echo chamber to keep users out of the internal bug trackers.
-Mozilla has to actually consider and prioritize user feedback from this
-forum, otherwise why does it exist?  Is there any evidence of such a
-process?
