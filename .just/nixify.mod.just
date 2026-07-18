@@ -5,7 +5,7 @@ dconf-dump-tmpfile := data-dir / "dconf.settings"
 dconf-output-file := data-dir / "dconf.settings.nix"
 
 [no-cd]
-all ext input-dir output-dir:
+all ext input-dir output-dir=data-dir:
   fd -t f -e {{ ext }} . {{ input-dir }} -x bash -c \
     'just nixify {{ ext }} {} | nixfmt > {{ output-dir }}/{/.}.nix'
 
