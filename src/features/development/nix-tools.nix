@@ -1,5 +1,7 @@
 {
   aspects.development.home = { pkgs, ... }: {
+    programs.nix-search-tv.enable = true;
+
     home.packages = [
       pkgs.nix-init
       pkgs.nix-inspect
@@ -8,20 +10,5 @@
       pkgs.nixfmt
       pkgs.nixpkgs-review
     ];
-
-    programs.television.channels = {
-      nix-search = {
-        metadata = {
-          name = "nix-search";
-          requirements = [ "nix-search-tv" ];
-        };
-        preview = {
-          command = "nix-search-tv preview {}";
-        };
-        source = {
-          command = "nix-search-tv print";
-        };
-      };
-    };
   };
 }
