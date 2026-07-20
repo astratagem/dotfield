@@ -3,7 +3,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = [
-        pkgs.wineWowPackages.waylandFull
+        pkgs.wineWow64Packages.waylandFull
 
         pkgs.wineasio
         pkgs.winetricks
