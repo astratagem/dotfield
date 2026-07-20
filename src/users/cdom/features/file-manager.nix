@@ -6,7 +6,6 @@ let
     show-size-column = true;
     show-type-column = true;
     sort-column = "name";
-    sort-directories-first = true;
     sort-order = "ascending";
     type-format = "category";
   };
