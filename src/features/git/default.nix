@@ -22,30 +22,6 @@ in
         programs.git = {
           enable = true;
           package = pkgs.gitFull;
-          ignores = [
-            # OS or Editor files
-            "._*"
-            ".DS_Store"
-            ".DS_Store?"
-            "ehthumbs.db"
-            "Thumbs.db"
-            ".tern-project"
-
-            # Files that might appear on external disks
-            ".Spotlight-V100"
-            ".Trashes"
-
-            # Always-ignore extensions
-            "*~"
-            "*.err"
-            "*.orig"
-            "*.pyc"
-            "*.rej"
-            "*.sw?"
-            "*.vi"
-            "*.bak"
-          ];
-
           settings = {
             alias = {
               snapshot = ''!git stash save "snapshot: $(date)" && git stash apply "stash@{0}"'';
@@ -64,26 +40,12 @@ in
             pager.difftool = true;
           };
         };
-
-        home.packages = [
-          pkgs.forgejo-cli # +Codeberg
-          pkgs.gh
-          pkgs.glab
-          pkgs.hub
-          pkgs.hut # <- a sourcehut CLI (unofficial)
-        ];
-
-        programs.gh.enable = true;
-        programs.gh.settings.git_protocol = lib.mkDefault "ssh";
       }
       (lib.mkIf (!isEmpty (whoami.name or false)) {
         programs.git.settings.user.name = whoami.name;
       })
       (lib.mkIf (!isEmpty (whoami.email.primary or false)) {
         programs.git.settings.user.email = whoami.email.primary;
-      })
-      (lib.mkIf (!isEmpty (whoami.accounts.github or false)) {
-        programs.git.settings.github.user = whoami.accounts.github;
       })
     ];
 }
