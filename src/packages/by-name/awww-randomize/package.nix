@@ -1,13 +1,13 @@
 {
   coreutils,
-  swww,
+  awww,
   writeShellApplication,
 }:
 writeShellApplication {
-  name = "swww-randomize";
+  name = "awww-randomize";
   runtimeInputs = [
     coreutils
-    swww
+    awww
   ];
   text = builtins.readFile ./script.sh;
 }
