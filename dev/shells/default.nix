@@ -55,6 +55,11 @@ in
         inputs'.colmena.packages.colmena
       ];
 
+      nixifyPkgs = [
+        pkgs.crudini # for dconf dump editing
+        pkgs.yq-go
+      ];
+
       secretsPkgs = [
         inputs'.sops-nix.packages.sops-import-keys-hook
         inputs'.sops-nix.packages.ssh-to-pgp
@@ -73,6 +78,7 @@ in
         ++ checksPkgs
         ++ formatterPkgs
         ++ maintenancePkgs
+        ++ nixifyPkgs
         ++ secretsPkgs
         ++ config.pre-commit.settings.enabledPackages
         ++ [
