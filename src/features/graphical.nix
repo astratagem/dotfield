@@ -65,11 +65,13 @@
       programs.zathura.enable = true;
 
       home.packages = [
+        pkgs.chafa # terminal image previewer
         pkgs.dex # helper for working with xdg desktop entries
         pkgs.imagemagick
         pkgs.mediainfo
         pkgs.signal-desktop
         pkgs.thunderbird-latest
+        pkgs.trash-cli
       ];
 
       xdg.userDirs = {

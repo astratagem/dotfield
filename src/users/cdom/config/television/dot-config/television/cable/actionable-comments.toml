@@ -1,0 +1,28 @@
+[metadata]
+name = "actionable-comments"
+description = "Find actionable comments (e.g. TODO, FIXME, HACK, etc.) in codebase"
+requirements = ["rg", "bat"]
+
+[source]
+command = "rg -n --color=always '(TODO|FIXME|HACK|XXX|BUG|WARN):?'"
+ansi = true
+output = "{strip_ansi|split:\\::..2}"
+
+[preview]
+command = "bat -n --color=always --highlight-line '{strip_ansi|split:\\::1}' '{strip_ansi|split:\\::0}'"
+offset = "{strip_ansi|split:\\::1}"
+
+[keybindings]
+enter = "actions:edit"
+
+[preview.env]
+BAT_THEME = "ansi"
+
+[ui.preview_panel]
+header = "{strip_ansi|split:\\::..2}"
+
+[actions.edit]
+description = "Open file in editor at the comment"
+command = "${EDITOR:-vim} '+{strip_ansi|split:\\::1}' '{strip_ansi|split:\\::0}'"
+shell = "bash"
+mode = "execute"

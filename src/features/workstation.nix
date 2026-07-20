@@ -39,11 +39,8 @@
           pkgs.kdePackages.okular
           pkgs.libreoffice-fresh
           pkgs.pdfarranger
-          # TODO: ideally this would only be included at the
-          # intersection of "graphical" and "mail" aspects, but there is
-          # currently no mechanism to achieve that. (i'm thinking
-          # module args / specialArgs of all active aspects...)
           pkgs.python313Packages.weasyprint # archive webpages to PDF
+          pkgs.unicode-character-database
           pkgs.visidata
           pkgs.vscode
           pkgs.xlsx2csv
