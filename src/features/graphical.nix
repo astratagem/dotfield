@@ -33,6 +33,7 @@
         adwaita-icon-theme
         dconf-editor
         dconf2nix
+        drm_info
         file-roller
         foot
         glib # provides gsettings
@@ -44,6 +45,7 @@
         nautilus
         wev
         wl-clipboard
+        wlr-randr
         wtype # abandoned?
         ydotool
       ];
