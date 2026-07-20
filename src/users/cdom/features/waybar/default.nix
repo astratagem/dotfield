@@ -16,7 +16,7 @@
 
       programs.waybar.enable = false;
       programs.waybar.systemd.enable = true;
-      programs.waybar.systemd.target = "tray.target";
+      programs.waybar.systemd.targets = [ "tray.target" ];
       programs.waybar.style = ''
         @import "./custom.css";
       '';
