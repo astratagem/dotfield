@@ -4,7 +4,8 @@
     {
       home.packages = [
         pkgs.darktable
-        pkgs.dia
+        # FIXME: 2026-07-20 failing build
+        # pkgs.dia
         pkgs.digikam
         pkgs.gimp-with-plugins
         pkgs.gthumb
