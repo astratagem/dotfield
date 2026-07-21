@@ -9,14 +9,14 @@
       stylix.enable = true;
 
       # Default to dark theme (base configuration before specialisation)
-      stylix.base16Scheme = toColorSchemePath "catppuccin-mocha";
+      stylix.base16Scheme = toColorSchemePath "penumbra-dark";
 
       specialisation = {
         dark.configuration = {
-          stylix.base16Scheme = lib.mkForce (toColorSchemePath "catppuccin-mocha");
+          stylix.base16Scheme = lib.mkForce (toColorSchemePath "penumbra-dark");
         };
         light.configuration = {
-          stylix.base16Scheme = lib.mkForce (toColorSchemePath "catppuccin-latte");
+          stylix.base16Scheme = lib.mkForce (toColorSchemePath "penumbra-light");
         };
       };
     };

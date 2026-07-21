@@ -1,0 +1,39 @@
+/* @import "./penumbra.css"; */
+
+:root {
+  --color-shade-minus: #24272B;
+  --color-shade: #303338;
+  --color-shade-plus: #3E4044;
+  --color-sky-minus: #636363;
+  --color-sky: #8F8F8F;
+  --color-sky-plus: #BEBEBE;
+  --color-sun-minus: #F2E6D4;
+  --color-sun: #FFF7ED;
+  --color-sun-plus: #FFFDFB;
+  --color-red: #CA736C;
+  --color-orange: #BA823A;
+  --color-yellow: #8D9741;
+  --color-green: #47A477;
+  --color-cyan: #00A2AF;
+  --color-blue: #5794D0;
+  --color-purple: #9481CC;
+  --color-magenta: #BC73A4;
+
+  --base00: var(--color-shade-minus);
+  --base01: var(--color-shade);
+  --base02: var(--color-shade-plus);
+  --base03: var(--color-sky-minus);
+  --base04: var(--color-sky);
+  --base05: var(--color-sky-plus);
+  --base06: var(--color-sun);
+  --base07: var(--color-sun-plus);
+
+  --base08: var(--color-red);
+  --base09: var(--color-orange);
+  --base0A: var(--color-yellow);
+  --base0B: var(--color-green);
+  --base0C: var(--color-cyan);
+  --base0D: var(--color-blue);
+  --base0E: var(--color-purple);
+  --base0F: var(--color-magenta);
+}

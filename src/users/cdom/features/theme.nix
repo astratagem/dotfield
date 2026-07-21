@@ -14,8 +14,8 @@
       toColorSchemePath = scheme: "${pkgs.base16-schemes}/share/themes/${scheme}.yaml";
 
       schemes = {
-        dark = "catppuccin-mocha";
-        light = "catppuccin-latte";
+        dark = "penumbra-dark";
+        light = "penumbra-light";
       };
 
       cursors = {

@@ -1,0 +1,19 @@
+:root {
+  --color-shade-minus: #24272B;
+  --color-shade: #303338;
+  --color-shade-plus: #3E4044;
+  --color-sky-minus: #636363;
+  --color-sky: #8F8F8F;
+  --color-sky-plus: #BEBEBE;
+  --color-sun-minus: #F2E6D4;
+  --color-sun: #FFF7ED;
+  --color-sun-plus: #FFFDFB;
+  --color-red: #CA736C;
+  --color-orange: #BA823A;
+  --color-yellow: #8D9741;
+  --color-green: #47A477;
+  --color-cyan: #00A2AF;
+  --color-blue: #5794D0;
+  --color-purple: #9481CC;
+  --color-magenta: #BC73A4;
+}
