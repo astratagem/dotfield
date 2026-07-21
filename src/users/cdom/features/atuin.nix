@@ -28,5 +28,8 @@
       # Opt in to new sync version for existing installs.
       sync.records = true;
     };
+
+    # Override Ctrl+R binding.
+    programs.fzf.historyWidget.command = "";
   };
 }
