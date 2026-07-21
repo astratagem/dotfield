@@ -95,7 +95,7 @@
     ##: customisation
     base16-schemes.url = "github:montchr/nix-base16-schemes";
     base16-schemes.inputs.nixpkgs.follows = "nixpkgs";
-    ironbar.url = "github:JakeStanger/ironbar";
+    ironbar.url = "github:JakeStanger/ironbar?ref=v0.19.0";
     ironbar.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
 
