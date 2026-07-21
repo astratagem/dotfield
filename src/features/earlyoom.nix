@@ -6,7 +6,7 @@
       let
         catPatterns = patterns: builtins.concatStringsSep "|" patterns;
         preferPatterns = [
-          ".firefox-wrappe"
+          ".?firefox"
           "ipfs"
           "java" # If it's written in java it's uninmportant enough it's ok to kill it
         ];
@@ -22,8 +22,10 @@
         ];
       in
       [
-        "--prefer '^(${catPatterns preferPatterns})$'"
-        "--avoid '^(${catPatterns avoidPatterns})$'"
+        "--prefer"
+        "'^(${catPatterns preferPatterns})'"
+        "--avoid"
+        "'^(${catPatterns avoidPatterns})'"
       ];
   };
 
