@@ -73,6 +73,8 @@
         };
       };
 
+      # TODO: remove when merged: <https://github.com/nix-community/stylix/pull/2407>
+      home.pointerCursor.enable = true;
       # alternatively: posy-cursors / graphite-cursors / vanilla-dmz /
       # catppuccin-cursors / hackneyed-x11-cursors / openzone-cursors
       stylix.cursor = {
