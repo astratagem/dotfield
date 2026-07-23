@@ -19,8 +19,10 @@
       };
 
       cursors = {
-        dark = "phinger-cursors-dark";
-        light = "phinger-cursors-light";
+        dark = "Hackneyed";
+        light = "Hackneyed";
+        # dark = "phinger-cursors-dark";
+        # light = "phinger-cursors-light";
       };
 
       wallpaperDark = "rougier--recursive-voronoi--inverted.png";
