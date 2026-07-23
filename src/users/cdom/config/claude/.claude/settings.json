@@ -156,8 +156,8 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "outputStyle": "Explanatory",
-  "alwaysThinkingEnabled": true,
+  "alwaysThinkingEnabled": false,
+  "effortLevel": "medium",
   "tui": "fullscreen",
-  "verbose": true,
-  "effortLevel": "medium"
+  "verbose": true
 }
