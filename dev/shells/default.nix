@@ -30,7 +30,6 @@ in
       ];
 
       checksPkgs = [
-        pkgs.biome
         pkgs.deadnix
         pkgs.editorconfig-checker
         nix-unit
