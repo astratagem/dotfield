@@ -60,8 +60,6 @@
         sansSerif = {
           name = "Inter";
           package = pkgs.inter;
-          # name = "Berkeley Mono";
-          # package = perSystem.config.packages.berkeley-mono;
         };
 
         serif = {
