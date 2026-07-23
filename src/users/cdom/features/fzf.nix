@@ -17,7 +17,7 @@ in
           "--inline-info"
           "--color=16"
         ];
-        fileWidgetCommand = cmd pkgs.fd {
+        fileWidget.command = cmd pkgs.fd {
           type = "file";
           hidden = true;
           follow = true;
@@ -30,13 +30,13 @@ in
           ];
         };
         # TODO: use `bat` -- see `igr` package source for example (doesn't include `head`-like tho)
-        fileWidgetOptions = [ "--preview 'head {}'" ];
-        changeDirWidgetCommand = cmd pkgs.fd { "type" = "directory"; };
-        changeDirWidgetOptions = [
+        fileWidget.options = [ "--preview 'head {}'" ];
+        changeDirWidget.command = cmd pkgs.fd { "type" = "directory"; };
+        changeDirWidget.options = [
           "--tiebreak=index"
           "--preview '${dirPreviewCommand}'"
         ];
-        historyWidgetOptions = [
+        historyWidget.options = [
           "--sort"
           "--exact"
         ];
