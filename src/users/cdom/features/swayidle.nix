@@ -17,7 +17,7 @@
         # FIXME: this isn't quite right, but the daemon needs to be
         # activated after the session is ready.  the defaults aren't
         # cutting it.
-        systemdTarget = "tray.target";
+        systemdTargets = [ "tray.target" ];
         timeouts = [
           {
             timeout = lockTime;
