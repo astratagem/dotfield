@@ -159,5 +159,6 @@
   "alwaysThinkingEnabled": false,
   "effortLevel": "medium",
   "tui": "fullscreen",
+  "theme": "auto",
   "verbose": true
 }
