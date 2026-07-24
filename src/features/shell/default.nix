@@ -7,6 +7,7 @@
         environment.shells = [
           pkgs.bashInteractive
           pkgs.fish
+          pkgs.nushell
         ];
       };
 

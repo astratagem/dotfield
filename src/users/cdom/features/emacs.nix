@@ -11,12 +11,9 @@
     {
       programs.emacs.ceamx.enable = true;
 
-      home = {
-        inherit sessionVariables;
-      };
-      programs.bash = {
-        inherit sessionVariables;
-      };
+      home = { inherit sessionVariables; };
+      programs.bash = { inherit sessionVariables; };
+      programs.nushell.settings.buffer_editor = [ "emacsclient -tc" ];
     }
   );
 }
