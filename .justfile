@@ -116,10 +116,9 @@ emacs-eval-cmd := "emacsclient --no-wait --eval"
 gtk-ui-schema := "org.gnome.desktop.interface"
 
 # <- Set the theme for all applications (rebuilds with the chosen polarity)
-# NOTE: Existing Ghostty windows require manual reload (Ctrl+Shift+,)
 [linux]
 theme kind='dark': && (wm-set-theme kind)
-  DOTFIELD_POLARITY={{ kind }} {{cachix-exec}} nh -- os switch "{{ prj-root }}"
+  DOTFIELD_POLARITY={{ kind }} nh os switch "{{ prj-root }}" -- --impure
   {{ emacs-eval-cmd }} '(ceamx-ui/{{ kind }})'
 
 # <- Use the 'light' theme for all applications
