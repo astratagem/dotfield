@@ -3,7 +3,11 @@ let
   inherit (config.meta) hosts keys;
 in
 {
-  users.cdom = { };
+  users.cdom = {
+    aspects.core.home = {
+      sops.defaultSopsFile = ./secrets/secrets.yaml;
+    };
+  };
 
   meta.users.cdom = {
     keys.ssh = [
