@@ -91,7 +91,6 @@
 
           ## Document viewers:
           pix # image manager
-          swayimg
           zathura
 
           ## Wallpaper:
