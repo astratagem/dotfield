@@ -12,20 +12,21 @@
           "apparat",
           "flake-parts",
           "nixpkgs-lib"
-        ]
+        ],
+        "systems": "systems"
       },
       "locked": {
-        "lastModified": 1758898369,
-        "narHash": "sha256-nTfGE/1sjOXYDdjmXWx8OTw2Wp1zkwl5862fBTP5gbU=",
-        "owner": "montchr",
-        "repo": "apparat",
-        "rev": "c32ab17c6936dc57c934e50a0930a49ad7fa64ad",
-        "type": "github"
+        "lastModified": 1784937763,
+        "narHash": "sha256-70hliTUG/8Y9vwQal5MMFIAk8EW65hznSytDwzfBIQ4=",
+        "ref": "refs/heads/main",
+        "rev": "63ec163fb61f71afa867f6f07f6878ca81461886",
+        "revCount": 128,
+        "type": "git",
+        "url": "ssh://git@codeberg.org/astratagem/apparat.git"
       },
       "original": {
-        "owner": "montchr",
-        "repo": "apparat",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://git@codeberg.org/astratagem/apparat.git"
       }
     },
     "asahi-tuuvok-firmware": {
@@ -773,7 +774,7 @@
     },
     "flake-utils_3": {
       "inputs": {
-        "systems": "systems"
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -1057,7 +1058,7 @@
         "bun2nix": "bun2nix",
         "flake-parts": "flake-parts_5",
         "nixpkgs": "nixpkgs_10",
-        "systems": "systems_2",
+        "systems": "systems_3",
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
@@ -2165,7 +2166,7 @@
         "gnome-shell": "gnome-shell",
         "nixpkgs": "nixpkgs_14",
         "nur": "nur",
-        "systems": "systems_3",
+        "systems": "systems_4",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
         "tinted-tmux": "tinted-tmux",
@@ -2216,6 +2217,21 @@
       }
     },
     "systems_3": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_4": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

@@ -49,7 +49,7 @@
     nixpkgs-apple-silicon.follows = "nixos-apple-silicon/nixpkgs";
 
     ##: core libraries
-    apparat.url = "github:montchr/apparat";
+    apparat.url = "git+ssh://git@codeberg.org/astratagem/apparat.git";
     dmerge = {
       url = "github:divnix/dmerge";
       inputs.haumea.follows = "haumea";
