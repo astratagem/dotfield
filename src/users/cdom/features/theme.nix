@@ -1,4 +1,7 @@
-{ moduleWithSystem, ... }:
+{ moduleWithSystem, self, ... }:
+let
+  inherit (self.lib.theme) polarity toColorSchemePath;
+in
 {
   users.cdom.aspects.graphical.home = moduleWithSystem (
     perSystem@{ config }:
@@ -10,8 +13,6 @@
     }:
     let
       wallpaperDir = "${config.home.homeDirectory}/Pictures/wallpapers/src";
-
-      toColorSchemePath = scheme: "${pkgs.base16-schemes}/share/themes/${scheme}.yaml";
 
       schemes = {
         dark = "penumbra-dark";
@@ -25,29 +26,19 @@
         # light = "phinger-cursors-light";
       };
 
-      wallpaperDark = "rougier--recursive-voronoi--inverted.png";
-      wallpaperLight = "rougier--recursive-voronoi.png";
+      wallpapers = {
+        dark = "dark/rougier--recursive-voronoi--inverted.png";
+        light = "light/rougier--recursive-voronoi.png";
+      };
     in
     {
       stylix.enable = true;
 
-      # Default to dark theme (base configuration before specialisation)
-      stylix.base16Scheme = toColorSchemePath schemes.dark;
+      # Select the active theme at build time (see `self.lib.theme.polarity`).
+      # Formerly a dark/light specialisation pair; now a single evaluated theme.
+      stylix.base16Scheme = toColorSchemePath pkgs schemes.${polarity};
 
-      services.wpaperd.settings.any.path = "${wallpaperDir}/dark/${wallpaperDark}";
-
-      specialisation = {
-        dark.configuration = {
-          services.wpaperd.settings.any.path = lib.mkForce "${wallpaperDir}/dark/${wallpaperDark}";
-          stylix.base16Scheme = lib.mkForce (toColorSchemePath schemes.dark);
-          stylix.cursor.name = lib.mkForce cursors.dark;
-        };
-        light.configuration = {
-          services.wpaperd.settings.any.path = lib.mkForce "${wallpaperDir}/light/${wallpaperLight}";
-          stylix.base16Scheme = lib.mkForce (toColorSchemePath schemes.light);
-          stylix.cursor.name = lib.mkForce cursors.light;
-        };
-      };
+      services.wpaperd.settings.any.path = "${wallpaperDir}/${wallpapers.${polarity}}";
 
       stylix.fonts = {
         sizes = {
@@ -78,7 +69,7 @@
       # alternatively: posy-cursors / graphite-cursors / vanilla-dmz /
       # catppuccin-cursors / hackneyed-x11-cursors / openzone-cursors
       stylix.cursor = {
-        name = "Hackneyed";
+        name = cursors.${polarity};
         package = pkgs.hackneyed;
         size = 24;
         # name = cursors.dark;

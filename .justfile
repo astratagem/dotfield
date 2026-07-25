@@ -20,6 +20,13 @@ cachix-cache-name := 'dotfield'
 cachix-jobs := '4'
 cachix-exec := "cachix watch-exec " + cachix-cache-name + " --jobs " + cachix-jobs
 
+##: theme
+# Build-time theme polarity, consumed by `self.lib.theme.polarity` during
+# evaluation (see src/lib/theme.nix).  Exported so every rebuild recipe below
+# sees a consistent value.  `just dark`/`just light` override it per-invocation;
+# a plain `just switch` uses the ambient value, defaulting to "dark".
+export DOTFIELD_POLARITY := env_var_or_default("DOTFIELD_POLARITY", "dark")
+
 ##: directories/paths
 prj-root := env_var('PRJ_ROOT')
 prj-data := env_var('PRJ_DATA_HOME')
@@ -53,9 +60,6 @@ switch *ARGS='':
 
 home args:
   {{cachix-exec}} nh -- home {{prj-root}} {{args}}
-
-home-specialise name:
-  nh home switch {{prj-root}} -s {{name}}
 
 # <- Run flake checks
 check *ARGS:
@@ -109,14 +113,13 @@ ironbar-dev:
 ###: THEME =====================================================================
 
 emacs-eval-cmd := "emacsclient --no-wait --eval"
-kitty-set-colors-cmd := "kitty @set-colors -a -c"
 gtk-ui-schema := "org.gnome.desktop.interface"
 
-# <- Set the theme for all applications
+# <- Set the theme for all applications (rebuilds with the chosen polarity)
 # NOTE: Existing Ghostty windows require manual reload (Ctrl+Shift+,)
 [linux]
 theme kind='dark': && (wm-set-theme kind)
-  nh home switch 'path:{{ prj-root }}' -c '{{ env("USER") }}@{{ `hostname` }}' -s {{ kind }}
+  DOTFIELD_POLARITY={{ kind }} {{cachix-exec}} nh -- os switch "{{ prj-root }}"
   {{ emacs-eval-cmd }} '(ceamx-ui/{{ kind }})'
 
 # <- Use the 'light' theme for all applications

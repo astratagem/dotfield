@@ -9,6 +9,9 @@
       };
     in
     {
+      # The single Emacs toggle: enabling ceamx also turns on `programs.emacs`,
+      # the emacs-unstable-pgtk package, and the emacs-overlay for this user
+      # (wired in src/features/emacs.nix).
       programs.emacs.ceamx.enable = true;
 
       home = { inherit sessionVariables; };

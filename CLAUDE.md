@@ -147,10 +147,15 @@ need runtime updates (Emacs, kitty, GTK).
 
 ## Current Hosts
 
-- **tuvok**: MacBook Air M2 running NixOS via Asahi Linux (daily driver)
+- **tuuvok**: MacBook Air M2 running NixOS via Asahi Linux
+- **riebeck**: Lenovo Thinkpad X1 (13th-gen) laptop
 - **ryosuke**: Teenage Engineering Computer-1 mini-ITX desktop (HTPC/office)
 - **boschic**: Gaming/workstation desktop with RTX 3080 Ti
 - **hodgepodge**: Early-2014 MacBook Pro (retirement/testing)
+
+(Other entries under `src/hosts/` — e.g. `atlantis`, `synoxyn`, `brakhage`,
+`tuvix` — are `meta.hosts.*` metadata/key entries, not full `hosts.nixos.*`
+systems built by this flake.)
 
 ## Development Environment
 

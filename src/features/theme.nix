@@ -1,24 +1,16 @@
-{ lib, ... }:
+{ lib, self, ... }:
+let
+  inherit (self.lib.theme) polarity toColorSchemePath;
+in
 {
   aspects.graphical.nixos =
     { pkgs, ... }:
-    let
-      toColorSchemePath = scheme: "${pkgs.base16-schemes}/share/themes/${scheme}.yaml";
-    in
     {
       stylix.enable = true;
 
-      # Default to dark theme (base configuration before specialisation)
-      stylix.base16Scheme = toColorSchemePath "penumbra-dark";
-
-      specialisation = {
-        dark.configuration = {
-          stylix.base16Scheme = lib.mkForce (toColorSchemePath "penumbra-dark");
-        };
-        light.configuration = {
-          stylix.base16Scheme = lib.mkForce (toColorSchemePath "penumbra-light");
-        };
-      };
+      # Select the active theme at build time (see `self.lib.theme.polarity`).
+      # Formerly a dark/light specialisation pair; now a single evaluated theme.
+      stylix.base16Scheme = toColorSchemePath pkgs "penumbra-${polarity}";
     };
 
   aspects.graphical.home = {

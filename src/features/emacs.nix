@@ -1,24 +1,30 @@
-{ inputs, ... }:
+{ inputs, moduleWithSystem, ... }:
 {
-  aspects.development = {
-    overlays = [ inputs.emacs-overlay.overlays.default ];
+  aspects.development.home = moduleWithSystem (
+    perSystem@{ inputs' }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    {
+      imports = [
+        inputs.ceamx.modules.homeManager.ceamx
+      ];
 
-    home =
-      { lib, pkgs, ... }:
-      let
-        inherit (pkgs.stdenv.hostPlatform) isDarwin;
-      in
-      {
-        imports = [
-          inputs.ceamx.modules.homeManager.ceamx
-        ];
-
+      config = lib.mkIf config.programs.emacs.ceamx.enable {
         programs.emacs = {
           enable = true;
-          package = if isDarwin then pkgs.emacs30-macport else pkgs.emacs-unstable-pgtk;
+          package =
+            if pkgs.stdenv.hostPlatform.isDarwin then
+              pkgs.emacs30-macport
+            else
+              perSystem.inputs'.emacs-overlay.packages.emacs-unstable-pgtk;
         };
 
         stylix.targets.emacs.enable = false;
       };
-  };
+    }
+  );
 }
