@@ -101,7 +101,7 @@
 
     ##: apps/tools
     ceamx = {
-      url = "github:montchr/ceamx";
+      url = "git+ssh://git@codeberg.org/astratagem/ceamx.git";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.apparat.follows = "apparat";
     };

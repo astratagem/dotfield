@@ -235,17 +235,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1778259517,
-        "narHash": "sha256-aMr4dXcVdmOuTnBPBDgNS062+QlLX9msK5etNQU+iCM=",
-        "owner": "montchr",
-        "repo": "ceamx",
-        "rev": "575e6abd00e8e9be2afc10d7106784e34b79106c",
-        "type": "github"
+        "lastModified": 1784952653,
+        "narHash": "sha256-aYR1Lbh03Pg2CWd5haNviyYscCmAPpzhIQyveaJLKOI=",
+        "ref": "refs/heads/main",
+        "rev": "c8a3d4381ac31f472f4c6baa7255fe6184d3e0ff",
+        "revCount": 2324,
+        "type": "git",
+        "url": "ssh://git@codeberg.org/astratagem/ceamx.git"
       },
       "original": {
-        "owner": "montchr",
-        "repo": "ceamx",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://git@codeberg.org/astratagem/ceamx.git"
       }
     },
     "colmena": {
