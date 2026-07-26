@@ -34,6 +34,12 @@
   # FIXME: this command is darwin-only
   flushdns = "dscacheutil -flushcache";
 
+  # Easier to type than a name containing dashes.
+  pbcopy = "wl-copy";
+  pbpaste = "wl-paste";
+
+  pubkey = "cat ~/.ssh/id_ed25519.pub | wl-copy";
+
   ##: --- nix ------------------------------------------------------------------
 
   n = "nix";
