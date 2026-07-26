@@ -12,9 +12,15 @@
         NVIM_CONFIG_DIR = "${xdg.configHome}/nvim";
         NVIM_DATA_DIR = dataPath;
       };
-
       programs.neovim = {
         enable = true;
+
+        viAlias = true;
+        vimAlias = true;
+        vimdiffAlias = true;
+        withNodeJs = true;
+        withPython3 = true;
+        withRuby = true;
       };
     };
 }

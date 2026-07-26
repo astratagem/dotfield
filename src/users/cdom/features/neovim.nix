@@ -24,14 +24,5 @@
           rm -rf "${cachePath}" "${dataPath}"
         '')
       ];
-
-      programs.neovim = {
-        viAlias = true;
-        vimAlias = true;
-        vimdiffAlias = true;
-        withNodeJs = true;
-        withPython3 = true;
-        withRuby = true;
-      };
     };
 }
