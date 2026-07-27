@@ -102,7 +102,7 @@
     ##: apps/tools
     ceamx = {
       url = "git+ssh://git@codeberg.org/astratagem/ceamx.git";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixos-stable";
       inputs.apparat.follows = "apparat";
     };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
