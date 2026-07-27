@@ -24,13 +24,14 @@ in
 
       home.packages = [
         pkgs.jj-pre-push
-        pkgs.jjui
       ];
 
       # This should be, for now, the developer's responsibility.  It is not
       # on individual projects to add an ignore for somebody's exotic
       # workflow until that workflow becomes widely adopted.
       programs.git.ignores = [ ".jj*" ];
+
+      programs.jjui.enable = true;
 
       programs.jujutsu = {
         enable = true;
