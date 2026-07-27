@@ -66,7 +66,7 @@ python3Packages.buildPythonApplication rec {
     changelog = "https://github.com/gtronset/beets-filetote/blob/${src.rev}/CHANGELOG.md";
     maintainers = with maintainers; [
       dansbandit
-      montchr
+      astratagem
     ];
     license = licenses.mit;
     inherit (beets.meta) platforms;

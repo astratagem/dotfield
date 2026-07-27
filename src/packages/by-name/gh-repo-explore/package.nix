@@ -25,7 +25,7 @@ buildGoModule rec {
     description = "GitHub CLI extension to interactively explore a repo without cloning";
     homepage = "https://github.com/samcoe/gh-repo-explore";
     license = licenses.mit;
-    maintainers = with maintainers; [ montchr ];
+    maintainers = with maintainers; [ astratagem ];
     mainProgram = "gh-repo-explore";
   };
 }

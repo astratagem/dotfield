@@ -43,7 +43,7 @@
     ##: channels
     nixpkgs.follows = "nixos-unstable";
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # nixos-unstable.url = "github:montchr/nixpkgs/nixos-unstable";
+    # nixos-unstable.url = "github:astratagem/nixpkgs/nixos-unstable";
     nixos-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-trunk.url = "github:NixOS/nixpkgs/master";
     nixpkgs-apple-silicon.follows = "nixos-apple-silicon/nixpkgs";
@@ -74,7 +74,7 @@
     ##: hardware
     nixos-apple-silicon = {
       # url = "github:nix-community/nixos-apple-silicon";
-      url = "github:montchr/nixos-apple-silicon/dev";
+      url = "github:astratagem/nixos-apple-silicon/dev";
       inputs.nixpkgs.follows = "nixos-unstable";
     };
     asahi-tuuvok-firmware.url = "git+ssh://git@codeberg.org/astratagem/asahi-tuuvok-firmware.git";
@@ -93,7 +93,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     ##: customisation
-    base16-schemes.url = "github:montchr/nix-base16-schemes";
+    base16-schemes.url = "github:astratagem/nix-base16-schemes";
     base16-schemes.inputs.nixpkgs.follows = "nixpkgs";
     ironbar.url = "github:JakeStanger/ironbar?ref=v0.19.0";
     ironbar.inputs.nixpkgs.follows = "nixpkgs";

@@ -39,7 +39,7 @@ in
       description = "A custom Iosevka build by @astratagem";
       homepage = "https://codeberg.org/astratagem/dotfield";
       license = lib.licenses.ofl;
-      maintainers = with lib.maintainers; [ montchr ];
+      maintainers = with lib.maintainers; [ astratagem ];
       mainProgram = "astrata-mono";
       platforms = lib.platforms.all;
     };

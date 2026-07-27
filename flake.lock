@@ -107,13 +107,13 @@
       "locked": {
         "lastModified": 1685915251,
         "narHash": "sha256-dGzuUxB6Bo+bs0Mw50LurcqIwQXTER/3/dYZr0jwmTU=",
-        "owner": "montchr",
+        "owner": "astratagem",
         "repo": "nix-base16-schemes",
         "rev": "464220d74b2ad19278d60620861911a333d3cdd2",
         "type": "github"
       },
       "original": {
-        "owner": "montchr",
+        "owner": "astratagem",
         "repo": "nix-base16-schemes",
         "type": "github"
       }
@@ -1389,13 +1389,13 @@
       "locked": {
         "lastModified": 1758458590,
         "narHash": "sha256-Jnn7Q53dOLNBo8rTEzTnYRkt2fltC1YhI9PzsJERuVk=",
-        "owner": "montchr",
+        "owner": "astratagem",
         "repo": "nixos-apple-silicon",
         "rev": "580cc0bf9479146baed7357f1fcf084c0a2ffbe5",
         "type": "github"
       },
       "original": {
-        "owner": "montchr",
+        "owner": "astratagem",
         "ref": "dev",
         "repo": "nixos-apple-silicon",
         "type": "github"

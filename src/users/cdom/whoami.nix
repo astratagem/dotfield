@@ -19,7 +19,7 @@ in
       key = keys.pgp.asc.${id};
     };
     accounts = {
-      github = "montchr";
+      github = "astratagem";
       mastodon = "@montchr@assemblag.es";
       email = {
         personal = {

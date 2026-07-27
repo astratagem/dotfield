@@ -48,7 +48,7 @@ python3.pkgs.buildPythonApplication rec {
     description = "Some ready-made rich tables for JSON data";
     homepage = "https://github.com/snejus/rich-tables";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ montchr ];
+    maintainers = with lib.maintainers; [ astratagem ];
     mainProgram = "rich-tables";
   };
 }

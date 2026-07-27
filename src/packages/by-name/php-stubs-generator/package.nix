@@ -24,7 +24,7 @@ php82.buildComposerProject (finalAttrs: {
     homepage = "https://github.com/php-stubs/generator";
     changelog = "https://github.com/php-stubs/generator/blob/${src.rev}/CHANGELOG.md";
     license = licenses.mit;
-    maintainers = with maintainers; [ montchr ];
+    maintainers = with maintainers; [ astratagem ];
     mainProgram = "generate-stubs";
     platforms = platforms.all;
   };

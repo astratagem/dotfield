@@ -80,7 +80,7 @@ python3.pkgs.buildPythonApplication rec {
     homepage = "https://github.com/snejus/beetcamp";
     changelog = "https://github.com/snejus/beetcamp/blob/${src.rev}/CHANGELOG.md";
     license = lib.licenses.gpl2Only;
-    maintainers = with lib.maintainers; [ montchr ];
+    maintainers = with lib.maintainers; [ astratagem ];
     mainProgram = "beetcamp";
   };
 }

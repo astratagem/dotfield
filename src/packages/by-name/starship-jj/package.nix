@@ -21,7 +21,7 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://gitlab.com/lanastara_foss/starship-jj";
     changelog = "https://gitlab.com/lanastara_foss/starship-jj/-/blob/${src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ montchr ];
+    maintainers = with lib.maintainers; [ astratagem ];
     mainProgram = "starship-jj";
   };
 }

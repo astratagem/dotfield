@@ -61,7 +61,7 @@ in
       description = "Pragmata Pro doppelgänger made of Iosevka SS08";
       homepage = "https://github.com/shytikov/pragmasevka";
       license = lib.licenses.ofl;
-      maintainers = with lib.maintainers; [ montchr ];
+      maintainers = with lib.maintainers; [ astratagem ];
       mainProgram = "pragmasevka";
       platforms = lib.platforms.all;
     };

@@ -24,7 +24,7 @@ rustPlatform.buildRustPackage rec {
       asl20
       mit
     ];
-    maintainers = with lib.maintainers; [ montchr ];
+    maintainers = with lib.maintainers; [ astratagem ];
     mainProgram = "iching";
   };
 }
