@@ -1,4 +1,4 @@
-{
+{ moduleWithSystem, ... }: {
   aspects.workstation = {
     requires = [
       "development"
@@ -31,10 +31,13 @@
         };
       };
 
-    home =
-      { pkgs, ... }:
+    home = moduleWithSystem (
+      perSystem@{ inputs' }:
+      home@{ pkgs, ... }:
       {
         home.packages = [
+          perSystem.inputs'.llm-agents.packages.claude-desktop
+
           pkgs.ffmpeg
           pkgs.kdePackages.okular
           pkgs.libreoffice-fresh
@@ -45,6 +48,7 @@
           pkgs.vscode
           pkgs.xlsx2csv
         ];
-      };
+      }
+    );
   };
 }
