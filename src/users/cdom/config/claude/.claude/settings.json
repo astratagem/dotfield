@@ -155,7 +155,7 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
-  "outputStyle": "Explanatory",
+  "outputStyle": "default",
   "alwaysThinkingEnabled": false,
   "effortLevel": "medium",
   "tui": "fullscreen",
