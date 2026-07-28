@@ -32,14 +32,22 @@
       }
     );
 
-    home = {
-      services.swayidle.timeouts = [
-        {
-          timeout = 20 * 60;
-          command = "niri msg output * off";
-          resumeCommand = "niri msg output * on";
-        }
-      ];
-    };
+    home = moduleWithSystem (
+      perSystem@{ config, ... }:
+      nixos@{ pkgs, ... }:
+      {
+        home.packages = [
+          config.packages.niri-sidebar
+        ];
+
+        services.swayidle.timeouts = [
+          {
+            timeout = 20 * 60;
+            command = "niri msg output * off";
+            resumeCommand = "niri msg output * on";
+          }
+        ];
+      }
+    );
   };
 }

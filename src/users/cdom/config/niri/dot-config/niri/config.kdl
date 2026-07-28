@@ -438,6 +438,18 @@ binds {
     Alt+Print { screenshot-window; }
     Mod+Alt+P { screenshot-window; }
 
+    // https://github.com/Vigintillionn/niri-sidebar#niri-configuration
+    // ==================================================================
+
+    // Toggle the focused window into/out of the sidebar
+    Mod+S { spawn-sh "niri-sidebar toggle-window"; }
+    // Toggle sidebar visibility (hide/show)
+    Mod+Shift+S { spawn-sh "niri-sidebar toggle-visibility"; }
+    // Flip the order of the sidebar
+    Mod+Ctrl+S { spawn-sh "niri-sidebar flip"; }
+    // Force reorder (useful if something gets misaligned manually)
+    Mod+Alt+R { spawn-sh "niri-sidebar reorder"; }
+
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
     // so they may, for example, forward the key presses as-is to a remote machine.
