@@ -38,6 +38,7 @@
       {
         home.packages = [
           config.packages.niri-sidebar
+          pkgs.nwg-displays
         ];
 
         services.swayidle.timeouts = [
