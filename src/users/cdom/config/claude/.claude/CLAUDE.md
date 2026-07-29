@@ -5,6 +5,14 @@
 - Always favor idiomatic approaches to code architecture and patterns
 - Avoid generating or suggesting quick hacks unless the situation
   specifically warrants it (e.g. prototyping, experimenting)
+- Comments should explain _why_, not _how_ (Jeff Atwood, "Code Tells You
+  How, Comments Tell You Why"). The code already shows how it works; a
+  comment that paraphrases the next line is noise that rots out of sync.
+  Comments earn their place by capturing intent, rationale, non-obvious
+  constraints, and tradeoffs — things the code cannot express. If code
+  needs a comment to explain _what_ it does, prefer refactoring (better
+  names, extracted functions) over annotating. Be terse.
+  <https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/>
 
 ## Nix
 
