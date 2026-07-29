@@ -17,7 +17,7 @@
         in
         {
           metadata = {
-            name = "nix-search-tv";
+            name = "nix";
             description = "Search nix options and packages";
           };
 
