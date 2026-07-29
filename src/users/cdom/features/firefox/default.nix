@@ -29,6 +29,8 @@
       programs.firefox.profiles.primary = {
         inherit search;
         id = 0;
+        # Match the existing store ID for new profiles system compat.
+        storeId = "ab9646ca";
         settings = baseSettings // { };
       };
     };
