@@ -1,7 +1,5 @@
 {
   aspects.development.home = { pkgs, ... }: {
-    programs.nix-search-tv.enable = true;
-
     home.packages = [
       pkgs.nix-init
       pkgs.nix-inspect
