@@ -23,14 +23,35 @@
             nerd-fonts.symbols-only
             terminus_font
           ];
+
+          serifFonts =
+            (with pkgs; [
+              bodoni-moda
+              cooper
+              courier-prime
+              drafting-mono
+              libre-baskerville
+              lora
+              merriweather
+              newcomputermodern
+            ])
+            ++ (with config.packages; [
+              cormorant
+              playfair
+            ]);
+
+          sansSerifFonts = with pkgs; [
+            jost
+            merriweather-sans
+          ];
         in
         baselineFonts
+        ++ serifFonts
+        ++ sansSerifFonts
         ++ (with pkgs; [
           atkinson-hyperlegible-mono
           atkinson-hyperlegible-next
           fira
-          libre-baskerville
-          newcomputermodern
           stix-two
         ])
       );
