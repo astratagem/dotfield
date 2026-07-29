@@ -15,7 +15,7 @@ flake@{ ... }:
         enable = true;
         enableDefaultConfig = false;
         includes = [ "~/.config/ssh/config.local" ];
-        matchBlocks = {
+        settings = {
           "synoxyn" = {
             hostname = hosts.synoxyn.ipv4.address;
             port = 2367;
@@ -33,17 +33,17 @@ flake@{ ... }:
           "*" = {
             inherit identityFile;
 
-            addKeysToAgent = "no";
-            compression = false;
-            controlMaster = "auto";
-            controlPath = "~/.ssh/master-%r@%n:%p";
-            controlPersist = "10m";
-            forwardAgent = false;
-            hashKnownHosts = false;
-            identitiesOnly = true;
-            serverAliveCountMax = 3;
-            serverAliveInterval = 300;
-            userKnownHostsFile = "~/.ssh/known_hosts";
+            AddKeysToAgent = "no";
+            Compression = false;
+            ControlMaster = "auto";
+            ControlPath = "~/.ssh/master-%r@%n:%p";
+            ControlPersist = "10m";
+            ForwardAgent = false;
+            HashKnownHosts = false;
+            IdentitiesOnly = true;
+            ServerAliveCountMax = 3;
+            ServerAliveInterval = 300;
+            UserKnownHostsFile = "~/.ssh/known_hosts";
           };
         };
       };

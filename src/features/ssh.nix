@@ -41,14 +41,12 @@ flake@{ ... }:
     home = {
       programs.ssh = {
         enable = true;
-        matchBlocks = {
+        settings = {
           "github.com" = {
             user = "git";
           };
           "eu.nixbuild.net" = {
-            extraOptions = {
-              PubkeyAcceptedKeyTypes = "ssh-ed25519";
-            };
+            PubkeyAcceptedKeyTypes = "ssh-ed25519";
           };
         };
       };
