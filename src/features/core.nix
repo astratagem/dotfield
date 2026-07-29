@@ -65,6 +65,7 @@ in
           gnused
           gnutar
           grc
+          hl-log-viewer
           htop
           hyperfine
           ijq # interactive jq
