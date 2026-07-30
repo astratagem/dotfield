@@ -38,18 +38,50 @@ flake@{ ... }:
       users.users.root.openssh.authorizedKeys.keys = flake.config.meta.users.cdom.keys.ssh;
     };
 
-    home = {
-      programs.ssh = {
-        enable = true;
-        settings = {
-          "github.com" = {
-            user = "git";
-          };
-          "eu.nixbuild.net" = {
-            PubkeyAcceptedKeyTypes = "ssh-ed25519";
+    home =
+      { config, ... }:
+      let
+        inherit (config.home) homeDirectory;
+        inherit (flake.config.meta) hosts;
+
+        sshDir = "${homeDirectory}/.ssh";
+        identityFile = "${sshDir}/id_ed25519";
+      in
+      {
+        programs.ssh = {
+          enable = true;
+          enableDefaultConfig = false;
+          settings = {
+            "synoxyn" = {
+              Hostname = hosts.synoxyn.ipv4.address;
+              Port = 2367;
+            };
+
+            "github.com" = {
+              User = "git";
+            };
+
+            "eu.nixbuild.net" = {
+              PubkeyAcceptedKeyTypes = "ssh-ed25519";
+            };
+
+            "*" = {
+              inherit identityFile;
+
+              AddKeysToAgent = "no";
+              Compression = false;
+              ControlMaster = "auto";
+              ControlPath = "~/.ssh/master-%r@%n:%p";
+              ControlPersist = "10m";
+              ForwardAgent = false;
+              HashKnownHosts = false;
+              IdentitiesOnly = true;
+              ServerAliveCountMax = 3;
+              ServerAliveInterval = 300;
+              UserKnownHostsFile = "~/.ssh/known_hosts";
+            };
           };
         };
       };
-    };
   };
 }
