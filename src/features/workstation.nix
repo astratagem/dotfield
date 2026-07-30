@@ -40,7 +40,6 @@
 
           pkgs.ffmpeg
           pkgs.kdePackages.okular
-          pkgs.libreoffice-fresh
           pkgs.pdfarranger
           pkgs.python313Packages.weasyprint # archive webpages to PDF
           pkgs.unicode-character-database
