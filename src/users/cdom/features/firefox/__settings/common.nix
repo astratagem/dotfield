@@ -1,11 +1,18 @@
 # TODO: add docs for all "magical" numeric values
 {
+  "browser.aboutConfig.showWarning" = false;
+
+  "browser.bookmarks.editDialog.firstEditField" = "tagsField";
+  "browser.bookmarks.restore_default_bookmarks" = false;
   "browser.bookmarks.showMobileBookmarks" = true;
+
   "browser.contentblocking.category" = "strict";
-  "browser.ctrlTab.recentlyUsedOrder" = false;
+  "browser.ctrlTab.recentlyUsedOrder" = true;
   # TODO: add documentation for values
   # "browser.display.os-zoom-behavior" = 1;
+
   "browser.proton.enabled" = true;
+
   # "browser.newtabpage.enabled" = true;
 
   # Enable a real search bar on `about:home` instead of diverting focus to the address bar.
@@ -25,13 +32,24 @@
   # <https://searchfox.org/mozilla-release/rev/b6792379492929d65f5b61a3caa0a9b19bbd7078/modules/libpref/init/StaticPrefList.yaml#1565-1571>
   "browser.tabs.inTitlebar" = 0;
 
-  # TODO: add documentation for values
-  "browser.uidensity" = 1; # Dense.
+  # Communicates the toolbar color to platform (for e.g., prefers-color-scheme).
+  #
+  # Returns whether the toolbar is dark (0), light (1), or system (2). The
+  # theming code overrides it if appropriate.
+  "browser.theme.toolbar-theme" = 2;
+
+  # UI density of the browser chrome. This mostly affects toolbarbutton
+  # and urlbar spacing. The possible values are 0=normal, 1=compact, 2=touch.
+  # https://searchfox.org/firefox-release/rev/c749d31276fecaa969469c4a53889a5639bb415c/browser/app/profile/firefox.js#255-257
+  "browser.uidensity" = 1;
+
   "browser.urlbar.placeholderName" = "…";
   "browser.urlbar.showSearchSuggestionsFirst" = false;
   "browser.urlbar.speculativeConnect.enabled" = false;
   "browser.urlbar.suggest.calculator" = true;
   "browser.urlbar.suggest.history" = true;
+  "browser.urlbar.suggest.quicksuggest.all" = false;
+  "browser.urlbar.suggest.quicksuggest.sponsored" = false;
 
   "devtools.theme" = "auto";
   "devtools.cache.disabled" = true;
@@ -51,7 +69,9 @@
   # TODO: add documentation for values (where is it? who knows?)
   # "layout.css.prefers-color-scheme.content-override" = 2;
 
+  # Enable picture-in-picture (PiP) mode.
   "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
+  "extensions.pictureinpicture.enable_picture_in_picture_overrides" = true;
 
   # WARNING: changing this may break keyboard shortcuts.
   "permissions.default.shortcuts" = 0; # :: default => 0
@@ -62,7 +82,9 @@
   # Disable fingerprinting on AMO to allow for Tridactyl control.
   # See https://github.com/tridactyl/tridactyl/issues/1800
   "privacy.resistFingerprinting.block_mozAddonManager" = true;
+
   "services.sync.engine.passwords" = false;
+  "services.sync.declinedEngines" = "creditcards,addresses,passwords";
 
   "signon.rememberSignons" = false;
 
@@ -74,6 +96,9 @@
   "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
   "webgl.disabled" = false;
+
+  # Firefox 150+: Disable GTK emoji picker, which is force-bound to [Ctrl-.]
+  "widget.gtk.native-emoji-dialog" = false;
 
   # Fully disable Pocket. See
   # https://www.reddit.com/r/linux/comments/zabm2a.
@@ -90,8 +115,6 @@
   "services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.includePocket" =
     false;
 
-  # Firefox 150+: Disable GTK emoji picker, which is force-bound to [Ctrl-.]
-  "widget.gtk.native-emoji-dialog" = false;
 }
 ##: Sources:
 # - https://git.sr.ht/~rycee/configurations/tree/5ef3e3b2bd400841be7ec641812b8006191bb7fc/item/user/firefox.nix
