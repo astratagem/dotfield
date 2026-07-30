@@ -12,7 +12,12 @@
     };
 
   aspects.graphical.home =
-    hmArgs@{ config, pkgs, ... }:
+    hmArgs@{
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     {
       programs.firefox = {
         enable = true;
@@ -23,6 +28,12 @@
             pkgs.firefox;
         configPath = "${config.xdg.configHome}/mozilla/firefox";
       };
+
+      # TODO: Disabled by default due to the limitation of needing to
+      # specify each profile name to be handled by Stylix, which cannot
+      # be determined here without configurating a common base profile
+      # for each user.
+      stylix.targets.firefox.enable = lib.mkDefault false;
     };
 
   aspects.desktop-sessions__gnome.home = {

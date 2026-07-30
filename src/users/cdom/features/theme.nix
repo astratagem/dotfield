@@ -83,9 +83,11 @@ in
         # size = 10;
       };
 
+      stylix.targets.firefox.enable = true;
       stylix.targets.floorp.enable = false;
       stylix.targets.librewolf.enable = false;
       stylix.targets.firefox.profileNames = [ "primary" ];
+
       stylix.targets.vscode.profileNames = [ "default" ];
 
       # TODO: move this to common aspect
