@@ -1,13 +1,14 @@
 {
   aspects.workstation.home =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
     {
       home.packages = [
-        pkgs.discord
         pkgs.fluffychat
         pkgs.slack
         pkgs.teams-for-linux
         pkgs.weechat
-      ];
+      ]
+      # XXX: Unsupported platform.
+      ++ lib.optionals (pkgs.stdenv.hostPlatform.system != "aarch64-linux") [ pkgs.discord ];
     };
 }
