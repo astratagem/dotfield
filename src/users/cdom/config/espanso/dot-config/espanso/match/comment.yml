@@ -1,40 +1,27 @@
 ---
-# yamllint disable rule:line-length
-global_vars:
-  - name: clip
-    type: clipboard
 matches:
-  - replace: '# <{{clipped}}>'
-    trigger: '# <'
+  - trigger: '# <'
+    replace: '# <{{clipb}}>'
     vars:
-      - depends_on:
-          - clip
-        name: clipped
-        params:
-          cmd: 'echo "$ESPANSO_CLIP" \ #magic___^_^___line | grep ''^https://'' || [[ $? == 1 ]] #magic___^_^___line '
-        type: shell
-  - replace: ;; <{{clipped}}>
-    trigger: ;; <
+      - name: "clipb"
+        type: "clipboard"
+  - trigger: ';; <'
+    replace: ;; <{{clipb}}>
     vars:
-      - depends_on:
-          - clip
-        name: clipped
-        params:
-          cmd: 'echo "$ESPANSO_CLIP" \ #magic___^_^___line | grep ''^https://'' || [[ $? == 1 ]] #magic___^_^___line '
-        type: shell
-  - replace: ''' :: <{{clipped}}>'
-    trigger: ''' :: <'
+      - name: clipb
+        type: clipboard
+  - trigger: ' :: <'
+    replace: ' :: <{{clipb}}>'
     vars:
-      - depends_on:
-          - clip
-        name: clipped
-        params:
-          cmd: 'echo "$ESPANSO_CLIP" \ #magic___^_^___line | grep ''^https://'' || [[ $? == 1 ]] #magic___^_^___line '
-        type: shell
-  - replace: '# SPDX-FileCopyrightText: (C) {{year}} {{form.author}} #magic___^_^___line # SPDX-License-Identifier: {{form.license}}'
-    trigger: ;#spdx
+      - name: clipb
+        type: clipboard
+  - trigger: ;#spdx
+    replace: |
+      # SPDX-FileCopyrightText: (C) {{year}} {{form.author}}
+      # SPDX-License-Identifier: {{form.license}}
     vars:
       - name: form
+        type: form
         params:
           fields:
             author:
@@ -52,9 +39,10 @@ matches:
                 - Apache-2.0
                 - MPL-2.0
                 - BSD-3-Clause
-          layout: 'author: [[author]] #magic___^_^___line license: [[license]] #magic___^_^___line '
-        type: form
+          layout: |
+            author: [[author]]
+            license: [[license]]
       - name: year
+        type: date
         params:
           format: '%Y'
-        type: date
