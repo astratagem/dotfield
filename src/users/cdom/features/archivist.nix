@@ -14,6 +14,8 @@ in
         perSystem.config.packages.aax-to-m4b
         pkgs.aaxtomp3
         pkgs.audible-cli
+        pkgs.zotero
+        pkgs.zotero-translation-server
       ];
 
       programs.rclone.remotes."whatbox" = {
