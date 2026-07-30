@@ -54,8 +54,8 @@ in
         };
 
         serif = {
-          name = "NewComputerModern10";
-          package = pkgs.newcomputermodern;
+          name = "Lora";
+          package = pkgs.lora;
         };
 
         monospace = {
