@@ -36,8 +36,6 @@
       home@{ pkgs, ... }:
       {
         home.packages = [
-          perSystem.inputs'.llm-agents.packages.claude-desktop
-
           pkgs.ffmpeg
           pkgs.kdePackages.okular
           pkgs.pdfarranger
