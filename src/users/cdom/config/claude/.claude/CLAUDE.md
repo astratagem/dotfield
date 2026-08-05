@@ -21,7 +21,8 @@
 - Always favor idiomatic approaches to code architecture and patterns
 - Avoid generating or suggesting quick hacks unless the situation
   specifically warrants it (e.g. prototyping, experimenting)
-- Comments should explain _why_, not _how_.  Be terse.
+- Comments should explain _why_, not _how_.  Let code explain the _how_.
+  If a _why_ is necessary, write a terse and concise comment.
 
 ## Nix
 
