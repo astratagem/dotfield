@@ -160,5 +160,7 @@
   "effortLevel": "medium",
   "tui": "fullscreen",
   "theme": "auto",
-  "verbose": true
+  "verbose": true,
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true
 }
