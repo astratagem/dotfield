@@ -57,6 +57,7 @@ in
           file
           findutils
           fish
+          fswatch
           gawk
           gcc
           git
