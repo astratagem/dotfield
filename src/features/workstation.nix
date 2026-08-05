@@ -37,6 +37,7 @@
       {
         home.packages = [
           pkgs.ffmpeg
+          pkgs.graphviz
           pkgs.kdePackages.okular
           pkgs.pdfarranger
           pkgs.python313Packages.weasyprint # archive webpages to PDF
