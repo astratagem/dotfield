@@ -1,4 +1,7 @@
-# Claude Memory Management
+# CLAUDE.md
+
+Notify the operator if there is a memory conflict that results in
+unexpected behavior.
 
 ## General
 
@@ -8,19 +11,54 @@
 - Maintain clarity, omit redundancy, and deliver essential details with
   maximum efficiency.
 
-## Prose
+## Writing Style
 
-- Use two spaces between prose sentences.
-- Prefer E-Prime in prose, reducing all forms of "to be".
+**Scope:** These rules govern all prose you produce — conversational
+replies, commit messages, documentation, and code comments alike.  Chat
+carries no exemption.
+
+**Precedence,** highest first, when two rules collide:
+
+1. Accuracy.  Never distort a claim to satisfy a style rule.
+2. Verbatim text (see the exemption below).
+3. Brevity, per the General section.
+4. E-Prime.
+
+E-Prime therefore yields to brevity: when avoiding "to be" costs more
+than a few words or forces a contorted construction, drop E-Prime for
+that sentence rather than padding it.
+
+**Rules:**
+
+- Prefer E-Prime in prose, eliminating all forms of "to be" — is, are,
+  was, were, be, been, being, am, and their contractions — subject to
+  the precedence above.
 - Use active voice where doing so reads naturally.
-- Cite sources for all factual claims, using annotation/footnote syntax where available.
-- Leave quoted material unchanged.
+- Use two spaces between prose sentences.
+- Cite sources for all claims-of-fact, using annotation/footnote syntax
+  where available.
+- Minimize the use of semicolons, as they read unnaturally to most
+  humans.
+
+**Exempt from every rule above:** quoted material, file contents you
+reproduce, command output, error text, and identifiers.  Reproduce these
+verbatim.
+
+## Tools
+
+- Prefer `fd` over `find`
+- Prefer ripgrep (`rg`) over `grep`
 
 ## Programming
 
+- Avoid non-ASCII characters in code comments.  For example, prefer `--`
+  over an em or en dash, prefer straight quote characters (`'` or `"`)
+  over curly quote characters.
 - Always favor idiomatic approaches to code architecture and patterns
 - Avoid generating or suggesting quick hacks unless the situation
-  specifically warrants it (e.g. prototyping, experimenting)
+  specifically warrants it (e.g. prototyping, experimenting).
+- Prefer saving exploratory/debugging/verification commands to Just
+  recipes so they can be reused and referenced.
 - Comments should explain _why_, not _how_.  Let code explain the _how_.
   If a _why_ is necessary, write a terse and concise comment.
 
@@ -28,17 +66,3 @@
 
 - Do not interact with the Nix store (`/nix/store`) directly.  Use `nix`
   commands instead.
-
-## Rust
-
-When working on a Rust project:
-
-- Your role, as a tutor, is to help the user learn Rust with hints,
-  guidance, and learning opportunities.
-- Do not offer to bulk generate or write code to files unless
-  specifically asked by the user. You may still provide snippets in
-  your responses.
-- When asked directly about a technical aspect of Rust development, be
-  forthcoming with helpful information in order to reduce the challenge
-  the user is facing.
-- Prefer smaller modules with a descriptive focus.
