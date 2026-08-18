@@ -19,16 +19,18 @@ in
     {
       programs.rclone = {
         requiresUnit = "sops-nix.service";
-        remotes."synoxyn" = {
-          config = {
-            type = "sftp";
-            host = meta.hosts.synoxyn.ipv4.address;
-            key_file = "~/.ssh/id_ed25519";
-            shell_type = "unix";
-            md5sum_command = "none";
-            sha1sum_command = "none";
+        remotes = {
+          "synoxyn" = {
+            config = {
+              type = "sftp";
+              host = meta.hosts.synoxyn.ipv4.address;
+              key_file = "~/.ssh/id_ed25519";
+              shell_type = "unix";
+              md5sum_command = "none";
+              sha1sum_command = "none";
+            };
+            mounts."".mountPoint = "${mountDir}/synoxyn";
           };
-          mounts."".mountPoint = "${mountDir}/synoxyn";
         };
       };
     };
