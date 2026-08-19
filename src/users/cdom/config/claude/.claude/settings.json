@@ -141,17 +141,17 @@
   },
   "model": "opus",
   "enabledPlugins": {
-    "commit-commands@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": false,
     "document-skills@anthropic-agent-skills": true,
-    "feature-dev@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": false,
+    "frontend-design@claude-plugins-official": false,
     "learning-output-style@claude-plugins-official": false,
     "compounding-engineering@every-marketplace": true,
-    "code-refactoring@claude-code-workflows": true,
-    "code-documentation@claude-code-workflows": true,
-    "context-management@claude-code-workflows": true,
-    "agent-orchestration@claude-code-workflows": true,
-    "developer-essentials@claude-code-workflows": true,
+    "code-refactoring@claude-code-workflows": false,
+    "code-documentation@claude-code-workflows": false,
+    "context-management@claude-code-workflows": false,
+    "agent-orchestration@claude-code-workflows": false,
+    "developer-essentials@claude-code-workflows": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
@@ -161,6 +161,6 @@
   "tui": "fullscreen",
   "theme": "auto",
   "verbose": true,
-  "agentPushNotifEnabled": true,
-  "inputNeededNotifEnabled": true
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true
 }
