@@ -21,7 +21,6 @@
 
       home.packages = with pkgs; [
         mpc
-        ncmpc
         cantata # qt gui (ick)
         mmtc
         pms
