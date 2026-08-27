@@ -18,7 +18,7 @@
         zx
         ;
 
-      # HACK(https://github.com/nixos/nixpkgs/issues/554041)
+      # HACK(https://github.com/NixOS/nixpkgs/pull/556080)
       linuxPackages_latest = prev.linuxPackages_latest.extend (
         _kfinal: kprev: {
           ddcci-driver = kprev.ddcci-driver.overrideAttrs (o: {
