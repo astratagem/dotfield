@@ -3,6 +3,7 @@
     { pkgs, ... }:
     {
       home.packages = [
+        pkgs.intelephense
         pkgs.phpactor
         pkgs.wp-cli
 
