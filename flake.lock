@@ -235,11 +235,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785715802,
-        "narHash": "sha256-4g4Vs6qdkqRAt/EWYZKn3VTYsiwkZ01PXDTX8BSz9XI=",
+        "lastModified": 1787854220,
+        "narHash": "sha256-gVPxP+ER0ww8u/eUUeT4AOj82GCE4Lr/zv+dNRmmWzI=",
         "ref": "refs/heads/main",
-        "rev": "82983f66b333efd21e7fed77eb860512b32b3067",
-        "revCount": 2343,
+        "rev": "3e68664ed7f6aac747dec647fe3d3f8a4625d4be",
+        "revCount": 2381,
         "type": "git",
         "url": "ssh://git@codeberg.org/astratagem/ceamx.git"
       },
