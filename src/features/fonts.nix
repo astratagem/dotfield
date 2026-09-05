@@ -43,6 +43,7 @@
           sansSerifFonts = with pkgs; [
             jost
             merriweather-sans
+            nebula-sans
           ];
         in
         baselineFonts
