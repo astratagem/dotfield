@@ -153,7 +153,8 @@
     "agent-orchestration@claude-code-workflows": false,
     "developer-essentials@claude-code-workflows": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "php-lsp@claude-plugins-official": true
   },
   "outputStyle": "default",
   "alwaysThinkingEnabled": false,
