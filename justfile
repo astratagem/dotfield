@@ -3,7 +3,7 @@
 
 ###: https://just.systems/man/en/
 
-mod nixify ".just/nixify.mod.just"
+mod nixify ".config/nixify.just"
 mod secrets
 
 default:
