@@ -22,10 +22,12 @@
           inputs.git-hooks.flakeModule
 
           ./src
-          ./dev
           ./tests
 
           ./hive.nix
+
+          ./.config/devshells.nix
+          ./.config/git-hooks.nix
         ];
 
         perSystem =

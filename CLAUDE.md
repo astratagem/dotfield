@@ -27,7 +27,7 @@ units.
 │   ├── modules/           # Custom NixOS/Home Manager modules
 │   ├── packages/          # Custom package definitions
 │   └── users/             # User-specific configurations
-├── dev/                   # Development environment tools
+├── .config/               # Development environment tools
 ├── tests/                 # Test configurations
 ├── secrets/               # SOPS-encrypted secrets
 ├── overlays/              # Nix package overlays
