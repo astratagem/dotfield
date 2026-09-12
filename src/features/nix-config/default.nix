@@ -1,4 +1,4 @@
-# Copyright (C) 2022-2025 Chris Montgomery
+# Copyright (C) 2022-2026 Chris Montgomery
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 flake@{ lib, inputs, ... }:

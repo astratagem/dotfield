@@ -1,4 +1,4 @@
-# Copyright (C) 2025 Chris Montgomery
+# Copyright (C) 2025-2026 Chris Montgomery
 # Copyright (C) 2025 Michael Belsanti
 # SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 

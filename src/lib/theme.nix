@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: Copyright (c) 2023 Chris Montgomery <chmont@protonmail.com>
+# SPDX-FileCopyrightText: Copyright (c) 2023-2026 Chris Montgomery <chmont@protonmail.com>
 # SPDX-FileCopyrightText: Copyright (c) 2019 Robert Helgesson
 # SPDX-License-Identifier: GPL-3.0-or-later OR MIT
 { lib, inputs, ... }:
