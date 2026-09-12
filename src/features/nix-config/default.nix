@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 flake@{ lib, inputs, ... }:
+let
+  inherit (inputs.apparat.lib) isEmpty;
+in
 {
   aspects.core.nixos =
     {
@@ -11,6 +14,8 @@ flake@{ lib, inputs, ... }:
     }:
     let
       cfg = config.nix;
+      hostMeta = flake.config.meta.hosts.${config.networking.hostName} or { };
+      hostSupportedFeatures = hostMeta.supportedFeatures or [ ];
     in
     {
       environment.systemPackages = [ cfg.package ];
@@ -36,8 +41,7 @@ flake@{ lib, inputs, ... }:
       ]
       ++ lib.optional (lib.versionOlder (lib.versions.majorMinor config.nix.package.version) "2.22") "repl-flake";
 
-      nix.settings.system-features =
-        flake.config.meta.hosts.${config.networking.hostName}.supportedFeatures;
+      nix.settings.system-features = lib.mkIf (!(isEmpty hostSupportedFeatures)) hostSupportedFeatures;
 
       # The default at 10 is rarely enough.
       nix.settings.log-lines = lib.mkDefault 25;
