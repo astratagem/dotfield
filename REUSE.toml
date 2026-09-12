@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+# SPDX-License-Identifier: CC0-1.0
+
+version = 1
+
+[[annotations]]
+path = [
+  "**.json",
+  "**.lock",
+  "**.d.ts",
+  "**/.gitattributes",
+  "**/.gitignore",
+  "**/.gitkeep",
+]
+SPDX-FileCopyrightText = "(C) 2020-2026 Chris Montgomery <chmont@protonmail.com>"
+SPDX-License-Identifier = "CC0-1.0"

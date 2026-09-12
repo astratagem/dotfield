@@ -3,81 +3,44 @@
 
 ###: https://just.systems/man/en/
 
+import "./.config/common.vars.just"
+
 mod nixify ".config/nixify.just"
+mod packages "src/packages"
+mod reuse ".config/reuse"
 mod secrets
+mod stow ".config/stow.just"
+mod symlink ".config/symlink.just"
+mod theme ".config/theme.just"
+
+alias dark := theme::dark
+alias light := theme::light
 
 default:
   @just --choose
-
-##: legal/reuse
-copyright := 'Chris Montgomery <chmont@protonmail.com>'
-default-license := 'GPL-3.0-or-later'
-docs-license := 'CC-BY-SA-4.0'
-public-domain-license := 'CC0-1.0'
-
-##: binary cache
-cachix-cache-name := 'dotfield'
-cachix-jobs := '4'
-cachix-exec := "cachix watch-exec " + cachix-cache-name + " --jobs " + cachix-jobs
-
-##: theme
-# Build-time theme polarity, consumed by `self.lib.theme.polarity` during
-# evaluation (see src/lib/theme.nix).  Exported so every rebuild recipe below
-# sees a consistent value.  `just dark`/`just light` override it per-invocation;
-# a plain `just switch` uses the ambient value, defaulting to "dark".
-export DOTFIELD_POLARITY := env_var_or_default("DOTFIELD_POLARITY", "dark")
-
-##: directories/paths
-prj-root := env_var('PRJ_ROOT')
-prj-data := env_var('PRJ_DATA_HOME')
-user-configs-dir := justfile_directory() / "src/users" / env("USER") / "config"
-ironbar-dir := user-configs-dir / "ironbar/dot-config/ironbar"
 
 push *ARGS="-b main":
   for remote in origin github; do \
     jj git push {{ ARGS }} --remote $remote; \
   done
 
-stow scope:
-  cd {{ user-configs-dir }} && stow -R {{ scope }}
-
-stow-all *FLAGS:
-  cd {{ user-configs-dir }} \
-  && fd --type d --max-depth 1 --exec-batch \
-  stow -R {{ FLAGS }} '{.}'
-
-# <- Rebuild the system and provide a summary of the changes
-build *ARGS='':
-  {{cachix-exec}} nh -- os build "{{prj-root}}" {{ARGS}}
-
-# <- Build the system for activation next boot
-boot *ARGS='':
-  {{cachix-exec}} nh -- os boot "{{prj-root}}" {{ARGS}}
-
-# <- Rebuild the system and switch to the next generation
-switch *ARGS='':
-  {{cachix-exec}} nh -- os switch "{{prj-root}}" {{ARGS}}
-
-home args:
-  {{cachix-exec}} nh -- home {{prj-root}} {{args}}
-
-# <- Run flake checks
+[doc("Run flake checks")]
 check *ARGS:
   nix flake check --verbose {{ ARGS }}
 
-# <- Inspect flake outputs
+[doc("Inspect flake outputs")]
 inspect:
   nix-inspect
 
-[doc: "Lint the project files"]
+[doc("Lint the project files")]
 lint:
   pre-commit run -a
 
-[doc: "Write linter fixes to project files"]
+[doc("Write linter fixes to project files")]
 fix: (_deadnix "--edit")
     statix fix
 
-[doc: "Format the project files"]
+[doc("Format the project files")]
 fmt *FILES:
     treefmt {{ FILES }}
 
@@ -87,71 +50,5 @@ _deadnix method='--fail' *ARGS='--no-underscore':
   fd -t f -e nix . packages --exec-batch \
     deadnix {{method}} --no-lambda-pattern-names {{ARGS}}
 
-# <- Generate a Nix package expression from a URL
-init-package pname url:
-  nix-init --url {{url}} packages/{{pname}}/package.nix
-  @echo "Add this to packages/default.nix:"
-  @echo '{{pname}} = callPackage ./{{pname}}/package.nix { };'
-
-[doc: "Replace a symlink to a Nix store file with a writeable copy of the file contents"]
-@derealise-symlink symlink:
-  if [[ ! -L "{{ symlink }}" ]]; then >&2 echo "Not a symlink: {{ symlink }}"; exit; fi
-  if [[ ! -d "{{ symlink }}" ]]; then \
-    cp --backup --suffix ".realised.bak" --copy-contents --verbose --remove-destination \
-      "$(readlink "{{ symlink }}")" "{{ symlink }}"; \
-    chmod --changes 644 "{{ symlink }}"; \
-  fi
-
-[doc: "Restore the original Nix store link backed up during derealisation"]
-@realise-symlink derealised:
-  if [[ ! -L "{{ derealised }}.realised.bak" ]]; then >&2 echo "Realisation not found: {{ derealised }}.realised.bak"; exit; fi
-  mv --backup --suffix ".derealised.bak" --verbose "{{ derealised }}.realised.bak" "{{ derealised }}"
-
 ironbar-dev:
     watchexec -w {{ ironbar-dir }} -- 'systemctl --user restart ironbar'
-
-###: THEME =====================================================================
-
-emacs-eval-cmd := "emacsclient --no-wait --eval"
-gtk-ui-schema := "org.gnome.desktop.interface"
-
-# <- Set the theme for all applications (rebuilds with the chosen polarity)
-[linux]
-theme kind='dark': && (wm-set-theme kind)
-  DOTFIELD_POLARITY={{ kind }} nh os switch "{{ prj-root }}" -- --impure
-  {{ emacs-eval-cmd }} '(ceamx-ui/{{ kind }})'
-
-# <- Use the 'light' theme for all applications
-light: (theme "light")
-
-# <- Use the 'dark' theme for all applications
-dark: (theme "dark")
-
-[private]
-[linux]
-gtk-theme command='get' kind='':
-  gsettings {{ command }} {{ gtk-ui-schema }} color-scheme \
-    {{ if command == 'set' { "prefer-" + kind } else { '' } }}
-
-# <- Switch the current GTK theme kind [default: dark]
-[private]
-[linux]
-wm-set-theme kind="dark": (gtk-theme "set" kind)
-
-###: LICENSING =================================================================
-
-# <- Validate the project's licensing and copyright info
-license-check:
-  reuse lint
-
-# <- Add a GPL-3.0-or-later license header to the specified files
-license-gpl +FILES:
-  reuse annotate -l {{default-license}} -c '{{copyright}}' {{FILES}}
-
-# <- Add a CC-BY-SA-4.0 license header to the specified files
-license-cc +FILES:
-  reuse annotate -l {{docs-license}} -c '{{copyright}}' {{FILES}}
-
-# <- Add a public domain CC0-1.0 license header to the specified files
-license-public-domain +FILES:
-  reuse annotate -l {{public-domain-license}} -c '{{copyright}}' {{FILES}}

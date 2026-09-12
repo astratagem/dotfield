@@ -1,4 +1,4 @@
-set no-cd := true
+set no-cd
 
 alias yml := yaml
 
@@ -8,8 +8,8 @@ data-dir := env("PRJ_DATA_HOME")
 dconf-dump-tmpfile := cache-dir / "dconf.settings"
 
 all ext input-dir output-dir=data-dir:
-  fd -t f -e {{ ext }} . {{ input-dir }} -x bash -c \
-    'just nixify {{ ext }} {} | nixfmt > {{ output-dir }}/{/.}.nix'
+    fd -t f -e {{ ext }} . {{ input-dir }} -x bash -c \
+      'just nixify {{ ext }} {} | nixfmt > {{ output-dir }}/{/.}.nix'
 
 [doc("Convert a YAML file to a Nix expression")]
 yaml input: (_yaml-to-json input)
