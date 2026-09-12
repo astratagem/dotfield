@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # TODO: add docs for all "magical" numeric values
 {
   "browser.aboutConfig.showWarning" = false;

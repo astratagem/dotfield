@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # Search engine options reference: <https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177>
 {
   lib,

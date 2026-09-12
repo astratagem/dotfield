@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # FIXME: frequent crashes with GNOME:
 # Jan 22 14:24:15 hodgepodge kernel: nouveau 0000:01:00.0: fifo: SCHED_ERROR 0a [CTXSW_TIMEOUT]
 # Jan 22 14:24:15 hodgepodge kernel: nouveau 0000:01:00.0: fifo: runlist 0: scheduled for recovery

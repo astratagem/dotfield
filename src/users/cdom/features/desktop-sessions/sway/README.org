@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 :PROPERTIES:
 :ID:       7b782948-d5e4-49a9-b0e6-a903c7cbd5a8
 :END:

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # - <https://www.gizra.com/content/plain-text-accounting-hledger/>
 # - <https://memo.barrucadu.co.uk/personal-finance.html>
 # - <https://github.com/edkedk99/awesome-hledger?tab=readme-ov-file>

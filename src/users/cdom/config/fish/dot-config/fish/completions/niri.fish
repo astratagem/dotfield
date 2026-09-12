@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # Print an optspec for argparse to handle cmd's options that are independent of any subcommand.
 function __fish_niri_global_optspecs
     string join \n c/config= session h/help V/version

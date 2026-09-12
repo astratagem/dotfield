@@ -1,3 +1,7 @@
+;;; SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+;;;
+;;; SPDX-License-Identifier: GPL-3.0-or-later
+
 ;;; Directory Local Variables            -*- no-byte-compile: t -*-
 ;;; For more information see (info "(emacs) Directory Variables")
 

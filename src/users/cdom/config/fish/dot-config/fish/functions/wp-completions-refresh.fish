@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 function wp-completions-refresh -d "Rebuild the cached WP-CLI completion tree for an env alias (e.g. @staging)"
   if test (count $argv) -ne 1
     echo "usage: wp-completions-refresh <alias>   # e.g. @staging" >&2

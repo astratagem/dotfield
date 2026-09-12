@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # Currently required for Asahi monitor support via USB-C.  Asahi does not yet
 # support DP-Alt display output.  DP-Alt output is required for true HDMI or
 # DP output via one of this machine's two USB-C ports and zero HDMI/DP ports.

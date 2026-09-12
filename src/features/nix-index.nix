@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # nix-index :: Nix-oriented package search tool and `command-not-found` replacement
 #
 # ::: {.note}

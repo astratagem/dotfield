@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 * [[http://download.ebz.epson.net/man/linux/iscan_e.html#sec8-3][Image Scan! for Linux Manual]] :website:
 
 [2024-02-25 Sun 00:36]

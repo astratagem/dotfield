@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 {
   aspects.hardware__viewsonic__PX727-4K.nixos = {
     # diag = w: h: sqrt(w^2 + h^2);

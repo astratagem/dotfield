@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # TODO: don't bother with this unless on home network -- may cause shutdown
 # delays on university network?
 ###: EPSON WF-3520

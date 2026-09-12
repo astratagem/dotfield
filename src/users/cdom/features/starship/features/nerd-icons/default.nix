@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 {
   # Graphical because this depends on a font that supports Nerd Icons.
   # FIXME: because both this base layer and the full configuration are

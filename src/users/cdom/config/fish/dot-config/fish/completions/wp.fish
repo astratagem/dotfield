@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # WP-CLI tab completions for fish, extended with environment-alias awareness.
 #
 # Upstream base: https://github.com/wp-cli/wp-cli/blob/776897923176304d813dae252799d1790c6a0cb6/utils/wp.fish

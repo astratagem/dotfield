@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # NOTE: The keys must not be changed! Only change the values.
 #
 # NOTE: All settings likely still need to be present in order to prevent

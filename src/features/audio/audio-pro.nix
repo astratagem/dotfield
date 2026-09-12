@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # <https://discourse.nixos.org/t/usb-audio-interface-not-recognized/35159>
 # <https://wiki.archlinux.org/index.php/Pro_Audio>
 # <https://wiki.nixos.org/wiki/PipeWire>

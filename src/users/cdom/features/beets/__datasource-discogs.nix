@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 {
   # https://beets.readthedocs.io/en/stable/plugins/discogs.html#configuration
   programs.beets.settings.discogs = {

@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # Focusrite Scarlett 18i20 [1st Gen]
 
 Generation can be identified by serial number prefix;

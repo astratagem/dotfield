@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 {
   aspects.telemetry.nixos = {
     # <numtide/srvos>: "To use this module you also need to allow port 9273

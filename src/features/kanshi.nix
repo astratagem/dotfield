@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # <https://sr.ht/~emersion/kanshi/>
 #
 # > kanshi allows you to define output profiles that are automatically

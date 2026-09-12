@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 # Display x509 certificates for an HTTPS URL
 # Source: https://git.j3s.sh/dotfiles/blob/main/bin/getcert
 { openssl, writeShellApplication }:

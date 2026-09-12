@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 { miller, writeShellApplication }:
 let
   initialOrder = "datetime,method,setting,query,hex_primary,hex_relating,unknown_1,date,unknown_2,unknown_3,seq_primary,seq_relating,uuid";
