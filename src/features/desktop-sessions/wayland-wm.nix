@@ -14,8 +14,6 @@
       # happening, and i'm not quite sure what exactly gdm needs.
       # apparently it *is* possible to use gdm + sway.
       # "login__gdm"
-
-      "secret-service__gnome-keyring"
     ];
 
     nixos =
@@ -61,22 +59,6 @@
     home =
       { pkgs, ... }:
       {
-        # A secret service is required.  It's either pass-secret-service or
-        # GNOME Keyring, but only one can be enabled at a time (they provide
-        # mutually-exclusive implementations of the XDG Secret Service
-        # protocol).  It's probably not the best idea to make
-        # pass-secret-service a default requirement, since it requires the
-        # user to have configured the password-store properly.  On top of
-        # that, GNOME Keyring generally works more seamlessly and has more
-        # integrations.  pass-secret-service will often spam the user for
-        # their GPG or hardware key passphrase on session start (when a
-        # startup service wants to use the secret service).
-        #
-        # Well, GNOME Keyring should be activated the system level, so this
-        # is pointless.
-        #
-        # ../gnome-keyring.nix
-
         programs.swaylock.enable = true;
 
         home.packages = with pkgs; [

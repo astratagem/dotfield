@@ -26,7 +26,6 @@
 
       services.accounts-daemon.enable = true;
       services.dbus.packages = [
-        pkgs.gcr # GNOME Crypto Services
         pkgs.gnome-settings-daemon
       ];
       # Sushi is a quick file previewer like Quick Look on macOS.
