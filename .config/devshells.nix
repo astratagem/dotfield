@@ -28,6 +28,7 @@ in
       commonPkgs = with pkgs; [
         bashInteractive
         biome
+        jq
         just
         npins
         pnpm
