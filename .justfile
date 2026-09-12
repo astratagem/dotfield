@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2022-2023 Chris Montgomery <chmont@proton.me>
+# SPDX-FileCopyrightText: 2022-2023 Chris Montgomery <chmont@protonmail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ###: https://just.systems/man/en/
@@ -10,7 +10,7 @@ default:
   @just --choose
 
 ##: legal/reuse
-copyright := 'Chris Montgomery <chmont@proton.me>'
+copyright := 'Chris Montgomery <chmont@protonmail.com>'
 default-license := 'GPL-3.0-or-later'
 docs-license := 'CC-BY-SA-4.0'
 public-domain-license := 'CC0-1.0'

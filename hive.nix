@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 Chris Montgomery <chmont@proton.me>
+# SPDX-FileCopyrightText: 2023 Chris Montgomery <chmont@protonmail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Ref: <https://github.com/zhaofengli/colmena/issues/60#issuecomment-1510496861>
 #
