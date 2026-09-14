@@ -44,11 +44,6 @@ that sentence rather than padding it.
 reproduce, command output, error text, and identifiers.  Reproduce these
 verbatim.
 
-## Tools
-
-- Prefer `fd` over `find`
-- Prefer ripgrep (`rg`) over `grep`
-
 ## Programming
 
 - Avoid non-ASCII characters in code comments.  For example, prefer `--`
