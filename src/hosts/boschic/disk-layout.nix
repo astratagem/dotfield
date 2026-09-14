@@ -5,15 +5,13 @@ let
   layout = {
     disko.devices.disk.main = {
       type = "disk";
-      # FIXME: confirm on the machine before running disko --
-      #   ls -l /dev/disk/by-id/ | grep -v part
-      device = "/dev/disk/by-id/CHANGE-ME";
+      device = "/dev/nvme0n1";
       content = {
         type = "gpt";
         partitions = {
           ESP = {
             priority = 1;
-            size = "1G";
+            size = "512M";
             type = "EF00";
             content = {
               type = "filesystem";
@@ -27,12 +25,20 @@ let
             };
           };
 
+          swap = {
+            priority = 2;
+            size = "4G";
+            content = {
+              type = "swap";
+              randomEncryption = false;
+            };
+          };
+
           luks = {
             size = "100%";
             content = {
               type = "luks";
-              # Must match boot.initrd.luks.devices."enc" in hardware.nix.
-              name = "enc";
+              name = "crypt";
               settings.allowDiscards = true;
               content = {
                 type = "btrfs";
@@ -48,7 +54,7 @@ let
                       "noatime"
                     ];
                   };
-                  "@store" = {
+                  "@nix" = {
                     mountpoint = "/nix";
                     mountOptions = [
                       "compress=zstd"
