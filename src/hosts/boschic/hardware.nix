@@ -1,81 +1,16 @@
 # SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
-#
 # SPDX-License-Identifier: GPL-3.0-or-later
-
 {
-  hosts.nixos.boschic.configuration = # FIXME: use device labels for interop
-    { lib, ... }:
-    {
-      boot.initrd.availableKernelModules = [
-        "nvme"
-        "xhci_pci"
-        "ahci"
-        "usb_storage"
-        "usbhid"
-        "sd_mod"
-      ];
-      boot.initrd.kernelModules = [ "kvm-amd" ];
-      boot.extraModulePackages = [ ];
-
-      fileSystems."/" = {
-        device = "/dev/disk/by-uuid/cba89c2c-fb8a-4335-8ca1-8518808e32eb";
-        fsType = "btrfs";
-        options = [
-          "subvol=root"
-          "compress=zstd"
-          "noatime"
-        ];
-      };
-
-      fileSystems."/home" = {
-        device = "/dev/disk/by-uuid/cba89c2c-fb8a-4335-8ca1-8518808e32eb";
-        fsType = "btrfs";
-        options = [
-          "subvol=home"
-          "compress=zstd"
-        ];
-      };
-
-      fileSystems."/nix" = {
-        device = "/dev/disk/by-uuid/cba89c2c-fb8a-4335-8ca1-8518808e32eb";
-        fsType = "btrfs";
-        options = [
-          "subvol=nix"
-          "compress=zstd"
-          "noatime"
-        ];
-      };
-
-      fileSystems."/persist" = {
-        device = "/dev/disk/by-uuid/cba89c2c-fb8a-4335-8ca1-8518808e32eb";
-        fsType = "btrfs";
-        options = [
-          "subvol=persist"
-          "compress=zstd"
-          "noatime"
-        ];
-      };
-
-      fileSystems."/var/log" = {
-        device = "/dev/disk/by-uuid/cba89c2c-fb8a-4335-8ca1-8518808e32eb";
-        fsType = "btrfs";
-        options = [
-          "subvol=log"
-          "compress=zstd"
-          "noatime"
-        ];
-        neededForBoot = true;
-      };
-
-      fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/9861-7D46";
-        fsType = "vfat";
-      };
-
-      swapDevices = [
-        # FIXME: apparently systemd will load this automatically? that explains why it won't work when i add it here
-        # https://github.com/NixOS/nixpkgs/pull/5202#issuecomment-65257876
-        # { device = "/dev/disk/by-uuid/4ffe4cf7-ad2d-4218-9f7c-b4393306636a"; }
-      ];
-    };
+  hosts.nixos.boschic.configuration = {
+    boot.initrd.availableKernelModules = [
+      "nvme"
+      "xhci_pci"
+      "ahci"
+      "usb_storage"
+      "usbhid"
+      "sd_mod"
+    ];
+    boot.initrd.kernelModules = [ "kvm-amd" ];
+    boot.extraModulePackages = [ ];
+  };
 }

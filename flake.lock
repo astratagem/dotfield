@@ -366,15 +366,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1781152676,
-        "narHash": "sha256-RxWs5ND31KzTG7wvMM+PMfUjyNpmIEr999lqNARaM5o=",
-        "owner": "nix-community",
+        "lastModified": 1783617614,
+        "narHash": "sha256-d0ZLm5yZtJewZI6kU/j4wWtoqEIKgDIG8Gd/qhZkOa4=",
+        "owner": "astratagem",
         "repo": "disko",
-        "rev": "ff8702b4de27f72b4c78573dfb89ec74e36abdf1",
+        "rev": "6747342da148f6cb28c8405a70fe00455a0ba027",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "astratagem",
+        "ref": "astratagem",
         "repo": "disko",
         "type": "github"
       }

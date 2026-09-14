@@ -18,6 +18,7 @@
         ];
 
         imports = [
+          inputs.disko.flakeModules.default
           inputs.flake-parts.flakeModules.modules
           inputs.git-hooks.flakeModule
 
@@ -69,7 +70,9 @@
     ##: core modules
     beams.url = "github:kleinweb/beams";
     beams.inputs.nixpkgs.follows = "nixpkgs";
-    disko.url = "github:nix-community/disko";
+    # XXX: https://github.com/nix-community/disko/pull/1277
+    # disko.url = "github:nix-community/disko";
+    disko.url = "github:astratagem/disko/astratagem";
     disko.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixos-unstable";

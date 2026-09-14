@@ -35,6 +35,8 @@ vendor/
 # Build artifacts
 *.qcow2
 *.img
+# Mutable EFI variable store written by disko's scratch VMs
+*-efi-vars.fd
 build
 hot
 result

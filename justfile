@@ -5,6 +5,8 @@
 
 import "./.config/common.vars.just"
 
+mod disko ".config/disko"
+mod iso ".config/iso"
 mod nixify ".config/nixify.just"
 mod packages "src/packages"
 mod reuse ".config/reuse"
