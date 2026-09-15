@@ -5,7 +5,7 @@
 {
   aspects.workstation.nixos = { pkgs, ... }: {
     environment.systemPackages = [
-      pkgs.libreoffice-fresh
+      pkgs.libreoffice-stable
       pkgs.hunspell
       pkgs.hunspellDicts.en-us
       pkgs.hunspellDicts.de-de
