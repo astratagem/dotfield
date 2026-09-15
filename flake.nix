@@ -56,7 +56,7 @@
     nixpkgs-apple-silicon.follows = "nixos-apple-silicon/nixpkgs";
 
     ##: core libraries
-    apparat.url = "git+ssh://git@codeberg.org/astratagem/apparat.git";
+    apparat.url = "git+https://codeberg.org/astratagem/apparat.git";
     dmerge = {
       url = "github:divnix/dmerge";
       inputs.haumea.follows = "haumea";
@@ -83,7 +83,8 @@
       url = "github:astratagem/nixos-apple-silicon/dev";
       inputs.nixpkgs.follows = "nixos-unstable";
     };
-    asahi-tuuvok-firmware.url = "git+ssh://git@codeberg.org/astratagem/asahi-tuuvok-firmware.git";
+    # FIXME: ssh not possible in nixos installer
+    # asahi-tuuvok-firmware.url = "git+https://codeberg.org/astratagem/asahi-tuuvok-firmware.git";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     ##: ops
@@ -107,7 +108,7 @@
 
     ##: apps/tools
     ceamx = {
-      url = "git+ssh://git@codeberg.org/astratagem/ceamx.git";
+      url = "git+https://codeberg.org/astratagem/ceamx.git";
       inputs.nixpkgs.follows = "nixos-stable";
       inputs.apparat.follows = "apparat";
     };

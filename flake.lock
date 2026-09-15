@@ -22,26 +22,11 @@
         "rev": "63ec163fb61f71afa867f6f07f6878ca81461886",
         "revCount": 128,
         "type": "git",
-        "url": "ssh://git@codeberg.org/astratagem/apparat.git"
+        "url": "https://codeberg.org/astratagem/apparat.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@codeberg.org/astratagem/apparat.git"
-      }
-    },
-    "asahi-tuuvok-firmware": {
-      "locked": {
-        "lastModified": 1758422739,
-        "narHash": "sha256-q9AadgIhCNt5O4FXWLq58+W8kaYLApOMmDNkpp3ZUlo=",
-        "ref": "refs/heads/master",
-        "rev": "731d906bcb1c994cc200fa73a3d1cb7c03633d45",
-        "revCount": 5,
-        "type": "git",
-        "url": "ssh://git@codeberg.org/astratagem/asahi-tuuvok-firmware.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@codeberg.org/astratagem/asahi-tuuvok-firmware.git"
+        "url": "https://codeberg.org/astratagem/apparat.git"
       }
     },
     "base16": {
@@ -235,17 +220,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1787854220,
-        "narHash": "sha256-gVPxP+ER0ww8u/eUUeT4AOj82GCE4Lr/zv+dNRmmWzI=",
+        "lastModified": 1789425642,
+        "narHash": "sha256-eUAyjilgVYqUkmDDzdfi24mGTkp+XIc3ZLoynUBQaIQ=",
         "ref": "refs/heads/main",
-        "rev": "3e68664ed7f6aac747dec647fe3d3f8a4625d4be",
-        "revCount": 2381,
+        "rev": "79c8803ae4fc4a867066a22b1251142a21cb248b",
+        "revCount": 2390,
         "type": "git",
-        "url": "ssh://git@codeberg.org/astratagem/ceamx.git"
+        "url": "https://codeberg.org/astratagem/ceamx.git"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@codeberg.org/astratagem/ceamx.git"
+        "url": "https://codeberg.org/astratagem/ceamx.git"
       }
     },
     "colmena": {
@@ -1970,7 +1955,6 @@
     "root": {
       "inputs": {
         "apparat": "apparat",
-        "asahi-tuuvok-firmware": "asahi-tuuvok-firmware",
         "base16-schemes": "base16-schemes",
         "beams": "beams",
         "ceamx": "ceamx",
