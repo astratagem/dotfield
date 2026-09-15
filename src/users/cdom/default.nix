@@ -17,7 +17,7 @@ in
     keys.ssh = [
       keys.ssh.cdom-yubikey-rsa
     ]
-    ++ hosts.boschic.users.seadoom.keys.ssh
+    ++ hosts.boschic.users.cdom.keys.ssh
     ++ hosts.brakhage.users.blink.keys.ssh
     ++ hosts.hodgepodge.users.seadoom.keys.ssh
     ++ hosts.riebeck.users.cdom.keys.ssh

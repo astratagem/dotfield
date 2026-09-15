@@ -111,8 +111,8 @@ in
         # `hashedPasswordFile` must be cleared as well, or it wins over
         # `initialPassword` and leaves the account locked.
         users.users.root.initialPassword = lib.mkForce "";
-        users.users.seadoom.hashedPasswordFile = lib.mkForce null;
-        users.users.seadoom.initialPassword = lib.mkForce "";
+        users.users.cdom.hashedPasswordFile = lib.mkForce null;
+        users.users.cdom.initialPassword = lib.mkForce "";
 
         # This VM exists to inspect the disk, not to run a desktop.  The
         # inherited graphical session does not come up under qemu, so boot

@@ -11,19 +11,22 @@ flake@{ self, ... }:
         config,
         ...
       }:
+      let
+        username = "cdom";
+      in
       {
-        sops.secrets."users/seadoom/hashed-password".neededForUsers = true;
+        sops.secrets."users/${username}/hashed-password".neededForUsers = true;
 
-        users.users.seadoom = {
+        users.users.${username} = {
           uid = 1000;
           isNormalUser = true;
-          hashedPasswordFile = config.sops.secrets."users/seadoom/hashed-password".path;
+          hashedPasswordFile = config.sops.secrets."users/${username}/hashed-password".path;
           openssh.authorizedKeys.keys = flake.config.meta.users.cdom.keys.ssh;
           extraGroups = [ "wheel" ];
         };
       };
 
-    users.seadoom = {
+    users.cdom = {
       configuration = {
         programs.git.signing.signByDefault = true;
         programs.jujutsu.signing.gpg.enable = true;
@@ -31,7 +34,7 @@ flake@{ self, ... }:
 
         programs.rclone.remotes."whatbox".mounts."".enable = true;
 
-        home.stateVersion = "21.11";
+        home.stateVersion = "25.05";
       };
     };
   };

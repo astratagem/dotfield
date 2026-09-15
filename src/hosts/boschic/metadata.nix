@@ -8,7 +8,7 @@ let
 in
 {
   meta.hosts.boschic = {
-    admins = [ "seadoom" ];
+    admins = [ "cdom" ];
     ipv4.address = "192.168.1.214";
     supportedFeatures = [
       "nixos-test"
@@ -25,10 +25,10 @@ in
     };
     network = "home";
     networks.ts = "100.112.94.38";
-    users.seadoom.keys = {
+    users.cdom.keys = {
       age = keys.age.seadoom-at-boschic;
       ssh = [ keys.ssh.seadoom-at-boschic ];
     };
-    syncthing.id = "5TCUNJM-PVGGNJ6-DETAT3O-PSMTOEP-SXRT7FP-62EFNZY-6ENFIYZ-3J2VHQJ";
+    # syncthing.id = "5TCUNJM-PVGGNJ6-DETAT3O-PSMTOEP-SXRT7FP-62EFNZY-6ENFIYZ-3J2VHQJ";
   };
 }
