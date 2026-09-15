@@ -21,7 +21,7 @@ in
   engines = {
     kagi = engine "https://kagi.com/search?q={searchTerms}";
     letterboxd = engine' "lb" "https://letterboxd.com/search/{searchTerms}";
-    marginalia = engine' "m" "https://search.marginalia.nu/search?query={searchTerms}&profile=default&js=default";
+    marginalia = engine' "m" "https://marginalia-search.com/search?query={searchTerms}";
     powerthesaurus = engine' "thes" "https://www.powerthesaurus.org/{searchTerms}/synonyms";
     tvdb = engine' "tvdb" "https://thetvdb.com/search?query={searchTerms}";
     wp = engine' "wp" "https://developer.wordpress.org/?s={searchTerms}";
