@@ -26,8 +26,8 @@ in
     network = "home";
     networks.ts = "100.112.94.38";
     users.cdom.keys = {
-      age = keys.age.seadoom-at-boschic;
-      ssh = [ keys.ssh.seadoom-at-boschic ];
+      age = keys.age.cdom-at-boschic;
+      ssh = [ keys.ssh.cdom-at-boschic ];
     };
     # syncthing.id = "5TCUNJM-PVGGNJ6-DETAT3O-PSMTOEP-SXRT7FP-62EFNZY-6ENFIYZ-3J2VHQJ";
   };

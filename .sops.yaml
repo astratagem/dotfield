@@ -59,7 +59,7 @@ creation_rules:
   - path_regex: src/users/cdom/secrets/[^/]+.yaml$
     key_groups:
       - age:
-          - age1up0p4xs0lze04acxrlxqj374ymu0dfkmc6adz2psmlz8g57ddv2qvf6pd4  # <seadoom@boschic>
+          - age1mqsrqdh0c8wep9jah0pvpzy2yey9wn7zwvqqe8zuuxjl8y8m4g9q0j3nhh  # <cdom@boschic>
           - age1msqfwt34d3gd5eaj54mmkffyac8hlrkwstwgfqp9ztf6yyreqg9qn7a63w  # <seadoom@hodgepodge>
           - age1xaxgeky7xtxuv8en508fr330wxaje0rdcr73j23kla70dt8lvsdqy33ypz  # <cdom@riebeck>
           - age19une89quzx4jt36hndrdp5ghr43845dndctfta206f7ts5ucsyjqt0l3pm  # <cdom@ryosuke>
