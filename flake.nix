@@ -102,7 +102,7 @@
     ##: customisation
     base16-schemes.url = "github:astratagem/nix-base16-schemes";
     base16-schemes.inputs.nixpkgs.follows = "nixpkgs";
-    ironbar.url = "github:JakeStanger/ironbar?ref=v0.19.0";
+    ironbar.url = "github:JakeStanger/ironbar";
     ironbar.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
 
