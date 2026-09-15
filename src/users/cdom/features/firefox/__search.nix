@@ -9,7 +9,7 @@
   pkgs,
 }:
 let
-  inherit (lib'.firefox) engine engine';
+  inherit (lib'.firefox) engine engine' engineWithAliases;
 in
 {
   # Required -- disabled by default to prevent unintentional data loss.
@@ -20,8 +20,14 @@ in
 
   engines = {
     kagi = engine "https://kagi.com/search?q={searchTerms}";
-    letterboxd = engine' "lb" "https://letterboxd.com/search/{searchTerms}";
-    marginalia = engine' "m" "https://marginalia-search.com/search?query={searchTerms}";
+    letterboxd = engineWithAliases [
+      "letterboxd"
+      "lb"
+    ] "https://letterboxd.com/search/{searchTerms}";
+    marginalia = engineWithAliases [
+      "marginalia"
+      "m"
+    ] "https://marginalia-search.com/search?query={searchTerms}";
     powerthesaurus = engine' "thes" "https://www.powerthesaurus.org/{searchTerms}/synonyms";
     tvdb = engine' "tvdb" "https://thetvdb.com/search?query={searchTerms}";
     wp = engine' "wp" "https://developer.wordpress.org/?s={searchTerms}";
@@ -29,6 +35,8 @@ in
     ## === Nix Reference ===
 
     hm-options = engine' "hm" "https://home-manager-options.extranix.com/?query={searchTerms}";
+    nixos-wiki = engine' "nwiki" "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+    noogle = engineWithAliases [ "nixlib" "noogle" ] "https://noogle.dev/q/?term={searchTerms}";
     nixpkgs = {
       definedAliases = [
         "@nixpkgs"
@@ -104,10 +112,6 @@ in
       ];
       icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
     };
-    nixos-wiki = {
-      urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
-      definedAliases = [ "@nwiki" ];
-    };
-    nix = engine' "nixlib" "https://noogle.dev/?term=%22{searchTerms}%22";
+
   };
 }
