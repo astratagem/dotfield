@@ -42,9 +42,9 @@ let
         hostSpec.baseline.home
       ];
 
-      makeHome = username: userSpec: {
+      makeHome = username: hostedUserSpec: {
         imports = resolveUserHomeModules {
-          inherit username userSpec hostAspects;
+          inherit username hostAspects hostedUserSpec;
           baseHomeModules = homeModules;
         };
       };

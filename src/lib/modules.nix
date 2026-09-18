@@ -74,25 +74,25 @@ let
   resolveUserAspects =
     {
       username,
-      userSpec,
+      hostedUserSpec,
       hostAspects,
     }:
     let
       userAspects = config.users.${username}.aspects;
       userAspectDeps =
-        (collectRequires config.aspects userSpec.aspects)
-        ++ (collectRequires userAspects userSpec.aspects);
+        (collectRequires config.aspects hostedUserSpec.aspects)
+        ++ (collectRequires userAspects hostedUserSpec.aspects);
       userExtendedAspects = collectNameMatches (
-        hostAspects ++ userSpec.aspects ++ userAspectDeps
+        hostAspects ++ hostedUserSpec.aspects ++ userAspectDeps
       ) userAspects;
       # NOTE: We only collect deps from config.aspects here, not from
-      # userAspects. Extended aspects should define their own dependencies
-      # directly. Attempting to source dependencies from multiple aspect
-      # groups can cause attribute-not-found errors when one group lacks
-      # the dependency. See the original comment in nixos.nix for details.
+      # hostedUserAspects.  Extended aspects should define their own
+      # dependencies directly.  Attempting to source dependencies from
+      # multiple aspect groups can cause attribute-not-found errors when
+      # one group lacks the dependency.
       userExtendedAspectsDeps = collectRequires config.aspects userExtendedAspects;
     in
-    userSpec.aspects
+    hostedUserSpec.aspects
     ++ userAspectDeps
     ++ userExtendedAspects
     ++ userExtendedAspectsDeps
@@ -102,29 +102,33 @@ let
   resolveUserHomeModules =
     {
       username,
-      userSpec,
+      hostedUserSpec,
       hostAspects,
       baseHomeModules,
     }:
     let
-      resolvedUserAspects = resolveUserAspects { inherit username userSpec hostAspects; };
+      resolvedUserAspects = resolveUserAspects {
+        inherit username hostAspects hostedUserSpec;
+      };
     in
     baseHomeModules
     ++ (collectHomeModules hostAspects)
     ++ (collectHomeModules resolvedUserAspects)
     ++ (collectHomeModules config.users.${username}.baseline.aspects)
-    ++ [ userSpec.configuration ];
+    ++ [ hostedUserSpec.configuration ];
 
   # Resolves all overlays for a user's standalone Home Manager configuration.
   # Collects from host aspects, user aspects, and appends self.overlays.default last.
   resolveUserOverlays =
     {
       username,
-      userSpec,
+      hostedUserSpec,
       hostAspects,
     }:
     let
-      resolvedUserAspects = resolveUserAspects { inherit username userSpec hostAspects; };
+      resolvedUserAspects = resolveUserAspects {
+        inherit username hostAspects hostedUserSpec;
+      };
     in
     (collectOverlays hostAspects)
     ++ (collectOverlays resolvedUserAspects)
@@ -187,6 +191,8 @@ let
             # were to manually define an aspect inside of an option
             # declared with this function (don't!), you would indeed run
             # into an error, and you would need to set `name` manually.
+            #
+            # TODO: investigate the module system's esoteric `key` here
             name = mkOption {
               type = types.str;
               readOnly = true;

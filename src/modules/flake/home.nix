@@ -36,13 +36,15 @@ let
         hostSpec.baseline.home
       ];
 
-      makeHome = username: userSpec: {
+      makeHome = username: hostedUserSpec: {
         name = "${username}@${hostName}";
         value = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = import inputs.${hostSpec.channel} {
             inherit system;
             config.allowUnfree = true;
-            overlays = resolveUserOverlays { inherit username userSpec hostAspects; };
+            overlays = resolveUserOverlays {
+              inherit username hostAspects hostedUserSpec;
+            };
           };
           extraSpecialArgs = {
             inherit inputs self;
@@ -55,7 +57,7 @@ let
             }
           ]
           ++ resolveUserHomeModules {
-            inherit username userSpec hostAspects;
+            inherit username hostAspects hostedUserSpec;
             baseHomeModules = homeModules;
           };
         };
