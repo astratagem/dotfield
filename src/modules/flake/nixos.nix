@@ -13,7 +13,7 @@ let
   inherit (self.lib.modules)
     collectNixosModules
     collectOverlays
-    collectRequires
+    collectAspectDeps
     resolveUserHomeModules
     ;
 
@@ -22,7 +22,7 @@ let
     let
       inherit (hostSpec) system;
 
-      hostAspectDeps = collectRequires config.aspects hostSpec.aspects;
+      hostAspectDeps = collectAspectDeps config.aspects hostSpec.aspects;
       hostAspects = hostSpec.aspects ++ hostAspectDeps;
 
       nixosModules = (collectNixosModules hostAspects) ++ [

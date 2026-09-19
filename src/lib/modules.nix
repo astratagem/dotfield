@@ -37,19 +37,24 @@ let
       flakeSpecialArgs // { inherit perSystem; }
     );
 
-  collectTypedModules = type: lib.foldr (v: acc: acc ++ (v.${type}.imports or [ ])) [ ];
-  collectNixosModules = collectTypedModules "nixos";
-  collectHomeModules = collectTypedModules "home";
+  /**
+    collectClassModules :: String -> { ${class} :: Module } -> [ Module ]
+  */
+  collectClassModules = class: lib.foldr (v: acc: acc ++ (v.${class}.imports or [ ])) [ ];
+  collectNixosModules = collectClassModules "nixos";
+  collectHomeModules = collectClassModules "home";
 
   # Collects overlays from a list of aspects.
   # self.overlays.default should be appended last at the call site to allow overrides.
   collectOverlays = lib.foldr (v: acc: acc ++ (v.overlays or [ ])) [ ];
+
   collectNameMatches =
     own: others: own |> (map (v: others.${v.name} or null)) |> filter (v: v != null);
-  collectRequires =
-    aspects: roots:
+
+  collectAspectDeps =
+    stack: requestors:
     let
-      rootNames = lib.catAttrs "name" roots;
+      rootNames = lib.catAttrs "name" requestors;
       op =
         visited: toVisit:
         if toVisit == [ ] then
@@ -63,14 +68,12 @@ let
             op visited rest
           else
             let
-              deps = map (name: aspects.${name}) (cur.requires or [ ]);
+              deps = map (name: stack.${name}) (cur.requires or [ ]);
             in
             op (op visited deps ++ [ cur ]) rest;
     in
-    (op [ ] roots) |> filter (v: !(lib.elem v.name rootNames));
+    (op [ ] requestors) |> filter (v: !(lib.elem v.name rootNames));
 
-  # Resolves the full list of user aspects given their spec and host context.
-  # This consolidates the fragile aspect dependency resolution logic.
   resolveUserAspects =
     {
       username,
@@ -80,25 +83,19 @@ let
     let
       userAspects = config.users.${username}.aspects;
       userAspectDeps =
-        (collectRequires config.aspects hostedUserSpec.aspects)
-        ++ (collectRequires userAspects hostedUserSpec.aspects);
-      userExtendedAspects = collectNameMatches (
+        (collectAspectDeps config.aspects hostedUserSpec.aspects)
+        ++ (collectAspectDeps userAspects hostedUserSpec.aspects);
+      userExtensiveAspects = collectNameMatches (
         hostAspects ++ hostedUserSpec.aspects ++ userAspectDeps
       ) userAspects;
-      # NOTE: We only collect deps from config.aspects here, not from
-      # hostedUserAspects.  Extended aspects should define their own
-      # dependencies directly.  Attempting to source dependencies from
-      # multiple aspect groups can cause attribute-not-found errors when
-      # one group lacks the dependency.
-      userExtendedAspectsDeps = collectRequires config.aspects userExtendedAspects;
+      userExtensiveAspectsDeps = collectAspectDeps config.aspects userExtensiveAspects;
     in
     hostedUserSpec.aspects
     ++ userAspectDeps
-    ++ userExtendedAspects
-    ++ userExtendedAspectsDeps
+    ++ userExtensiveAspects
+    ++ userExtensiveAspectsDeps
     ++ [ (userAspects.core or { }) ];
 
-  # Resolves all Home Manager modules for a user given their spec and host context.
   resolveUserHomeModules =
     {
       username,
@@ -118,7 +115,6 @@ let
     ++ [ hostedUserSpec.configuration ];
 
   # Resolves all overlays for a user's standalone Home Manager configuration.
-  # Collects from host aspects, user aspects, and appends self.overlays.default last.
   resolveUserOverlays =
     {
       username,
@@ -204,18 +200,17 @@ let
       );
       default = [ ];
     };
-
 in
 {
   flake.lib.modules = {
     inherit
       aspectSubmoduleGenericOptions
+      collectAspectDeps
+      collectClassModules
       collectHomeModules
       collectNameMatches
       collectNixosModules
       collectOverlays
-      collectRequires
-      collectTypedModules
       flakeSpecialArgs
       flakeSpecialArgs'
       mkAspectListOpt

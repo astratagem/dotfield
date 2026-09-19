@@ -4,12 +4,12 @@
 
 { self, ... }:
 let
-  inherit (self.lib.modules) collectTypedModules collectRequires;
+  inherit (self.lib.modules) collectClassModules collectRequires;
 in
 {
   flake.tests.lib.modules = {
-    testCollectTypedModules = {
-      expr = collectTypedModules "foo" [
+    testCollectClassModules = {
+      expr = collectClassModules "foo" [
         {
           foo = {
             imports = [
