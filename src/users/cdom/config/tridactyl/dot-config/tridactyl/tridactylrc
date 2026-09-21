@@ -31,6 +31,7 @@ bind K tabnext_gt
 " Hinting mode
 set hintfiltermode vimperator-reflow
 set hintnames short
+set modeindicatormodes.normal false
 
 set hintdelay 100
 
