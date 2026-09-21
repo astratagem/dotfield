@@ -1,22 +1,14 @@
 # SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
-#
 # SPDX-License-Identifier: GPL-3.0-or-later
-
 {
   aspects.graphical.nixos =
     { pkgs, ... }:
     {
-      programs.firefox = {
-        enable = true;
-        nativeMessagingHosts.packages = [
-          pkgs.tridactyl-native
-          pkgs.passff-host
-        ];
-      };
+      environment.systemPackages = [ pkgs.firefox ];
     };
 
   aspects.graphical.home =
-    hmArgs@{
+    {
       lib,
       config,
       pkgs,
@@ -25,11 +17,10 @@
     {
       programs.firefox = {
         enable = true;
-        package =
-          if (hmArgs.osConfig.programs.firefox.enable or false) then
-            (hmArgs.osConfig.programs.firefox.package or pkgs.firefox)
-          else
-            pkgs.firefox;
+        nativeMessagingHosts = [
+          pkgs.tridactyl-native
+          pkgs.passff-host
+        ];
         configPath = "${config.xdg.configHome}/mozilla/firefox";
       };
 
@@ -41,6 +32,7 @@
     };
 
   aspects.desktop-sessions__gnome.home = {
+    programs.firefox.enableGnomeExtensions = true;
     dconf.settings."org/gnome/desktop/notifications/application/firefox" = {
       application-id = "firefox.desktop";
     };
