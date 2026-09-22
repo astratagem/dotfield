@@ -15,8 +15,10 @@
     aspects = with config.aspects; [
       hardware__lenovo__thinkpad-x1-13th-gen
       workstation
-      desktop-sessions__niri
       development__kleinweb
+
+      desktop-sessions__niri
+      noctalia
     ];
   };
 

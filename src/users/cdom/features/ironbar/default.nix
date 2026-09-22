@@ -4,7 +4,7 @@
 
 { inputs, ... }:
 {
-  users.cdom.aspects.desktop-sessions__wayland-wm.home =
+  users.cdom.aspects.ironbar.home =
     {
       ...
     }:

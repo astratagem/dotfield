@@ -45,14 +45,6 @@
           pkgs.nirius # https://git.sr.ht/~tsdh/nirius
           pkgs.nwg-displays
         ];
-
-        services.swayidle.timeouts = [
-          {
-            timeout = 20 * 60;
-            command = "niri msg output * off";
-            resumeCommand = "niri msg output * on";
-          }
-        ];
       }
     );
   };

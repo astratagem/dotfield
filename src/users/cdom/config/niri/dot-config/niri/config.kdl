@@ -101,6 +101,13 @@ workspace "chat"
 /// ==================================================================
 
 window-rule {
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
     match app-id="mpv"
 
@@ -165,6 +172,13 @@ overview {
         offset x=0 y=10
         color "#18182550"
     }
+}
+
+blur {
+    passes 2        // more passes = stronger blur (default: 3)
+    offset 3.0      // sample distance per pass (default: 3.0)
+    noise 0.03      // grain overlay (default: 0.02)
+    saturation 1.0  // color saturation boost (default: 1.5)
 }
 
 spawn-at-startup "niriusd"
@@ -475,3 +489,5 @@ binds {
     // DISABLED: because I have no need for this.
     // Mod+Shift+P { power-off-monitors; }
 }
+
+include optional=true "noctalia-integration.kdl"
