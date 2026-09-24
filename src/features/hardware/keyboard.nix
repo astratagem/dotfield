@@ -30,6 +30,16 @@
   };
 
   aspects.graphical = {
+    nixos = { pkgs, ... }: {
+      environment.systemPackages = [
+        pkgs.wev
+
+        # Virtual keyboards
+        pkgs.gnome-tecla
+        pkgs.wvkbd
+      ];
+    };
+
     home =
       { lib, ... }:
       {
