@@ -66,7 +66,6 @@
   # https://searchfox.org/firefox-release/rev/c749d31276fecaa969469c4a53889a5639bb415c/browser/app/profile/firefox.js#255-257
   "browser.uidensity" = 1;
 
-  "browser.urlbar.placeholderName" = "…";
   "browser.urlbar.showSearchSuggestionsFirst" = false;
   "browser.urlbar.speculativeConnect.enabled" = false;
   "browser.urlbar.suggest.calculator" = true;
