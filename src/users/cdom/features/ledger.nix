@@ -29,7 +29,6 @@
         pkgs.hledger-web
 
         pkgs.hledger-utils # <https://gitlab.com/nobodyinperson/hledger-utils>
-        pkgs.ledger-autosync # sync with financial institutions via OFX
         pkgs.puffin # hledger dashboard
       ];
     };
