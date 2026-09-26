@@ -17,10 +17,10 @@
       programs.gpg = {
         enable = true;
         settings = {
-          keyserver = "hkps://keys.openpgp.org";
+          keyserver = "hkps://keyserver.ubuntu.com";
+          # keyserver = "hkps://pgpkeys.eu"; # only server providing sync
+          # keyserver = "hkps://keys.openpgp.org";
           # keyserver = "hkps://keys.mailvelope.com";
-          # FIXME: this should be (and, actually, is) the default
-          # keyserver = "hkps://keyserver.ubuntu.com";
         };
       };
     };

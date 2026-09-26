@@ -29,6 +29,6 @@ in
       age = keys.age.cdom-at-boschic;
       ssh = [ keys.ssh.cdom-at-boschic ];
     };
-    # syncthing.id = "5TCUNJM-PVGGNJ6-DETAT3O-PSMTOEP-SXRT7FP-62EFNZY-6ENFIYZ-3J2VHQJ";
+    syncthing.id = "FHFRNSL-H3GF7WZ-KNJMZFG-MUPOIAK-5HMAXDU-A6PQLPH-DKDKXUG-VZGGIAG";
   };
 }
