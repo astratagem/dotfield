@@ -2,7 +2,12 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-{ config, self, ... }:
+{
+  moduleWithSystem,
+  config,
+  self,
+  ...
+}:
 {
   hosts.nixos.boschic = {
     system = "x86_64-linux";
@@ -15,27 +20,31 @@
       development__kleinweb
       video-production
     ];
-    configuration = { pkgs, ... }: {
-      time.timeZone = "America/New_York";
+    configuration = moduleWithSystem (
+      perSystem@{ config }: { pkgs, ... }: {
+        time.timeZone = "America/New_York";
 
-      # FIXME: disable. likely interferes with rEFInd.
-      boot.loader.efi.canTouchEfiVariables = true;
-      boot.kernelPackages = pkgs.linuxPackages_latest;
-      boot.loader.timeout = 7;
-      boot.initrd.supportedFilesystems = [ "btrfs" ];
-      boot.supportedFilesystems = [ "btrfs" ];
+        # FIXME: disable. likely interferes with rEFInd.
+        boot.loader.efi.canTouchEfiVariables = true;
+        boot.kernelPackages = pkgs.linuxPackages_latest;
+        boot.loader.timeout = 7;
+        boot.initrd.supportedFilesystems = [ "btrfs" ];
+        boot.supportedFilesystems = [ "btrfs" ];
 
-      virtualisation.vmVariant = {
-        virtualisation.graphics = false;
-      };
+        fonts.packages = [ perSystem.config.packages.berkeley-mono ];
 
-      users.mutableUsers = false;
+        virtualisation.vmVariant = {
+          virtualisation.graphics = false;
+        };
 
-      programs.steam.enable = true;
+        users.mutableUsers = false;
 
-      sops.defaultSopsFile = ./secrets/secrets.yaml;
+        programs.steam.enable = true;
 
-      system.stateVersion = "26.05";
-    };
+        sops.defaultSopsFile = ./secrets/secrets.yaml;
+
+        system.stateVersion = "26.05";
+      }
+    );
   };
 }
