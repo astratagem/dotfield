@@ -17,6 +17,8 @@
 
       workstation
       desktop-sessions__niri
+      noctalia
+
       development__kleinweb
       video-production
     ];
