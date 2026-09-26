@@ -23,5 +23,8 @@
           # keyserver = "hkps://keys.mailvelope.com";
         };
       };
+
+      services.gpg-agent.enable = true;
+      services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
     };
 }

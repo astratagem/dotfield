@@ -7,7 +7,7 @@ let
   inherit (inputs.apparat.lib) isEmpty;
 in
 {
-  aspects.gpg-immutable.home =
+  aspects.workstation.home =
     {
       config,
       lib,
@@ -19,9 +19,17 @@ in
       key = whoami.pgp.id;
     in
     lib.mkIf (!isEmpty key) {
+      home.sessionVariables.DOTFIELD_PGP_KEY = key;
       programs.gpg = {
-        mutableKeys = false;
-        mutableTrust = false;
+        publicKeys = [
+          {
+            text = flake.config.meta.keys.pgp.asc.${key};
+            trust = "ultimate";
+          }
+        ];
+      };
+      services.gpg-agent = {
+        sshKeys = [ key ];
       };
     };
 }
