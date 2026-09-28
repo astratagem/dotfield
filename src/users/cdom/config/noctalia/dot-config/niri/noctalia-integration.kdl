@@ -5,8 +5,8 @@ window-rule {
     match app-id="dev.noctalia.Noctalia"
 
     open-floating true
-    default-column-width { fixed 1080; }
-    default-window-height { fixed 920; }
+    default-column-width { fixed 920; }
+    default-window-height { fixed 768; }
 }
 
 // Noctalia backdrop.
