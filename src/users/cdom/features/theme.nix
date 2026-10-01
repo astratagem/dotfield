@@ -45,13 +45,6 @@ in
       services.wpaperd.settings.any.path = "${wallpaperDir}/${wallpapers.${polarity}}";
 
       stylix.fonts = {
-        sizes = {
-          applications = 10;
-          desktop = 10;
-          popups = 8;
-          terminal = 10;
-        };
-
         sansSerif = {
           name = "Inter";
           package = pkgs.inter;

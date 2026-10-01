@@ -34,6 +34,13 @@ flake@{ ... }:
       configuration =
         { pkgs, ... }:
         {
+          stylix.fonts.sizes = {
+            applications = 10;
+            desktop = 10;
+            popups = 8;
+            terminal = 10;
+          };
+
           programs.git.signing.signByDefault = true;
           programs.jujutsu.signing.gpg.enable = true;
           programs.jujutsu.signing.onPush = true;
