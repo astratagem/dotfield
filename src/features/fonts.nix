@@ -49,6 +49,12 @@
             merriweather-sans
             nebula-sans
           ];
+
+          monospaceFonts = with pkgs; [
+            _0xproto
+            ioskeley-mono.nf
+            ioskeley-mono.term-nf
+          ];
         in
         baselineFonts
         ++ serifFonts
