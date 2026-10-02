@@ -1,7 +1,5 @@
 # SPDX-FileCopyrightText: (C) 2026 Chris Montgomery <chmont@protonmail.com>
-#
 # SPDX-License-Identifier: GPL-3.0-or-later
-
 {
   aspects.workstation.home =
     { pkgs, ... }:
@@ -9,9 +7,6 @@
       home.packages = with pkgs; [
         gnupg
         gpgme
-        (writeShellScriptBin "gpg-agent-restart" ''
-          pkill gpg-agent ; pkill ssh-agent ; pkill pinentry ; eval $(gpg-agent --daemon --enable-ssh-support)
-        '')
       ];
 
       programs.gpg = {
@@ -21,10 +16,18 @@
           # keyserver = "hkps://pgpkeys.eu"; # only server providing sync
           # keyserver = "hkps://keys.openpgp.org";
           # keyserver = "hkps://keys.mailvelope.com";
-        };
-      };
 
-      services.gpg-agent.enable = true;
-      services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
+          charset = "utf-8";
+          no-greeting = true;
+          with-key-origin = true;
+
+          # Enforce memory locking to avoid accidentally swapping GPG memory to disk
+          require-secmem = true;
+
+          # Output ASCII instead of binary
+          armor = true;
+        };
+        scdaemonSettings.disable-ccid = true;
+      };
     };
 }
