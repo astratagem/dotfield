@@ -35,11 +35,12 @@ input {
 layout {
     background-color "#181825"
 
-    gaps 12
+    gaps 6
+
     struts {
-        top 4
+        top 0
         right 0
-        bottom 4
+        bottom 0
         left 0
     }
 
@@ -48,17 +49,28 @@ layout {
     }
 
     always-center-single-column
-    center-focused-column "never"
+    center-focused-column "on-overflow"
+    empty-workspace-above-first
+
     default-column-width {
         proportion 0.5
     }
+
     preset-column-widths {
+        proportion 0.333333
         proportion 0.381953
         proportion 0.5
         proportion 0.618033
+        proportion 0.666667
     }
-    preset-window-heights {
 
+    preset-window-heights {
+        proportion 0.333333
+        proportion 0.381953
+        proportion 0.5
+        proportion 0.618033
+        proportion 0.666667
+        proportion 1.0
     }
 
     focus-ring {
