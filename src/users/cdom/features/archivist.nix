@@ -14,11 +14,19 @@ in
       mountDir = "${config.home.homeDirectory}/mnt";
     in
     {
-      home.packages = [
-        perSystem.config.packages.aax-to-m4b
-        pkgs.aaxtomp3
-        pkgs.audible-cli
-      ];
+      home.packages =
+        let
+          audiobookPkgs = [
+            perSystem.config.packages.aax-to-m4b
+            pkgs.aaxtomp3
+            pkgs.audible-cli
+          ];
+
+          webScrapingPkgs = [
+            pkgs.python314Packages.trafilatura # https://trafilatura.readthedocs.io/en/latest/index.html
+          ];
+        in
+        audiobookPkgs ++ webScrapingPkgs ++ [ ];
 
       programs.rclone.remotes."whatbox" = {
         config = {
