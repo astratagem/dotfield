@@ -3,6 +3,7 @@
 {
   users.cdom.aspects.core.home = {
     programs.fish.binds = {
+      "alt-w".command = "fish_commandline_append ' &| wl-copy'";
       "alt-shift-b".command = "backward-bigword";
       "alt-shift-f".command = "forward-bigword";
     };
