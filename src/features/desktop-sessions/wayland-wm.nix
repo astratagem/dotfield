@@ -7,7 +7,7 @@
     requires = [
       # FIXME: not necessarily -- and this prevents usage alongside
       # gnome desktop session
-      "login__regreet"
+      "login__noctalia-greeter"
 
       # FIXME: gdm crashes to black screen without a gnome session
       # available.  there are numerous reports out there of this
